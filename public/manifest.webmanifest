@@ -1,0 +1,15 @@
+{"name" : "BigShop",
+  "short_name" : "BigShop",
+  "start_url" : "/big-shop/index.php",
+  "display" : "standalone",
+  "background_color" : "#EAEBEF",
+  "theme_color" : "#FE1F1F",
+  "description" : "a lifestyle e-commerce on test shop",
+  "lang" : "",
+  "orientation" : "portrait",
+  "icons" : [
+    {
+      "src": "https://haim-taragano.tk/big-shop/_img/logo.png",
+      "sizes": "512x512"
+    }
+  ]}

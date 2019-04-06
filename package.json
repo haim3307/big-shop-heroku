@@ -1,0 +1,53 @@
+{
+    "name": "laravel_app",
+    "version": "0.0.1",
+    "private": true,
+    "scripts": {
+        "dev": "npm run development",
+        "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "watch-poll": "npm run watch -- --watch-poll",
+        "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "prod": "npm run production",
+        "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.3.3",
+        "@babel/plugin-proposal-class-properties": "^7.2.1",
+        "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+        "@babel/plugin-transform-async-to-generator": "^7.2.0",
+        "@babel/plugin-transform-runtime": "^7.2.0",
+        "@babel/preset-env": "^7.3.1",
+        "@babel/preset-react": "^7.0.0",
+        "@babel/runtime": "^7.3.1",
+        "axios": "^0.18",
+        "babel-loader": "^8.0.5",
+        "bootstrap": "^4.3.1",
+        "cross-env": "^5.1",
+        "extract-text-webpack-plugin": "^4.0.0-beta.0",
+        "jquery": "^3.2",
+        "laravel-mix": "^4.0.0",
+        "lodash": "^4.17.11",
+        "mini-css-extract-plugin": "^0.5.0",
+        "minifier": "^0.8.1",
+        "popper.js": "^1.14.7",
+        "purify-css": "^1.2.6",
+        "purifycss-webpack": "^0.7.0",
+        "sass": "^1.17.1",
+        "sass-loader": "^7.1.0",
+        "vue": "^2.6.7",
+        "vue-server-renderer": "^2.6.7",
+        "webpack": "^4.0.0",
+        "webpack-cli": "^3.2.3",
+        "webpack-require-http": "^0.4.3"
+    },
+    "dependencies": {
+        "bootstrap-vue": "^2.0.0-rc.13",
+        "moment": "^2.24.0",
+        "stripe": "^6.25.1",
+        "vue-datetime-2": "^0.6.1",
+        "vue-star-rating": "^1.6.1",
+        "vue-stripe-elements-plus": "^0.2.9",
+        "vuedraggable": "^2.17.0"
+    }
+}
