@@ -1,46 +1,48 @@
 @extends('layouts.master')
 @section('content')
 
-    <div class="profilePage container-1112 f-row" style="padding-top: 20px; background-color: #fff;">
+    <div class="container-fluid">
+        <div class="profilePage container-1112 f-row" style="padding-top: 20px; background-color: #fff;">
 
 
-                <div class="col-12 col-md-9">
-                    @yield('settings-content')
-                </div>
+            <div class="col-12 col-md-9">
+                @yield('settings-content')
+            </div>
 
-                <div class="col-12 col-md-3" style="margin: 10px 0;">
-                    <div class="sidebar_widget_menu">
-                        <nav id="sidebar_wid_menu">
-                            @php($userLinks = [
-                                (object)['url'=>'user/profile','icon'=>'ti-user','title'=>'Your Information'],
-                                (object)['url'=>'user/orders','icon'=>'ti-menu','title'=>'Order List'],
-                                (object)['url'=>'user/wishlist','icon'=>'ti-heart','title'=>'Wishlist'],
+            <div class="col-12 col-md-3" style="margin: 10px 0;">
+                <div class="sidebar_widget_menu">
+                    <nav id="sidebar_wid_menu">
+                        @php($userLinks = [
+                            (object)['url'=>'user/profile','icon'=>'ti-user','title'=>'Your Information'],
+                            (object)['url'=>'user/orders','icon'=>'ti-menu','title'=>'Order List'],
+                            (object)['url'=>'user/wishlist','icon'=>'ti-heart','title'=>'Wishlist'],
 /*                                (object)['url'=>'user/support','icon'=>'ti-headphone-alt','title'=>'Support'],
 */                            ])
-                            <ul>
-                                @foreach ($userLinks as $item)
-                                    <li class="{{active($item->url != 'user/profile'?$item->url:[$item->url,'user'])}}"><a href="{{url($item->url)}}"><i class="{{$item->icon}}"></i> {{$item->title}}</a></li>
-                                @endforeach
-                                <li class="">
-                                    <a href="#">
-                                        <i class="ti-lock"></i>
-                                        <form action="{{route('logout')}}" class="d-inline-block">
-                                            <input type="submit" id="logout" class="d-none"><label
-                                                    for="logout">Logout</label>
-                                        </form>
-                                    </a>
-                                </li>
-                                <li><a href="#"></a></li>
-                                <li><a href="#"></a></li>
-                                <li><a href="#"></a></li>
-                                <li><a href="#"></a></li>
-                                <li><a href="#"></a></li>
+                        <ul>
+                            @foreach ($userLinks as $item)
+                                <li class="{{active($item->url != 'user/profile'?$item->url:[$item->url,'user'])}}"><a href="{{url($item->url)}}"><i class="{{$item->icon}}"></i> {{$item->title}}</a></li>
+                            @endforeach
+                            <li class="">
+                                <a href="#">
+                                    <i class="ti-lock"></i>
+                                    <form action="{{route('logout')}}" class="d-inline-block">
+                                        <input type="submit" id="logout" class="d-none"><label
+                                                for="logout">Logout</label>
+                                    </form>
+                                </a>
+                            </li>
+                            <li><a href="#"></a></li>
+                            <li><a href="#"></a></li>
+                            <li><a href="#"></a></li>
+                            <li><a href="#"></a></li>
+                            <li><a href="#"></a></li>
 
-                            </ul>
-                        </nav>
-                    </div>
+                        </ul>
+                    </nav>
                 </div>
+            </div>
 
+        </div>
     </div>
 @endsection
 @section('script')

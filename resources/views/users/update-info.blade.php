@@ -7,11 +7,13 @@
                {{$user->name}}
                <div class="form-group">
                    {{csrf_field()}}
-                   <div class="f-row justify-content-between">
-                       <input type="file" class="form-control-file fade" id="upload-new-thumb" name="profile_img">
-                       <label class="submit" for="upload-new-thumb">Upload Profile Img</label>
-                       <label class="submit" for="submitImg">Submit Profile Img</label>
-                       <input type="submit" name="submit" id="submitImg" class="fade">
+                   <div class="container-fluid">
+                       <div class="f-row justify-content-between">
+                           <input type="file" class="form-control-file fade" id="upload-new-thumb" name="profile_img">
+                           <label class="submit" for="upload-new-thumb">Upload Profile Img</label>
+                           <label class="submit" for="submitImg">Submit Profile Img</label>
+                           <input type="submit" name="submit" id="submitImg" class="fade">
+                       </div>
                    </div>
                    @if($errors->has('profile_img')) <div class="text-danger">{{$errors->first('profile_img')}}</div> @endif
 

@@ -1187,6 +1187,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "manage-page-list",
   props: ['list', 'listTitle', 'list_id', 'pageManageMode'],
@@ -24528,59 +24530,61 @@ var render = function() {
       )
     ]),
     _vm._v(" "),
-    _c(
-      "form",
-      {
-        staticClass: "f-row justify-content-center p-2",
-        staticStyle: { "background-color": "cornflowerblue" },
-        attrs: {
-          id: "changesOrderForm",
-          action:
-            _vm.url +
-            "/cms/page/" +
-            _vm.page.url +
-            "/" +
-            _vm.listTitle +
-            "/order?manage_mode=" +
-            _vm.pageManageMode,
-          method: "POST"
-        },
-        on: {
-          submit: function($event) {
-            return _vm.onSubmitForm($event)
+    _c("div", { staticClass: "container-fluid" }, [
+      _c(
+        "form",
+        {
+          staticClass: "f-row justify-content-center p-2",
+          staticStyle: { "background-color": "cornflowerblue" },
+          attrs: {
+            id: "changesOrderForm",
+            action:
+              _vm.url +
+              "/cms/page/" +
+              _vm.page.url +
+              "/" +
+              _vm.listTitle +
+              "/order?manage_mode=" +
+              _vm.pageManageMode,
+            method: "POST"
+          },
+          on: {
+            submit: function($event) {
+              return _vm.onSubmitForm($event)
+            }
           }
-        }
-      },
-      [
-        _c("input", {
-          attrs: { type: "hidden", name: "_token" },
-          domProps: { value: _vm.token }
-        }),
-        _vm._v(" "),
-        _c("input", {
-          attrs: { type: "hidden", name: "_method", value: "PATCH" }
-        }),
-        _vm._v(" "),
-        _c("input", {
-          staticClass: "btn btn-primary",
-          attrs: { type: "submit", value: "Save Changes" }
-        }),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-3" }, [
+        },
+        [
           _c("input", {
-            attrs: { type: "hidden", name: "order", id: "order" },
-            domProps: { value: _vm.order }
-          })
-        ]),
-        _vm._v(" "),
-        _c("a", { attrs: { href: "?manage_mode=" + _vm.pageManageMode } }, [
+            attrs: { type: "hidden", name: "_token" },
+            domProps: { value: _vm.token }
+          }),
+          _vm._v(" "),
           _c("input", {
-            staticClass: "btn btn-danger",
-            attrs: { type: "button", value: "Cancel", id: "cancel" }
-          })
-        ])
-      ]
-    ),
+            attrs: { type: "hidden", name: "_method", value: "PATCH" }
+          }),
+          _vm._v(" "),
+          _c("input", {
+            staticClass: "btn btn-primary",
+            attrs: { type: "submit", value: "Save Changes" }
+          }),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-3" }, [
+            _c("input", {
+              attrs: { type: "hidden", name: "order", id: "order" },
+              domProps: { value: _vm.order }
+            })
+          ]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "?manage_mode=" + _vm.pageManageMode } }, [
+            _c("input", {
+              staticClass: "btn btn-danger",
+              attrs: { type: "button", value: "Cancel", id: "cancel" }
+            })
+          ])
+        ]
+      )
+    ]),
     _vm._v(" "),
     _c(
       "div",

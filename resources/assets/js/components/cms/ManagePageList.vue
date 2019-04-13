@@ -1,17 +1,19 @@
 <template>
     <div class="pageList">
         <h2>{{listTitle | seoUnFriendly | capitalize}}</h2>
-        <form id="changesOrderForm" @submit="onSubmitForm($event)"
-              :action="url + '/cms/page/'+page.url+'/'+listTitle+'/order?manage_mode='+pageManageMode"
-              class="f-row justify-content-center p-2"
-              method="POST"
-              style="background-color: cornflowerblue;">
-            <input type="hidden" name="_token" :value="token">
-            <input type="hidden" name="_method" value="PATCH">
-            <input type="submit" value="Save Changes" class="btn btn-primary">
-            <div class="col-3"><input type="hidden" name="order" id="order" :value="order"></div>
-            <a :href="'?manage_mode='+pageManageMode"><input type="button" value="Cancel" id="cancel" class="btn btn-danger"></a>
-        </form>
+        <div class="container-fluid">
+            <form id="changesOrderForm" @submit="onSubmitForm($event)"
+                  :action="url + '/cms/page/'+page.url+'/'+listTitle+'/order?manage_mode='+pageManageMode"
+                  class="f-row justify-content-center p-2"
+                  method="POST"
+                  style="background-color: cornflowerblue;">
+                <input type="hidden" name="_token" :value="token">
+                <input type="hidden" name="_method" value="PATCH">
+                <input type="submit" value="Save Changes" class="btn btn-primary">
+                <div class="col-3"><input type="hidden" name="order" id="order" :value="order"></div>
+                <a :href="'?manage_mode='+pageManageMode"><input type="button" value="Cancel" id="cancel" class="btn btn-danger"></a>
+            </form>
+        </div>
         <div class="tabs ui-tabs ui-corner-all ui-widget ui-widget-content">
             <ul class="ui-tabs-nav ui-corner-all ui-helper-reset ui-helper-clearfix ui-widget-header" v-if="list.items && list.items.length">
                 <li :class="{'ui-state-active':displayMode === 'thumbnail'}" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab ui-tabs-active" @click="displayMode = 'thumbnail'"><a class="tabLink ui-tabs-anchor" href="#thumbnails">Thumbnails</a></li>

@@ -66,7 +66,7 @@
         <div class="col dtc d-grid"
              style="grid-template-rows: auto 1fr;padding: 0;height: 100vh;">
             @include('cms.layouts.header')
-            <main style="overflow-y: scroll; padding-bottom: 50px;">
+            <main class="container-fluid mt-2" style="overflow-y: scroll; padding-bottom: 50px;">
                 @yield('content')
             </main>
             <footer id="admin-footer" style="margin: 0;" class="row justify-content-between">
