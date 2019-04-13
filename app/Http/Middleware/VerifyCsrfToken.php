@@ -40,7 +40,6 @@ class VerifyCsrfToken extends Middleware
             });
         }
 
-        //throw new TokenMismatchException;
-        dd($this->getTokenFromRequest($request), $request->session()->token(),session()->token());
+        throw new TokenMismatchException;
     }
 }

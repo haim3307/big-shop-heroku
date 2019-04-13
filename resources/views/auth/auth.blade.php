@@ -6,14 +6,13 @@
     </div>
 @endsection
 @section('script')
-   {{-- <script>
+    <script>
 			window.fbAsyncInit = function () {
 				FB.init({
-					appId: '386001925234856',
-                    '560ce6aae5aae9f8b9c75ed5f1a8131b',
+					appId: '{{env('FACEBOOK_CLIENT_ID')}}',
 					cookie: true,
 					xfbml: true,
-					version: '{latest-api-version}'
+					version: 'v3.2'
 				});
 
 				FB.AppEvents.logPageView();
@@ -30,5 +29,5 @@
 				js.src = "https://connect.facebook.net/en_US/sdk.js";
 				fjs.parentNode.insertBefore(js, fjs);
 			}(document, 'script', 'facebook-jssdk'));
-    </script>--}}
+    </script>
 @endsection
