@@ -16,7 +16,7 @@ class CMSPagesController extends CMSControlller
     public function __construct()
     {
         parent::__construct();
-        self::$data['page'] = (object)['title' => explode('@', Route::current()->action['uses'])[1]];
+        self::$data['page'] = (object)['title' =>  !empty(Route::current()->action) ? explode('@', Route::current()->action['uses'])[1]:''];
         self::$data['entity'] = 'page';
     }
 

@@ -12,7 +12,7 @@
 */
 # Client
 
-Route::group(['middleware' => ['CacheControl']], function () {
+Route::group(['middleware' => []], function () {
     Route::get('/', 'PagesController@home');
     Route::get('home', 'PagesController@home')->name('home');
     Route::get('home/tags/{tagName}', 'HomeController@byTag');
@@ -157,7 +157,18 @@ Route::group(['middleware' => ['CacheControl']], function () {
         Route::post('/', 'CartController@checkoutPost');
     });
 
-    Auth::routes();
+    Route::get('sign-in', 'Auth\LoginController@showLoginForm')->name('login');
+    Route::post('sign-in', 'Auth\LoginController@login');
+    Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
+    Route::post('register', 'Auth\RegisterController@register');
+    Route::post('logout', 'Auth\LoginController@logout')->name('logout');
+    // Password reset link request routes...
+    Route::get('password/email', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.email');
+    Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail');
+
+    // Password reset routes...
+    Route::get('password/reset', 'Auth\ResetPasswordController@showResetForm')->name('password.request');
+    Route::post('password/reset/{token}', 'Auth\ResetPasswordController@postReset')->name('password.reset');
 
     Route::get('login/facebook', 'Auth\LoginController@redirectToProvider');
     Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback');

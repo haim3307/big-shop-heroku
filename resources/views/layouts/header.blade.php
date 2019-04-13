@@ -160,7 +160,7 @@
                                             class="fa fa-angle-down ml-2 mr-2"></i></span> </a>
                             <ul class="dropdown-menu w-150" role="menu">
                                 @if(!Auth::check())
-                                    <li><a href="{{url('login')}}">Login</a></li>
+                                    <li><a href="{{route('login')}}">Login</a></li>
                                     <li><a href="{{url('register')}}">Create Account</a></li>
                                 @elseif($user->allowedCMS() && !request()->iframe_mode)
                                     <li><a href="{{url('cms/')}}">CMS</a></li>
