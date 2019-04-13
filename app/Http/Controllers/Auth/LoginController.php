@@ -130,19 +130,18 @@ class LoginController extends MainController
         }
         Auth::login($authUser);
         Session::put('user',auth()->user());
-        redirect(\URL::previous());
-        /*        if ($this->authenticated($request, $this->guard()->user()))
-                {
-                    return redirect()->route('cms.home');
-                }
-                else if (Session::has('rt') && !empty(Session::get('rt')))
-                {
-                    Session::flash('scrollToId',1);
-                    return redirect(Session::get('rt'));
-                }
-                else
-                {
-                    return redirect()->intended($this->redirectPath());
-                }*/
+        if ($this->authenticated($request, $this->guard()->user()))
+        {
+            return redirect()->route('cms.home');
+        }
+        else if (Session::has('rt') && !empty(Session::get('rt')))
+        {
+            Session::flash('scrollToId',1);
+            return redirect(Session::get('rt'));
+        }
+        else
+        {
+            return redirect()->intended($this->redirectPath());
+        }
     }
 }
