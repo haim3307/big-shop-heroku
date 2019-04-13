@@ -111,13 +111,16 @@ class LoginController extends MainController
     {
         try{
             $user = Socialite::driver('facebook')->user();
-        }catch (\Exception $e){
+        }
+        catch (\Exception $e){
             return redirect('login/facebook');
         }
         $findUser = User::where('email',$user->email)->first();
-        if($findUser){
+        if($findUser)
+        {
             $authUser = $findUser;
-        }else{
+        }
+        else{
             $authUser = new User([
                 'name' => $user->name,
                 'email' => $user->email,
@@ -127,13 +130,19 @@ class LoginController extends MainController
         }
         Auth::login($authUser);
         Session::put('user',auth()->user());
-        if ($this->authenticated($request, $this->guard()->user())){
-            return redirect()->route('cms.home');
-        }else if (Session::has('rt') && !empty(Session::get('rt'))){
-            Session::flash('scrollToId',1);
-            return redirect(Session::get('rt'));
-        }else{
-            return redirect()->intended($this->redirectPath());
-        }
+        redirect(\URL::previous());
+        /*        if ($this->authenticated($request, $this->guard()->user()))
+                {
+                    return redirect()->route('cms.home');
+                }
+                else if (Session::has('rt') && !empty(Session::get('rt')))
+                {
+                    Session::flash('scrollToId',1);
+                    return redirect(Session::get('rt'));
+                }
+                else
+                {
+                    return redirect()->intended($this->redirectPath());
+                }*/
     }
 }
