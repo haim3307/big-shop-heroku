@@ -5,13 +5,13 @@ return [
     /*
      *  Sirv CDN
      * */
+    //bigshop-cdn.sirv.com
+    //bigshop.sirv.com
     'cdn' => array(
-        "localhost/big-shop-upload/public_html/big-shop" => "css|js|eot|woff|ttf",
-        "bigshop-cdn.sirv.com" => "jpg|jpeg|png|gif|svg",
-        "localhost/big-shop-upload/public_html/big-shop" => ""
+        env('APP_URL') => "jpg|jpeg|png|gif|svg",
     ),
     'cdnByType' => array(
-        'img' => '//bigshop.sirv.com'
+        'img' => ''
     ),
     /*
     |--------------------------------------------------------------------------

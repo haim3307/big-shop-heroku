@@ -1,4 +1,5 @@
 const mix = require('laravel-mix');
+const minifier = require('minifier');
 
 /*
  |--------------------------------------------------------------------------
@@ -10,6 +11,44 @@ const mix = require('laravel-mix');
  | file for the application as well as bundling up all the JS files.
  |
  */
+/*
+mix.setPublicPath('../public_html/big-shop');
+*/
+/*
+const base = '../public_html/big-shop/';
+*/
+mix.webpackConfig({
+    resolve: {
+        alias: {
+            'vue$': 'vue/dist/vue.esm.js'
+        }
+    }
+});
 
-mix.js('resources/js/app.js', 'public/js')
-   .sass('resources/sass/app.scss', 'public/css');
+mix.options({
+    processCssUrls: false,
+    purifyCss: true,
+});
+
+mix
+    .js('resources/assets/js/app.js', 'js/app.js')
+    .js('resources/assets/js/bootstrap.js', 'js/bootstrap.js')
+    .sass('resources/assets/sass/app.scss', 'css/app.css')
+    .sass('resources/assets/sass/styles.scss', 'css/styles1.css');
+
+
+/*mix.then(() => {
+	minifier.minify(base+'js/app.js');
+  minifier.minify(base+'css/app.css');
+  minifier.minify(base+'css/styles1.css');
+});*/
+/*
+mix.styles('public/css/pages/home.css', 'public/css/pages/homePreFixed.css')
+	.options({
+		postCss: [
+			require('autoprefixer')({
+				browsers: ['last 40 versions'],
+				grid: true
+			})
+		]
+});*/

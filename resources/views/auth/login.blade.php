@@ -9,7 +9,7 @@
                 <div class="card-header">{{ __('Login') }}</div>
                 <div class="card-body">
                     <form method="POST" action="{{ route('login',['rt'=>request()->rt]) }}" novalidate="novalidate">
-                        {{csrf_field()}}
+                        @csrf
                         <div class="form-group f-row flex-column justify-content-center">
                                 <input id="email" type="email"
                                        class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email"

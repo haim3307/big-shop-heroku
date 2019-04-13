@@ -126,6 +126,8 @@
     var token = $('meta[name="csrf-token"]').attr('content');
 
     var CMSAppOBJ = {el: '#CMSApp', data: {}, methods: {}, computed: {}, filters: {}, watch: {}};
+    window.BASE_URL = '{{remove_http(url(''))}}'.replace('index.php','');
+    Vue.prototype.cdnByType = {!! json_encode(Config::get('app.cdnByType')) !!};
     Vue.prototype.url = BASE_URL;
 </script>
 <script>VueComponents()</script>

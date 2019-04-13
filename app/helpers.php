@@ -41,7 +41,7 @@ if(! function_exists('img'))
     function img($url = null)
     {
         try {
-            return cdn($url);
+            return asset($url);
         } catch (Exception $exception) {
             var_dump($exception);
         }

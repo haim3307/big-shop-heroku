@@ -88,6 +88,7 @@
             });
             jQuery(function ($) {
                 tplJQ();
+                reloadSirv();
                 load.js('https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js').then(function () {
                     var $footerCarousel =  $('#footer-carousel').owlCarousel({
                         loop:true,

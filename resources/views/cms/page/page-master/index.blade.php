@@ -9,7 +9,7 @@
         </nav>
         <iframe v-if="pageManageMode == 'watch' || pageManageMode == 'both'" src="{{url($page->url)}}?iframe_mode=1" width="100%"
                 :class="{splitMode:pageManageMode == 'both'}" frameborder="0"></iframe>
-        <main  v-show="pageManageMode == 'manage' || pageManageMode == 'both'" :class="{splitMode:pageManageMode == 'both'}">
+        <main class="container-fluid p-md-4"  v-show="pageManageMode == 'manage' || pageManageMode == 'both'" :class="{splitMode:pageManageMode == 'both'}">
             @yield('page-master-content')
             <manage-page-lists v-if="lists && lists.length" :lists="lists" :selected-list="selectedList" :page-manage-mode="pageManageMode"></manage-page-lists>
         </main>

@@ -7,5 +7,10 @@
 	};
 	console.log(CMSAppOBJ.data.lists);
 	Vue.prototype.page = {url: '{{$page->url}}'};
+    CMSAppOBJ.provide = function(){
+        return {
+            page: {!! $page !!}
+        }
+    }
 	var CMSApp = new Vue(CMSAppOBJ);
 </script>

@@ -26,7 +26,9 @@
     @endif
 
     <link rel="shortcut icon" href="{{asset('favicon.ico')}}"/>
+{{--
     <script src="https://scripts.sirv.com/sirv.js" defer></script>
+--}}
     <script>
 			function ready(fn) {
 				if (document.readyState != 'loading') {
@@ -78,13 +80,16 @@
 
 			}
             function reloadSirv() {
-                Sirv.start();
+               document.querySelectorAll('img[data-src]').forEach(function ($el) {
+                    $el.src = $el.dataset.src
+                    $el.classList.add('img-fluid')
+                })
 			}
             //reloadSirv();
 			var addonsJQ = [];// array of own plugin functions
     </script>
     <script>
-			window.url = '{{remove_http(url(''))}}';
+			window.url = '{{env('APP_URL')}}';
 			window.token = '{{ csrf_token() }}';
 			window.categoriesWithFilters = {!! \App\Category::with('filters')->get() !!};
 			console.log(categoriesWithFilters);

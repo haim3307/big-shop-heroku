@@ -21,7 +21,8 @@
 	export default {
 		name: "manage-page-lists",
 		props: ['lists', 'pageManageMode', 'selectedList'],
-		mounted() {
+        inject:['page'],
+        mounted() {
 			console.log(this.lists);
 			//this.selectedList = this.lists[0].url;
 		},

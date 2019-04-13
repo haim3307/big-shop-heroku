@@ -53,6 +53,7 @@
 	export default {
 		name: "manage-page-list",
 		props: ['list', 'listTitle', 'list_id', 'pageManageMode'],
+        inject:['page'],
 		data() {
 			return {
 				token: window.token,

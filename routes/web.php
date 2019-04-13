@@ -11,8 +11,8 @@
 |
 */
 # Client
-Route::group(['middleware' => 'CacheControl'], function () {
 
+Route::group(['middleware' => ['CacheControl']], function () {
     Route::get('/', 'PagesController@home');
     Route::get('home', 'PagesController@home')->name('home');
     Route::get('home/tags/{tagName}', 'HomeController@byTag');
@@ -158,6 +158,7 @@ Route::group(['middleware' => 'CacheControl'], function () {
     });
 
     Auth::routes();
+
     Route::get('login/facebook', 'Auth\LoginController@redirectToProvider');
     Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback');
 
