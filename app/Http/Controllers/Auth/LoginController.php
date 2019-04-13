@@ -43,7 +43,7 @@ class LoginController extends MainController
     public function __construct()
     {
         parent::__construct();
-        $this->redirectTo = \URL::previous();
+/*        $this->redirectTo = \URL::previous();*/
         $this->middleware('guest', ['except' => 'logout']);
     }
     /*public function __construct()
