@@ -159,7 +159,7 @@ return [
 
         Illuminate\View\ViewServiceProvider::class,
 
-        Wpb\String_Blade_Compiler\ViewServiceProvider::class,
+        // Wpb\String_Blade_Compiler\ViewServiceProvider::class,
 
 
         /*
