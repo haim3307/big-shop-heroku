@@ -98,21 +98,18 @@
                             <a style="cursor: pointer;" href="javascript:void(0)" class="d-sm-flex align-items-center">
                                 <i class="fa fa-language ml-2" style="position: relative; top: -3px;"></i>
                                 @push('scripts')
-                                    <script async defer>
+                                    <script defer>
 
                                         function googleTranslateElementInit() {
-                                            new google.translate.TranslateElement({
+
+                                            var $el = new google.translate.TranslateElement({
                                                 pageLanguage: 'en',
                                                 includedLanguages: 'en,es,fr,ru',
                                                 layout: google.translate.TranslateElement.InlineLayout.SIMPLE
                                             }, 'google_translate_element');
                                             //document.querySelector('.topBarNav').classList.add('show');
-
-                                            document.getElementsByClassName('topBarNav')[0].classList.remove('fade');
-
+                                            document.getElementsByClassName('topBarNav')[0].classList.add('show');
                                         }
-
-                                        load.js('//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit');
                                     </script>
                                     <style>
                                         .goog-te-menu-value {

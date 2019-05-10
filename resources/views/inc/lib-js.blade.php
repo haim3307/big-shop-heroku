@@ -58,6 +58,7 @@
             load.js('https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js').then(function () {
                 load.js('https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js').then(function () {
                     jQuery(function ($) {
+                        load.js('//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit')
                         tplJQBT();
                         @if(Session::has('ms')) $('#addedToCartModal').modal('show'); @endif
                         $('#translateLi>a').on('click',function (e) {
