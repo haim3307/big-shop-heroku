@@ -1,6 +1,6 @@
 <template>
     <!-- animate-loaded-hide animated zoomIn-->
-    <li class="catesItemR">
+    <li class="catesItemR animate-loaded animated zoomIn">
         <!-- :class="{'zoomIn':loadedItem}"--><!-- v-show="loadedItem"-->
         <a :href="url_item" style="text-decoration: none; color: black;">
             <div class="innerCatesItemR" :style="{backgroundImage:make_bgi}" style="    background-size: cover;">

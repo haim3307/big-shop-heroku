@@ -59,7 +59,6 @@ window.VueComponents = function () {
 		props:['product'],
 		methods:{
             addToCartEvent(e){
-            	debugger;
             	window.addToCartEvent.call(this.$refs.addToCart,e);
 			}
 		}
