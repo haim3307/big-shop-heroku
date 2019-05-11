@@ -112,7 +112,7 @@ ul,li {
 }
 
 @media (min-width: 1112px) {
-  .mainHeader > div {
+  .mainHeader > div:not(.fixedBar) {
     display: grid;
     grid-template-columns: 24px 177px;
     grid-template-rows: 67px auto 45px;
@@ -589,7 +589,7 @@ ul,li {
   }
 }
 
-.fixedBar {
+.fixedBar .thirdNav {
   position: fixed;
   top: 0;
   right: 0;

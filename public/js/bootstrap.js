@@ -34774,7 +34774,7 @@ if (token) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Administrator\PhpstormProjects\big-shop-5.8\big-shop\resources\assets\js\bootstrap.js */"./resources/assets/js/bootstrap.js");
+module.exports = __webpack_require__(/*! /Users/admin/PhpstormProjects/big-shop-heroku/resources/assets/js/bootstrap.js */"./resources/assets/js/bootstrap.js");
 
 
 /***/ })

@@ -108,7 +108,7 @@
     --}}
 
     <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="{{asset('css/app.min.css')}}">
-    <link rel="stylesheet" href="{{ asset('css/styles1.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/styles1.css')}}">
     <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://unpkg.com/flickity@2.1.1/dist/flickity.min.css">
     <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">

@@ -3,7 +3,7 @@ $container-width : 1112px;
     background-color: #404040;
     color: white;
     @media (min-width: $container-width) {
-        &> div {
+        &> div:not(.fixedBar) {
             display: grid;
             grid-template-columns: 24px 177px;
             grid-template-rows: 67px auto 45px;
@@ -424,13 +424,15 @@ $container-width : 1112px;
 }
 
 .fixedBar {
-    position: fixed;
-    top: 0;
-    right: 0;
-    box-shadow: -5px 0 20px -3px grey;
-    z-index: 99999;
-    background-color: currentColor;
-    width: 100%;
+    .thirdNav{
+        position: fixed;
+        top: 0;
+        right: 0;
+        box-shadow: -5px 0 20px -3px grey;
+        z-index: 99999;
+        background-color: currentColor;
+        width: 100%;
+    }
 }
 
 @media (max-width: 910px) {

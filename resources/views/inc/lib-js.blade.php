@@ -224,8 +224,8 @@
                             $('.carousel-cell').css('opacity', '1');
 
                             function toggleThirdNav(e) {
-                                if (window.scrollY > 200) $('.thirdNav').addClass('fixedBar');
-                                else $('.thirdNav').removeClass('fixedBar');
+                                if (window.scrollY > 200) $('.mainHeader > .container-1112').addClass('fixedBar');
+                                else $('.mainHeader > .container-1112').removeClass('fixedBar');
                             }
                             var $backToTop = $('.backToTop');
                             $backToTop.on('click',function (e) {
