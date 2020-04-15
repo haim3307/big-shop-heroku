@@ -7,7 +7,7 @@
             <div class="product-details">
                 <div class="close-icon" v-on:click.prevent="emitDeleteItem"><a><i class="fa fa-close"></i></a>
                 </div>
-                <p class="product-name">{{cartItem['title'] | capitalize}}</p>
+                <p class="product-name">{{cartItem['title'] | capitalize }}</p>
                 <strong>{{cartItem['quantity']}}</strong> x <span
                     class="price text-primary">${{cartItem['price']}}</span>
             </div>
@@ -22,19 +22,21 @@
 		props: ['cartItem'],
 
 		mounted() {
-			if (!this.cartItem['quantity']) this.$set(this.cartItem, 'quantity', 1);
+			let { cartItem } = this;
+			if (!cartItem['quantity']) this.$set(cartItem, 'quantity', 1);
 		},
 		computed: {
 			main_img() {
-                if(!this.cartItem) return;
-			    if(!this.cartItem['main_category'] && !('url' in this.cartItem['main_category']) && !this.cartItem['c_url']) return;
-				return `${this.url}/_img/products/${this.cartItem['c_url']?this.cartItem['c_url']:this.cartItem['main_category'].url}/${this.cartItem['main_img']}`;
+				let { cartItem,url } = this;
+			    if(!cartItem['main_category'] && !('url' in cartItem['main_category']) && !cartItem['c_url']) return;
+				return `${url}/_img/products/${cartItem['c_url']? cartItem['c_url'] : cartItem['main_category'].url}/${cartItem['main_img']}`;
 			},
 			url_item() {
 				//!this.cartItem['c_name'] && (this.cartItem['c_name'] = selectedCategory);
                 /*console.log('cartItem:',this.cartItem['main_category']);
 				*/
-                return `${this.url}/shop/${this.cartItem['c_url']?this.cartItem['c_url']:this.cartItem['main_category'].url}/${this.cartItem['url']}`;
+				let { cartItem,url } = this;
+                return `${url}/shop/${cartItem['c_url'] ? cartItem['c_url'] : cartItem['main_category'].url}/${cartItem['url']}`;
 			}
 		},
 		methods: {
