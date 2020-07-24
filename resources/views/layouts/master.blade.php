@@ -50,6 +50,7 @@
             if (item.main_category && typeof item.main_category === 'string') item.main_category = JSON.parse(item.main_category);
             return item;
         });
+
         localStorage.setItem('cartItems', JSON.stringify(localList));
     </script>
     @include('inc.load-script')

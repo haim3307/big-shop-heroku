@@ -32,14 +32,15 @@ class CartController extends MainController
                 }
                 return ['item' => $product, 'quantity' => $item->quantity];
             })->filter(fn($order) => $order['item'])->toJson();
-            if ($orderList = auth()->user()->orders()->save(new OrderList(['list' => $order, 'step' => 1]))) {
-                $orderData = ['order_id', $orderList->id, 'step' => 1];
-                if (!Session::has('userOrders')) Session::put('userOrders', [$orderData]);
-                else Session::push('userOrders', $orderData);
+            /** @var OrderList $orderList */
+            $orderList = auth()->user()->orders()->save(new OrderList(['list' => $order, 'step' => 1]));
 
-                Session::flash('clear_cart', 1);
+            if ($orderList) {
+                $orderData = ['order_id', $orderList->id, 'step' => 1];
+                if (!session()->has('userOrders')) session()->put('userOrders', [$orderData]);
+                else session()->push('userOrders', $orderData);
                 //Session::flash('ms','Thank you ! Order has been registered');
-                return redirect('checkout?order_id=' . $orderList->id);
+                return redirect('checkout?order_id=' . $orderList->id)->with('clear_cart', 1);
             }
         }
         return redirect('cart');
@@ -79,7 +80,8 @@ class CartController extends MainController
 
             // save this info to your database
             auth()->user()->orders()->where('id', $request->order_id)->update(['step' => 1]);
-            Session::flash('orderPayed', 1);
+            session()->flash('orderPayed', 1);
+            session()->flash('clear_cart', 1);
             // SUCCESSFUL
             return back()->with('success_message', 'Thank you! Your payment has been accepted.');
         } catch (CardErrorException $e) {

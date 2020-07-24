@@ -19,19 +19,15 @@ class OrderList extends MainModel
 
     static public function getAllOrdersPaginate(&$page, $userId = null, $limit = 3)
     {
-
-        if ($userId) $page = self::where('user_id', $userId);
-        $page = self::orderBy('created_at', 'desc')->paginate($limit);
+        $qb = self::orderBy('created_at', 'desc');
+        if ($userId) $qb->where('user_id', $userId);
+        $page = $qb->paginate($limit);
         $page->getCollection()->transform(function ($order) {
             $order->list = collect(json_decode($order['list']));
-            $order->subTotal = $order->list->sum(function ($listItem) {
-                return $listItem->item->price * $listItem->quantity;
-            });
+            $order->subTotal = $order->list->sum(fn($listItem) => $listItem->item->price * $listItem->quantity);
             $order->total = $order->subTotal + ($order->subTotal * 0.18);
-            $order->totalQuantity = $order->list->sum(function ($listItem) {
-                return $listItem->quantity;
-            });
-            if (isset($order->user)) return $order;
+            $order->totalQuantity = $order->list->sum(fn($listItem) => $listItem->quantity);
+            if (!empty($order->user)) return $order;
         });
 
     }

@@ -2,8 +2,6 @@
 
 @section('content')
     <div class="container all-g-centered-md" style="min-height: 60vh">
-
-
         <div class="card">
             <div class="card-header">{{ __('Register') }}</div>
 

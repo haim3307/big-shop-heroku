@@ -16,6 +16,7 @@ class CacheControl
     public function handle($request, Closure $next)
     {
         $response = $next($request);
+        $request->session()->reflash();
 
         //$response->header('Cache-Control', 'no-cache, must-revalidate');
         // Or whatever you want it to be:
