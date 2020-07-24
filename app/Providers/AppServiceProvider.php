@@ -27,8 +27,8 @@ class AppServiceProvider extends ServiceProvider
         Schema::defaultStringLength(191);
         view()->composer('*', function ($view) {
             $view->with([
-                'store_name'=>'Big-Shop',
-                'defaultMetaDesc'=>"Life Style Store with sports , camping ,gaming and playground products , Choose Your life style at big store",
+                'store_name' => 'Big-Shop',
+                'defaultMetaDesc' => "Life Style Store with sports , camping ,gaming and playground products , Choose Your life style at big store",
             ]);
         });
     }

@@ -34,52 +34,52 @@
     </li>
 </template>
 <script>
-	export default {
-		mounted() {
-			/*			$('.addToCartB').on('click', updateCartedButtons);
+    export default {
+        mounted() {
+            /*			$('.addToCartB').on('click', updateCartedButtons);
                         console.log('options:',this.it['options']);*/
-		},
-		props: ['it'],
-		data: function () {
-			return {
-				loadedItem: false
-			}
-		},
-		methods: {
-			loadItem() {
-				this.loadedItem = true;
-			},
-			addToCartEvent($event) {
-              window.addToCartEvent.call(this.$refs.addToCart,$event);
-			}
-		},
-		computed: {
-			// a computed getter
-			url_main_img() {
-				return `${this.cdnByType.img}/_img/products/${this.it['c_url']}/${this.it['main_img']}?scale.width=231`;
-			},
-			url_shopping_cart() {
-				return `${this.cdnByType.img}/_img/shopping-cart.png`;
-			},
-			url_item() {
-				!this.it['c_url'] && (this.it['c_url'] = typeof this.selectedCategory == "undefined"?this.it.main_category.url:this.selectedCategory);
-				return `${this.url}/shop/${this.it['c_url']}/${this.it['url']}`;
-			},
-			make_bgi() {
-				let url = this.url;
+        },
+        props: ['it'],
+        data: function () {
+            return {
+                loadedItem: false
+            }
+        },
+        methods: {
+            loadItem() {
+                this.loadedItem = true;
+            },
+            addToCartEvent($event) {
+                window.addToCartEvent.call(this.$refs.addToCart, $event);
+            }
+        },
+        computed: {
+            // a computed getter
+            url_main_img() {
+                return `${this.cdnByType.img}/_img/products/${this.it['c_url']}/${this.it['main_img']}?scale.width=231`;
+            },
+            url_shopping_cart() {
+                return `${this.cdnByType.img}/_img/shopping-cart.png`;
+            },
+            url_item() {
+                !this.it['c_url'] && (this.it['c_url'] = typeof this.selectedCategory == "undefined" ? this.it.main_category.url : this.selectedCategory);
+                return `${this.url}/shop/${this.it['c_url']}/${this.it['url']}`;
+            },
+            make_bgi() {
+                let url = this.url;
 
-				function bg_white() {
-					return `${url}/_img/bg_items_white.png`;
-				}
+                function bg_white() {
+                    return `${url}/_img/bg_items_white.png`;
+                }
 
-				return `url('${bg_white()}')`;
-			},
-			jsonProduct() {
-				return JSON.stringify(this.it);
-			}
-		},
-		filters: {}
-	}
+                return `url('${bg_white()}')`;
+            },
+            jsonProduct() {
+                return JSON.stringify(this.it);
+            }
+        },
+        filters: {}
+    }
 </script>
 <style>
     .catesItemR {

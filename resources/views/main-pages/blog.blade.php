@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('head')
-    <link rel='stylesheet' id='exgym-style-css'  href={{asset('css/specialTemp.css')}} type='text/css' media='all' />
+    <link rel='stylesheet' id='exgym-style-css' href={{asset('css/specialTemp.css')}} type='text/css' media='all'/>
 
     <style>
         .widget-woof .woof_container .widget h4, .widget .widget-title, .widget .widget-woof .woof_container h4, .widget .widgettitle {
@@ -34,7 +34,7 @@
                                 <div class="g-row" style="grid-gap: 20px;">
                                     @forelse($posts as $post)
                                         @include('items.post')
-                                        @empty
+                                    @empty
                                         <h3 class="text-center g-col-12">No posts were found..</h3>
                                     @endforelse
                                 </div>

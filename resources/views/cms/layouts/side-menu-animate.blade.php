@@ -75,7 +75,8 @@
                             <i>
                             {{--<div class="led-green" style="@if($navItem->active)background-color:#F00;@endif position: relative;top: -2px;"></div>--}}
                         </i>
-                        <a class="my-text-overflow" href="{{url('cms/page/'.$navItem->url)}}">{{ucwords($navItem->title)}}</a>
+                        <a class="my-text-overflow"
+                           href="{{url('cms/page/'.$navItem->url)}}">{{ucwords($navItem->title)}}</a>
                         </span>
                         @include('cms.layouts.inc.is-core-badge')
                     </li>
@@ -182,6 +183,7 @@
             align-items: stretch;
             perspective: 1500px;
         }
+
         a, a:hover, a:focus {
             color: inherit;
             text-decoration: none;
@@ -254,6 +256,7 @@
             font-size: 1.1em;
             display: block;
         }
+
         #sidebar ul li.active > a, #sidebar a[aria-expanded="true"] {
             color: #fff;
         }
@@ -292,6 +295,7 @@
             background: #fff;
             color: #7386D5;
         }
+
         @media (max-width: 768px) {
             #sidebar {
                 margin-left: -250px;
@@ -300,10 +304,12 @@
                 z-index: 999999;
                 height: 100%;
             }
+
             #sidebar.active {
                 margin-left: 0;
                 transform: none;
             }
+
             #sidebarCollapse span:first-of-type,
             #sidebarCollapse span:nth-of-type(2),
             #sidebarCollapse span:last-of-type {
@@ -311,15 +317,19 @@
                 opacity: 1;
                 margin: 5px auto;
             }
+
             #sidebarCollapse.active span {
                 margin: 0 auto;
             }
+
             #sidebarCollapse.active span:first-of-type {
                 transform: rotate(45deg) translate(2px, 2px);
             }
+
             #sidebarCollapse.active span:nth-of-type(2) {
                 opacity: 0;
             }
+
             #sidebarCollapse.active span:last-of-type {
                 transform: rotate(-45deg) translate(1px, -1px);
             }

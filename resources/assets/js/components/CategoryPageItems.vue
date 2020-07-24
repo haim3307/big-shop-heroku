@@ -13,17 +13,17 @@
     }
 </style>
 <script>
-	export default {
-		data: function () {
-			return {
-				items: window.items, itemsAvail: true
-			}
-		},
-		props: {},
+    export default {
+        data: function () {
+            return {
+                items: window.items, itemsAvail: true
+            }
+        },
+        props: {},
 
-		mounted() {
-			console.log(this.items);
-			console.log('Component mounted.');
-		}
-	}
+        mounted() {
+            console.log(this.items);
+            console.log('Component mounted.');
+        }
+    }
 </script>

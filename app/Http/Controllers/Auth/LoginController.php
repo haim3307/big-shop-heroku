@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
 use App\Http\Controllers\MainController;
 use App\Http\Requests\SigninRequest;
 use App\User;
+use Auth;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
-use Socialite,Auth;
+use Socialite;
+
 class LoginController extends MainController
 {
     /*
@@ -43,9 +44,10 @@ class LoginController extends MainController
     public function __construct()
     {
         parent::__construct();
-/*        $this->redirectTo = \URL::previous();*/
+        /*        $this->redirectTo = \URL::previous();*/
         $this->middleware('guest', ['except' => 'logout']);
     }
+
     /*public function __construct()
     {
         $this->middleware('guest')->except('logout');
@@ -53,12 +55,13 @@ class LoginController extends MainController
     public function showLoginForm()
     {
         self::setTitle('Login');
-        return view('auth.login',self::$data);
+        return view('auth.login', self::$data);
     }
+
     public function login(SigninRequest $request)
     {
         if ($user = $this->attemptLogin($request)) {
-            Session::put('user',auth()->user());
+            Session::put('user', auth()->user());
             return $this->sendLoginResponse($request);
 
         }
@@ -66,16 +69,17 @@ class LoginController extends MainController
 
         return $this->sendFailedLoginResponse($request);
     }
+
     protected function sendLoginResponse(Request $request)
     {
         $request->session()->regenerate();
 
         $this->clearLoginAttempts($request);
-        if ($this->authenticated($request, $this->guard()->user())){
+        if ($this->authenticated($request, $this->guard()->user())) {
             return redirect()->route('cms.home');
-        }else if ($request->has('rt') && !empty($request->rt)){
+        } else if ($request->has('rt') && !empty($request->rt)) {
             return redirect($request->rt);
-        }else{
+        } else {
             return redirect()->intended($this->redirectPath());
         }
     }
@@ -83,14 +87,15 @@ class LoginController extends MainController
     /**
      * The user has been authenticated.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  mixed  $user
+     * @param \Illuminate\Http\Request $request
+     * @param mixed $user
      * @return mixed
      */
     protected function authenticated(Request $request, $user)
     {
         return $user->allowedCMS();
     }
+
     /**
      * Redirect the user to the Facebook authentication page.
      *
@@ -98,7 +103,7 @@ class LoginController extends MainController
      */
     public function redirectToProvider(Request $request)
     {
-        if($request->rt) Session::put('rt',$request->rt);
+        if ($request->rt) Session::put('rt', $request->rt);
         return Socialite::driver('facebook')->redirect();
     }
 
@@ -109,18 +114,15 @@ class LoginController extends MainController
      */
     public function handleProviderCallback(Request $request)
     {
-        try{
+        try {
             $user = Socialite::driver('facebook')->user();
-        }
-        catch (\Exception $e){
+        } catch (\Exception $e) {
             return redirect('login/facebook');
         }
-        $findUser = User::where('email',$user->email)->first();
-        if($findUser)
-        {
+        $findUser = User::where('email', $user->email)->first();
+        if ($findUser) {
             $authUser = $findUser;
-        }
-        else{
+        } else {
             $authUser = new User([
                 'name' => $user->name,
                 'email' => $user->email,
@@ -129,18 +131,13 @@ class LoginController extends MainController
             $authUser->save();
         }
         Auth::login($authUser);
-        Session::put('user',auth()->user());
-        if ($this->authenticated($request, $this->guard()->user()))
-        {
+        Session::put('user', auth()->user());
+        if ($this->authenticated($request, $this->guard()->user())) {
             return redirect()->route('cms.home');
-        }
-        else if (Session::has('rt') && !empty(Session::get('rt')))
-        {
-            Session::flash('scrollToId',1);
+        } else if (Session::has('rt') && !empty(Session::get('rt'))) {
+            Session::flash('scrollToId', 1);
             return redirect(Session::get('rt'));
-        }
-        else
-        {
+        } else {
             return redirect()->intended($this->redirectPath());
         }
     }

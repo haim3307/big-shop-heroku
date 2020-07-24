@@ -21,14 +21,14 @@
                         <hr style="margin: 14px 0 29px 0;">
                         <div class="d-grid-row" style="margin-bottom: 10px"><span class="gray149"
                                                                                   style="letter-spacing: 0.4px;">CART SUBTOTAL</span><span
-                                    class="bigGrayWide" v-cloak>${{totalSubPriceCoined | fixed}}</span>
+                                class="bigGrayWide" v-cloak>${{totalSubPriceCoined | fixed}}</span>
                         </div>
                         <div class="d-grid-row"><span class="gray149"
                                                       style="letter-spacing: 0.4px;">SHIPPING</span><span
-                                    class="bigGrayWide">Free shipping</span></div>
+                                class="bigGrayWide">Free shipping</span></div>
                         <hr style="margin: 29px 0;">
                         <div class="d-grid-row" style="margin: 20px 0;"><strong>ORDER TOTAL</strong><span
-                                    class="bigGrayWide" v-cloak>${{totalPriceCoined | fixed}}</span>
+                                class="bigGrayWide" v-cloak>${{totalPriceCoined | fixed}}</span>
                         </div>
                         @endverbatim
                         <form action="" id="checkoutForm" method="post" v-on:submit="toCheckout($event)">
@@ -64,57 +64,57 @@
 @section('script')
 
     <script>
-			function tpl() {
-				shopAppOBJ.computed.orderIds = function (e) {
-					return JSON.stringify(this.cartItems.filter(function (item) {
-						return item.id > 0;
-					}).map(function (item) {
-						return {"id": item.id, "quantity": item.quantity};
-					}));
-				};
-			}
+        function tpl() {
+            shopAppOBJ.computed.orderIds = function (e) {
+                return JSON.stringify(this.cartItems.filter(function (item) {
+                    return item.id > 0;
+                }).map(function (item) {
+                    return {"id": item.id, "quantity": item.quantity};
+                }));
+            };
+        }
 
-			function tplJQ() {
-				/*                $('.input-number').focusin(function () {
-                                    $(this).data('oldValue', $(this).val());
-                                });
-                                $('.input-number').change(function () {
+        function tplJQ() {
+            /*                $('.input-number').focusin(function () {
+                                $(this).data('oldValue', $(this).val());
+                            });
+                            $('.input-number').change(function () {
 
-                                    minValue = parseInt($(this).attr('min'));
-                                    maxValue = parseInt($(this).attr('max'));
-                                    valueCurrent = parseInt($(this).val());
+                                minValue = parseInt($(this).attr('min'));
+                                maxValue = parseInt($(this).attr('max'));
+                                valueCurrent = parseInt($(this).val());
 
-                                    name = $(this).attr('name');
-                                    if (valueCurrent >= minValue) {
-                                        $(".btn-number[data-type='minus'][data-field='" + name + "']").removeAttr('disabled')
-                                    } else {
-                                        alert('Sorry, the minimum value was reached');
-                                        $(this).val($(this).data('oldValue'));
-                                    }
-                                    if (valueCurrent <= maxValue) {
-                                        $(".btn-number[data-type='plus'][data-field='" + name + "']").removeAttr('disabled')
-                                    } else {
-                                        alert('Sorry, the maximum value was reached');
-                                        $(this).val($(this).data('oldValue'));
-                                    }
+                                name = $(this).attr('name');
+                                if (valueCurrent >= minValue) {
+                                    $(".btn-number[data-type='minus'][data-field='" + name + "']").removeAttr('disabled')
+                                } else {
+                                    alert('Sorry, the minimum value was reached');
+                                    $(this).val($(this).data('oldValue'));
+                                }
+                                if (valueCurrent <= maxValue) {
+                                    $(".btn-number[data-type='plus'][data-field='" + name + "']").removeAttr('disabled')
+                                } else {
+                                    alert('Sorry, the maximum value was reached');
+                                    $(this).val($(this).data('oldValue'));
+                                }
 
 
-                                });*/
-				$(".input-number").keydown(function (e) {
-					// Allow: backspace, delete, tab, escape, enter and .
-					if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 190]) !== -1 ||
-						// Allow: Ctrl+A
-						(e.keyCode == 65 && e.ctrlKey === true) ||
-						// Allow: home, end, left, right
-						(e.keyCode >= 35 && e.keyCode <= 39)) {
-						// let it happen, don't do anything
-						return;
-					}
-					// Ensure that it is a number and stop the keypress
-					if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
-						e.preventDefault();
-					}
-				});
-			}
+                            });*/
+            $(".input-number").keydown(function (e) {
+                // Allow: backspace, delete, tab, escape, enter and .
+                if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 190]) !== -1 ||
+                    // Allow: Ctrl+A
+                    (e.keyCode == 65 && e.ctrlKey === true) ||
+                    // Allow: home, end, left, right
+                    (e.keyCode >= 35 && e.keyCode <= 39)) {
+                    // let it happen, don't do anything
+                    return;
+                }
+                // Ensure that it is a number and stop the keypress
+                if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+                    e.preventDefault();
+                }
+            });
+        }
     </script>
 @endsection

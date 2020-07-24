@@ -2,16 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\{Brand, Category, Http\Requests\ProductReviewRequest, Product, ProductReview, WishListItem};
 use Illuminate\Http\Request;
-use App\{
-    Category,
-    Brand,
-    Http\Requests\CategoryRequest,
-    Http\Requests\ProductReviewRequest,
-    Product,
-    ProductReview,
-    WishListItem
-};
 
 class ShopController extends MainController
 {
@@ -22,13 +14,13 @@ class ShopController extends MainController
         return view('main-pages.shop', self::$data);
     }
 
-    public function show($main_category, $subCategory = 'all', $page = 1,Request $request)
+    public function show($main_category, $subCategory = 'all', $page = 1, Request $request)
     {
         $main_category = Category::getByNameOrUrl($main_category);
         if ($main_category) {
-            $selectedBrandIds= Brand::getSelected($request);
+            $selectedBrandIds = Brand::getSelected($request);
             //items source
-            Category::getCategoryProducts($main_category,$selectedBrandIds,$request,self::$data);
+            Category::getCategoryProducts($main_category, $selectedBrandIds, $request, self::$data);
 
             $request->flash();
             self::setTitle('Shop | ' . ucwords($main_category->name));
@@ -41,16 +33,19 @@ class ShopController extends MainController
             return view('main-pages.categories-page', self::$data);
         } else abort(404);
     }
-    public function storeReview($categoryUrl,$productUrl , ProductReviewRequest $request){
-        if($product = Product::getByUrl($productUrl) and $product->id){
-            if(!ProductReview::where([['user_id',auth()->user()->id],['product_id',$product->id]])->exists())
-                ProductReview::createNew($product,$request);
-            else return redirect()->back()->withErrors(['exist'=> 'You have already written a review for this product!']);
+
+    public function storeReview($categoryUrl, $productUrl, ProductReviewRequest $request)
+    {
+        if ($product = Product::getByUrl($productUrl) and $product->id) {
+            if (!ProductReview::where([['user_id', auth()->user()->id], ['product_id', $product->id]])->exists())
+                ProductReview::createNew($product, $request);
+            else return redirect()->back()->withErrors(['exist' => 'You have already written a review for this product!']);
         }
 
         return redirect()->back();
 
     }
+
     public function productPage($mainCategory, $itemTitle)
     {
         $item = Product::getItemPage($itemTitle, $mainCategory);
@@ -72,7 +67,7 @@ class ShopController extends MainController
                                         temporibus totam veniam. Amet, at dicta, dolorem doloribus ducimus eaque est et
                                         maiores maxime neque non odio quae repellat sequi sint suscipit vel.
                                         Exercitationem, libero.',
-                    'rating'=>4.5
+                    'rating' => 4.5
                 ],
                 (object)[
                     "user" => (object)["name" => 'Rina Oziel', "profile_img" => "default.png"],
@@ -82,7 +77,7 @@ class ShopController extends MainController
                                         temporibus totam veniam. Amet, at dicta, dolorem doloribus ducimus eaque est et
                                         maiores maxime neque non odio quae repellat sequi sint suscipit vel.
                                         Exercitationem, libero.',
-                    'rating'=>5
+                    'rating' => 5
                 ]
             ]
         ];

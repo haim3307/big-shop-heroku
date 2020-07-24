@@ -94,67 +94,67 @@
     </style>
 
     <script>
-			$(function () {
-				var selectedMenu = CMSAppOBJ.data.selectedMenu, selectedItems = selectedMenu.items
-				$("#list-tab-nav").sortable({
-					tolerance: 'pointer',
-					revert: 'invalid',
-					placeholder: 'span2 well placeholder tile',
-					forceHelperSize: true,
-					/*
-                                        items: 'a:not(:first)'
-                    */
-				});
-				$('#saveMenu').on('click', function () {
-					$('#applyMenu').val(1);
-				});
-				$('#cancelMenu').on('click', function () {
-					$("#list-tab-nav").sortable('cancel');
-				});
-				$('#menuOrderForm').on('submit', function () {
-					$(this).append('<input name="nav_order" style="display: none;" value="' + $("#list-tab-nav").sortable("toArray").join() + '">');
-				});
-				$('.addToNav').on('click', function () {
-					var exist = false, entityId = $(this).data('entity-id'),
-						entityItemId = $(this).data('entity-item-id');
-					var menu = CMSAppOBJ.data.menus.filter(function (menu) {
-						return menu.id == CMSAppOBJ.data.selectedMenuId;
-					})[0];
-					for (var item in menu.items) {
-						if (menu.items[item].entity_item_id == entityItemId && menu.items[item].entity_id == entityId) {
-							exist = true;
-						}
-					}
-					if (exist) return;
-					$.ajax({
-						method: 'POST',
-						url: '{{url('')}}' + '/cms/menus/' + CMSAppOBJ.data.selectedMenuId + '/add-item',
-						data: {
-							entityId: entityId,
-							entityItemId: entityItemId
-						}
-					}).then(function (res) {
-						menu.items.unshift(res);
-						CMSAppOBJ.data.selectedMenu = menu;
-					});
-				});
-			});
-			CMSAppOBJ.data.selectedMenu = {!! $selected_menu !!};
-			CMSAppOBJ.data.selectedMenuId = CMSAppOBJ.data.selectedMenu.id;
-			CMSAppOBJ.data.menus = {!! $menus !!};
-			CMSAppOBJ.data.BASEURL = '{{url('')}}';
-			CMSAppOBJ.data.editMode = false;
-			CMSAppOBJ.computed.calc_calc_url = function () {
-				return CMSAppOBJ.data.BASEURL + '/' + this.calc_url;
-			};
-			CMSAppOBJ.methods.changeMenu = function () {
-				var _self = this;
-				this.selectedMenu = this.menus.filter(function (menu) {
-					return menu.id == _self.selectedMenuId;
-				})[0];
-			};
+        $(function () {
+            var selectedMenu = CMSAppOBJ.data.selectedMenu, selectedItems = selectedMenu.items
+            $("#list-tab-nav").sortable({
+                tolerance: 'pointer',
+                revert: 'invalid',
+                placeholder: 'span2 well placeholder tile',
+                forceHelperSize: true,
+                /*
+                                    items: 'a:not(:first)'
+                */
+            });
+            $('#saveMenu').on('click', function () {
+                $('#applyMenu').val(1);
+            });
+            $('#cancelMenu').on('click', function () {
+                $("#list-tab-nav").sortable('cancel');
+            });
+            $('#menuOrderForm').on('submit', function () {
+                $(this).append('<input name="nav_order" style="display: none;" value="' + $("#list-tab-nav").sortable("toArray").join() + '">');
+            });
+            $('.addToNav').on('click', function () {
+                var exist = false, entityId = $(this).data('entity-id'),
+                    entityItemId = $(this).data('entity-item-id');
+                var menu = CMSAppOBJ.data.menus.filter(function (menu) {
+                    return menu.id == CMSAppOBJ.data.selectedMenuId;
+                })[0];
+                for (var item in menu.items) {
+                    if (menu.items[item].entity_item_id == entityItemId && menu.items[item].entity_id == entityId) {
+                        exist = true;
+                    }
+                }
+                if (exist) return;
+                $.ajax({
+                    method: 'POST',
+                    url: '{{url('')}}' + '/cms/menus/' + CMSAppOBJ.data.selectedMenuId + '/add-item',
+                    data: {
+                        entityId: entityId,
+                        entityItemId: entityItemId
+                    }
+                }).then(function (res) {
+                    menu.items.unshift(res);
+                    CMSAppOBJ.data.selectedMenu = menu;
+                });
+            });
+        });
+        CMSAppOBJ.data.selectedMenu = {!! $selected_menu !!};
+        CMSAppOBJ.data.selectedMenuId = CMSAppOBJ.data.selectedMenu.id;
+        CMSAppOBJ.data.menus = {!! $menus !!};
+        CMSAppOBJ.data.BASEURL = '{{url('')}}';
+        CMSAppOBJ.data.editMode = false;
+        CMSAppOBJ.computed.calc_calc_url = function () {
+            return CMSAppOBJ.data.BASEURL + '/' + this.calc_url;
+        };
+        CMSAppOBJ.methods.changeMenu = function () {
+            var _self = this;
+            this.selectedMenu = this.menus.filter(function (menu) {
+                return menu.id == _self.selectedMenuId;
+            })[0];
+        };
 
-			const CMSApp = new Vue(CMSAppOBJ);
+        const CMSApp = new Vue(CMSAppOBJ);
 
 
     </script>

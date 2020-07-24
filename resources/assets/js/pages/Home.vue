@@ -28,7 +28,7 @@
     export default {
         name: "home",
         props: ['items'],
-        data(){
+        data() {
             return {
                 itemsAvail: this
             }

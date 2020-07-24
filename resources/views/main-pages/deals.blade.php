@@ -358,8 +358,8 @@
                                                             <div class="kc_wrapper ui-tabs kc_clearfix">
                                                                 <ul class="kc_tabs_nav ui-tabs-nav kc_clearfix">
                                                                     <li class="ui-tabs-active"><a
-                                                                                href="#today-deals"
-                                                                                data-prevent="scroll">Today
+                                                                            href="#today-deals"
+                                                                            data-prevent="scroll">Today
                                                                             deals</a></li>
                                                                     <li><a href="#pass-deals" data-prevent="scroll">Pass
                                                                             deals</a></li>
@@ -378,7 +378,8 @@
                                                                                 </style>
                                                                                 <div class="products-inner f-row">
                                                                                     @foreach($lists['deals'] as $deal)
-                                                                                        <div class="pos-right col-md-4 col-sm-6">
+                                                                                        <div
+                                                                                            class="pos-right col-md-4 col-sm-6">
                                                                                             @include('items.special-item',['product'=>$deal,'dealMode'=>1])
                                                                                         </div>
                                                                                     @endforeach
@@ -403,7 +404,8 @@
                                                                                 <div class="products-inner row">
 
                                                                                     @foreach($expired_deals as $deal)
-                                                                                        <div class="pos-right col-md-4 col-sm-6">
+                                                                                        <div
+                                                                                            class="pos-right col-md-4 col-sm-6">
                                                                                             @include('items.special-item',['product'=>$deal,'dealMode'=>1])
                                                                                         </div>
                                                                                     @endforeach
@@ -465,14 +467,13 @@
     </style>
     <script>
 
-			function tplJQUI() {
-				/*
-                                $('.ui-tabs').tabs()
-                */
-							load.js('http://demo3.wpopal.com/exgym/wp-content/themes/exgym/js/woocommerce.js?ver=20131022');
-							$('.ui-tabs').tabs();
-			}
-
+        function tplJQUI() {
+            /*
+                            $('.ui-tabs').tabs()
+            */
+            load.js('http://demo3.wpopal.com/exgym/wp-content/themes/exgym/js/woocommerce.js?ver=20131022');
+            $('.ui-tabs').tabs();
+        }
 
 
     </script>

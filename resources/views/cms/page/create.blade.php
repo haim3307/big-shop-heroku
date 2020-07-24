@@ -14,7 +14,8 @@
                     </div>
                 </span>
     </fieldset>
-    <textarea class="form-control" id="customPageNote" name="content">{{old('content',$entityItem->content??'')}}</textarea>
+    <textarea class="form-control" id="customPageNote"
+              name="content">{{old('content',$entityItem->content??'')}}</textarea>
 
 @endsection
 @push('scripts')

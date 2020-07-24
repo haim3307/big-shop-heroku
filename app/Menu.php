@@ -2,20 +2,28 @@
 
 namespace App;
 
-use DB,Request;
+use DB;
+use Request;
+
 class Menu extends MainModel
 {
-    public function items(){
+    public function items()
+    {
         return $this->hasMany(MenuItem::class)->orderBy('order');
     }
-    public function entities(){
+
+    public function entities()
+    {
         return $this->hasMany('entities');
     }
+
     static public function set_active($path, $all = true)
     {
         return Request::is($path . ($all ? '*' : '')) ? 'routeBTN' : '';
     }
-    static public function clear_calc(){
-        DB::table('menu_items')->update(['calc_url'=> null]);
+
+    static public function clear_calc()
+    {
+        DB::table('menu_items')->update(['calc_url' => null]);
     }
 }

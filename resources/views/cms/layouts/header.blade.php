@@ -16,7 +16,8 @@
     <div class="col-md-2 d-flex" style="text-align: right;flex-flow: column;">
 
         <nav class="navbar bg-faded d-md-none">
-            <button style="z-index: 99999999999; position: relative;" type="button" id="sidebarCollapse" class="navbar-btn">
+            <button style="z-index: 99999999999; position: relative;" type="button" id="sidebarCollapse"
+                    class="navbar-btn">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -42,9 +43,11 @@
                     #sidebarCollapse span:first-of-type {
                         transform: rotate(45deg) translate(2px, 2px);
                     }
+
                     #sidebarCollapse span:nth-of-type(2) {
                         opacity: 0;
                     }
+
                     #sidebarCollapse span:last-of-type {
                         transform: rotate(-45deg) translate(1px, -1px);
                     }
@@ -55,15 +58,18 @@
                         opacity: 1;
                         margin: 5px auto;
                     }
+
                     @media (max-width: 768px) {
                         #sidebar {
                             margin-left: -250px;
                             transform: rotateY(90deg);
                         }
+
                         #sidebar.active {
                             margin-left: 0;
                             transform: none;
                         }
+
                         #sidebarCollapse span:first-of-type,
                         #sidebarCollapse span:nth-of-type(2),
                         #sidebarCollapse span:last-of-type {
@@ -71,15 +77,19 @@
                             opacity: 1;
                             margin: 5px auto;
                         }
+
                         #sidebarCollapse.active span {
                             margin: 0 auto;
                         }
+
                         #sidebarCollapse.active span:first-of-type {
                             transform: rotate(45deg) translate(2px, 2px);
                         }
+
                         #sidebarCollapse.active span:nth-of-type(2) {
                             opacity: 0;
                         }
+
                         #sidebarCollapse.active span:last-of-type {
                             transform: rotate(-45deg) translate(1px, -1px);
                         }
@@ -88,13 +98,13 @@
 
                 </style>
             @endpush
-{{--            <button style="height: 40px;" class="navbar-toggler" type="button"
-                    data-toggle="collapse" data-target="#side-menu" aria-controls="side-menu"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                <i class="
+            {{--            <button style="height: 40px;" class="navbar-toggler" type="button"
+                                data-toggle="collapse" data-target="#side-menu" aria-controls="side-menu"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                            <i class="
 
-fa fa-bars fa-lg"></i>
-            </button>--}}
+            fa fa-bars fa-lg"></i>
+                        </button>--}}
 
         </nav>
         <div class="d-grid align-items-center" style="padding: 0 20px;">

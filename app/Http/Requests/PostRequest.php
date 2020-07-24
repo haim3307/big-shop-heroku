@@ -24,10 +24,10 @@ class PostRequest extends FormRequest
      */
     public function rules(Request $request)
     {
-        $item_id = isset($request->item_id)?','.$request->item_id:'';
+        $item_id = isset($request->item_id) ? ',' . $request->item_id : '';
         return [
             'title' => 'required|max:255',
-            'url' => 'required|max:255|regex:/^[a-z\d-]+$/|unique:posts,url'.$item_id,
+            'url' => 'required|max:255|regex:/^[a-z\d-]+$/|unique:posts,url' . $item_id,
             'description' => 'required',
             'article' => 'required',
             'main_img' => 'image'

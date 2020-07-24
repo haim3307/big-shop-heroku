@@ -4,7 +4,7 @@
 @endsection
 @section('head')
 
-     <link rel='stylesheet' id='kc-general-css' href={{asset('css/specialGeneral.css')}} type='text/css' media='all'/>
+    <link rel='stylesheet' id='kc-general-css' href={{asset('css/specialGeneral.css')}} type='text/css' media='all'/>
 
     <style type="text/css" id="kc-css-general">
         .kc-off-notice {
@@ -318,17 +318,18 @@
             }
         }
     </style>
-     <style>
-         body.kc-css-system .kc-css-702426 {
-             background: transparent url({{asset('_img/layout/contact.jpg')}}) center center/cover no-repeat fixed;
-         }
-         @media  only screen and (min-width: 1000px) and (max-width: 5000px) {
+    <style>
+        body.kc-css-system .kc-css-702426 {
+            background: transparent url({{asset('_img/layout/contact.jpg')}}) center center/cover no-repeat fixed;
+        }
 
-             body.kc-css-system .kc-css-702426 {
-                 background: transparent url({{asset('_img/layout/contact.jpg')}}) center center/cover no-repeat fixed;
-             }
-         }
-     </style>
+        @media only screen and (min-width: 1000px) and (max-width: 5000px) {
+
+            body.kc-css-system .kc-css-702426 {
+                background: transparent url({{asset('_img/layout/contact.jpg')}}) center center/cover no-repeat fixed;
+            }
+        }
+    </style>
 @endsection
 @section('content')
     <div id="page" class="hfeed site page-home-1" style="background-color:#fff; padding-top: 0;">
@@ -348,9 +349,11 @@
                                             <div class="kc-row-container  kc-container">
                                                 <div class="kc-wrap-columns">
                                                     @foreach($lists['contact-us'] as $item)
-                                                        <div class="kc-elm kc-css-91913 kc_col-sm-4 kc_column kc_col-sm-4">
+                                                        <div
+                                                            class="kc-elm kc-css-91913 kc_col-sm-4 kc_column kc_col-sm-4">
                                                             <div class="kc-col-container">
-                                                                <div class="kc-elm kc-css-828788 kc-title-wrap no-border ">
+                                                                <div
+                                                                    class="kc-elm kc-css-828788 kc-title-wrap no-border ">
 
                                                                     <h3 class="kc_title">{!! $item->title !!}</h3>
                                                                 </div>
@@ -367,18 +370,18 @@
                                                                     </div>
                                                                     <div class="opal-contact-us emai">
                                                                         <div class="one-one"><i
-                                                                                    class="fa fa-comment-o"></i>{{$item->options->email->value}}
+                                                                                class="fa fa-comment-o"></i>{{$item->options->email->value}}
 
                                                                         </div>
                                                                     </div>
                                                                     <div class="opal-contact-us clock">
                                                                         <div class="one-one"><i
-                                                                                    class="fa fa-clock-o"></i>{!! $item->options->opening->value !!}
+                                                                                class="fa fa-clock-o"></i>{!! $item->options->opening->value !!}
                                                                         </div>
                                                                     </div>
                                                                     <div class="opal-contact-us adress">
                                                                         <div class="one-one"><i
-                                                                                    class="fa fa-building"></i>{!! $item->options->adress->value !!}
+                                                                                class="fa fa-building"></i>{!! $item->options->adress->value !!}
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -391,7 +394,8 @@
                                         <section class="kc-elm kc-css-486192 kc_row">
                                             <div class="kc-row-container kc-container">
                                                 <div class="kc-wrap-columns">
-                                                    <div class="kc-elm kc-css-100872 kc_col-sm-12 kc_column kc_col-sm-12">
+                                                    <div
+                                                        class="kc-elm kc-css-100872 kc_col-sm-12 kc_column kc_col-sm-12">
                                                         <div class="kc-col-container">
                                                             <div class="kc-elm kc-css-496842 kc-title-wrap no-border ">
 
@@ -451,49 +455,54 @@
                                                                           novalidate="novalidate">
                                                                         {{csrf_field()}}
                                                                         <div class="form-group">
-                                                                        <span class="wpcf7-form-control-wrap text-144"><input
-                                                                                    type="text" name="name" value=""
-                                                                                    size="40"
-                                                                                    class="wpcf7-form-control wpcf7-text form-control"
-                                                                                    id="contact_subject"
-                                                                                    aria-invalid="false"
-                                                                                    placeholder="Your name"></span>
+                                                                        <span
+                                                                            class="wpcf7-form-control-wrap text-144"><input
+                                                                                type="text" name="name" value=""
+                                                                                size="40"
+                                                                                class="wpcf7-form-control wpcf7-text form-control"
+                                                                                id="contact_subject"
+                                                                                aria-invalid="false"
+                                                                                placeholder="Your name"></span>
                                                                         </div>
                                                                         <div class="row">
                                                                             <div class="form-group col-md-6 col-sm-12">
-                                                                            <span class="wpcf7-form-control-wrap text-799"><input
-                                                                                        type="text" name="email"
-                                                                                        value="" size="40"
-                                                                                        class="wpcf7-form-control wpcf7-text form-control"
-                                                                                        id="your_email"
-                                                                                        aria-invalid="false"
-                                                                                        placeholder="Email"></span>
+                                                                            <span
+                                                                                class="wpcf7-form-control-wrap text-799"><input
+                                                                                    type="text" name="email"
+                                                                                    value="" size="40"
+                                                                                    class="wpcf7-form-control wpcf7-text form-control"
+                                                                                    id="your_email"
+                                                                                    aria-invalid="false"
+                                                                                    placeholder="Email"></span>
                                                                             </div>
                                                                             <div class="form-group col-md-6 col-sm-12">
-                                                                            <span class="wpcf7-form-control-wrap email-257"><input
-                                                                                        type="email" name="phone"
-                                                                                        value="" size="40"
-                                                                                        class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-email form-control"
-                                                                                        id="your_phone"
-                                                                                        aria-invalid="false"
-                                                                                        placeholder="Phone"></span>
+                                                                            <span
+                                                                                class="wpcf7-form-control-wrap email-257"><input
+                                                                                    type="email" name="phone"
+                                                                                    value="" size="40"
+                                                                                    class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-email form-control"
+                                                                                    id="your_phone"
+                                                                                    aria-invalid="false"
+                                                                                    placeholder="Phone"></span>
                                                                             </div>
                                                                         </div>
                                                                         <div class="form-group area-content">
-                                                                        <span class="wpcf7-form-control-wrap textarea-552"><textarea
-                                                                                    name="comment" cols="40"
-                                                                                    rows="10"
-                                                                                    class="wpcf7-form-control wpcf7-textarea form-control"
-                                                                                    id="your_message"
-                                                                                    aria-invalid="false"
-                                                                                    placeholder="Comment"></textarea></span>
+                                                                        <span
+                                                                            class="wpcf7-form-control-wrap textarea-552"><textarea
+                                                                                name="comment" cols="40"
+                                                                                rows="10"
+                                                                                class="wpcf7-form-control wpcf7-textarea form-control"
+                                                                                id="your_message"
+                                                                                aria-invalid="false"
+                                                                                placeholder="Comment"></textarea></span>
                                                                         </div>
                                                                         <div class="form-group">
                                                                             <input type="submit" value="Submit"
                                                                                    class="form-control submit btn btn-primary">
                                                                             <span class="ajax-loader"></span>
                                                                         </div>
-                                                                        <div class="wpcf7-response-output wpcf7-display-none"></div>
+                                                                        <div
+                                                                            class="wpcf7-response-output wpcf7-display-none"></div>
                                                                     </form>
                                                                 </div>
                                                             </div>
@@ -525,11 +534,11 @@
         }
     </style>
     <script>
-			function tpl() {
+        function tpl() {
 
-			}
+        }
 
-			function tplJQ() {
-			}
+        function tplJQ() {
+        }
     </script>
 @endsection

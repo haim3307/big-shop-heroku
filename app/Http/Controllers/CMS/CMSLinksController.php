@@ -4,8 +4,10 @@ namespace App\Http\Controllers\CMS;
 
 use App\Http\Requests\LinkRequest;
 use App\Link;
-use Illuminate\Http\Request;
-use Session,URL,File;
+use File;
+use Session;
+use URL;
+
 class CMSLinksController extends CMSControlller
 {
     static public $route = 'cms/link';
@@ -16,10 +18,12 @@ class CMSLinksController extends CMSControlller
         parent::__construct();
         self::$data['entity'] = 'link';
     }
+
     public function index()
     {
-        return view(self::$routeName.'.index',self::$data);
+        return view(self::$routeName . '.index', self::$data);
     }
+
     public function store(LinkRequest $request)
     {
         Link::createNew($request);
@@ -47,6 +51,7 @@ class CMSLinksController extends CMSControlller
     {
         return ($link = Link::where('url', '=', $linkUrl)->first()) ? view('cms.link.show')->with('link', $link) : abort(404);
     }
+
     public function destroy($linkId)
     {
         return Link::destroy($linkId);

@@ -8,6 +8,7 @@
             }
 
         }
+
         td {
             max-width: 100px;
             overflow: hidden;
@@ -17,12 +18,13 @@
     </style>
 
     @yield('index-content')
-    <div class="f-row p-5" id="createBTN"><a href="{{url("cms/$entity/create")}}" role="button" class="btn btn-primary">Create New</a>
+    <div class="f-row p-5" id="createBTN"><a href="{{url("cms/$entity/create")}}" role="button" class="btn btn-primary">Create
+            New</a>
     </div>
 
 @endsection
 @push('scripts')
-	<script>
+    <script>
         $(document).ready(function () {
             $('.delete{{ucwords($entity)}}').on('click', function (e) {
                 const _self = $(this);
@@ -42,5 +44,5 @@
             });
             $('#productsTable').DataTable();
         });
-	</script>
+    </script>
 @endpush

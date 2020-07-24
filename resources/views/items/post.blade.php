@@ -36,9 +36,9 @@
                         </div>
                         <div class="tag-link">
                             <a href="http://demo3.wpopal.com/exgym/tag/html/" rel="tag">HTML</a>/<a
-                                    href="http://demo3.wpopal.com/exgym/tag/media/" rel="tag">media</a>/<a
-                                    href="http://demo3.wpopal.com/exgym/tag/php/" rel="tag">PHP</a>/<a
-                                    href="http://demo3.wpopal.com/exgym/tag/web-design/" rel="tag">web design</a></div>
+                                href="http://demo3.wpopal.com/exgym/tag/media/" rel="tag">media</a>/<a
+                                href="http://demo3.wpopal.com/exgym/tag/php/" rel="tag">PHP</a>/<a
+                                href="http://demo3.wpopal.com/exgym/tag/web-design/" rel="tag">web design</a></div>
 
                     </div>
                     <!-- .entry-meta -->

@@ -1,7 +1,8 @@
 <script>
     function addToCartEvent(e) {
-        addToCartEventJQ.call(e.currentTarget,e)
+        addToCartEventJQ.call(e.currentTarget, e)
     }
+
     function addToCartEventJQ(e) {
         e.preventDefault();
         e.stopPropagation();
@@ -39,7 +40,7 @@
     }
 
     //load-vue
-    (async function(){
+    (async function () {
         await load.js('https://cdn.jsdelivr.net/npm/vue/dist/vue.js');
         Vue.prototype.url = BASE_URL;
         Vue.prototype.cdnByType = {!! json_encode(Config::get('app.cdnByType')) !!};

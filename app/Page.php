@@ -2,7 +2,8 @@
 
 namespace App;
 
-use DB, Session;
+use DB;
+use Session;
 use Toastr;
 
 class Page extends CMSModel
@@ -13,41 +14,45 @@ class Page extends CMSModel
     {
         return $this->hasMany(PageList::class);
     }
-    static public function isCore($id){
-        return self::where([['id',$id],['is_core',1]])->exists();
+
+    static public function isCore($id)
+    {
+        return self::where([['id', $id], ['is_core', 1]])->exists();
     }
+
     static public function getListsItems($url, &$data, $modifyListsKeys = true)
     {
-        $data['page'] = self::with('lists', 'lists.items','lists.entity')->where('url', $url)->first();
+        $data['page'] = self::with('lists', 'lists.items', 'lists.entity')->where('url', $url)->first();
         $data['lists'] = $data['page']->lists;
         if ($modifyListsKeys) $data['lists'] = $data['lists']->keyBy('url');
 
-        $data['lists']->transform(function ($list) use($modifyListsKeys) {
-            $list->items->transform(function ($item) use ($list,$modifyListsKeys) {
-                if($item->entity_id) $item->setEntityItem();
-                if(isset($item->entityItem)) {
+        $data['lists']->transform(function ($list) use ($modifyListsKeys) {
+            $list->items->transform(function ($item) use ($list, $modifyListsKeys) {
+                if ($item->entity_id) $item->setEntityItem();
+                if (isset($item->entityItem)) {
                     $item->entityItem->setItemBaseUrl($item->entity);
                     $item->entityItem->setItemImgPath($item->entity);
-                    if($item->entity->name == 'product') $item->entityItem->setExtraProps();
+                    if ($item->entity->name == 'product') $item->entityItem->setExtraProps();
                 }
                 $item = (object)$item->toArray();
                 if (!empty($item->options)) {
                     $item->options = json_decode($item->options);
-                    if(isset($item->entityItem)) $item->entityItem->options = $item->options;
+                    if (isset($item->entityItem)) $item->entityItem->options = $item->options;
                 }
                 /*$item->img_path = $item->entityItem->img_path;
                 $item->base_url = $item->entityItem->base_url;*/
                 $item->list_item_id = $item->id;
                 $item->list_id = $item->page_list_id;
                 $item->hasOptions = $list->options_layout ? true : false;
-                if(!empty($list->entity_id)){
-                    if(!empty($item->entityItem)){
+                if (!empty($list->entity_id)) {
+                    if (!empty($item->entityItem)) {
                         return $item;
-                    }return false;
-                }else return $item;
+                    }
+                    return false;
+                } else return $item;
 
             });
-           return !$modifyListsKeys?$list:$list->items;
+            return !$modifyListsKeys ? $list : $list->items;
         });
 
     }

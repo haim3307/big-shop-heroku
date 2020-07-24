@@ -37,19 +37,20 @@
     </div>
 </template>
 <script>
-	export default {
-		props: ['product','message'],
-		mounted() {
-			console.log('modal here!');
-		}
-	}
+    export default {
+        props: ['product', 'message'],
+        mounted() {
+            console.log('modal here!');
+        }
+    }
 </script>
 
 <style>
     /* animations */
-    #addedToCartModal{
+    #addedToCartModal {
         z-index: 9999999999;
     }
+
     @-webkit-keyframes checkmark {
         0% {
             stroke-dashoffset: 50px

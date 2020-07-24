@@ -9,12 +9,12 @@ class CMSAdmin
     /**
      * Handle an incoming request.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
+     * @param \Illuminate\Http\Request $request
+     * @param \Closure $next
      * @return mixed
      */
     public function handle($request, Closure $next)
     {
-        return (!auth()->user()->isAdministrator())?redirect('/'):$next($request);
+        return (!auth()->user()->isAdministrator()) ? redirect('/') : $next($request);
     }
 }

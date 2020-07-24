@@ -11,14 +11,15 @@ namespace App\Services;
 
 class MasterData
 {
-    public $menus , $brands , $allCategories;
+    public $menus, $brands, $allCategories;
+
     public function __construct()
     {
         $this->menus = \App\Menu::with('items')->get()->keyBy('url');
-        $this->menus->transform(function ($menu){
-            $menu->items->transform(function ($item,$key) use ($menu){
+        $this->menus->transform(function ($menu) {
+            $menu->items->transform(function ($item, $key) use ($menu) {
                 $item->calc_url = $item->customUrl();
-                if($item->calc_url) return $item;
+                if ($item->calc_url) return $item;
             });
             return $menu;
         });

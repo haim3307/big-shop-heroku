@@ -17,9 +17,9 @@
             <a>
                 <span class="fa fa-list-alt" aria-hidden="true"></span>
                 <span class="d-lg-inline-block title">Categories</span>
-{{--
-                <span class="badge badge-success d-lg-inline-block notification">20</span>
---}}
+                {{--
+                                <span class="badge badge-success d-lg-inline-block notification">20</span>
+                --}}
             </a>
             <ul class="collpseableSide" id="collapse-post">
                 <li><i></i><a href="{{url('cms/category/create')}}">Create New</a></li>
@@ -32,9 +32,9 @@
             <a>
                 <span class="fa fa-list-alt" aria-hidden="true"></span>
                 <span class="d-lg-inline-block title">Products</span>
-{{--
-                <span class="badge badge-success d-lg-inline-block notification">20</span>
---}}
+                {{--
+                                <span class="badge badge-success d-lg-inline-block notification">20</span>
+                --}}
             </a>
             <ul class="collpseableSide" id="collapse-post">
                 <li><i></i><a href="{{url('cms/product/create')}}">Create New</a></li>
@@ -46,9 +46,9 @@
             <a>
                 <span class="fa fa-list-alt" aria-hidden="true"></span>
                 <span class="d-lg-inline-block title">Pages</span>
-{{--
-                <span class="badge badge-success d-lg-inline-block notification">20</span>
---}}
+                {{--
+                                <span class="badge badge-success d-lg-inline-block notification">20</span>
+                --}}
             </a>
             <ul class="collpseableSide" id="collapse-pages">
                 <li>
@@ -75,7 +75,8 @@
                             <i>
                             {{--<div class="led-green" style="@if($navItem->active)background-color:#F00;@endif position: relative;top: -2px;"></div>--}}
                         </i>
-                        <a class="my-text-overflow" href="{{url('cms/page/'.$navItem->url)}}">{{ucwords($navItem->title)}}</a>
+                        <a class="my-text-overflow"
+                           href="{{url('cms/page/'.$navItem->url)}}">{{ucwords($navItem->title)}}</a>
                         </span>
                         @include('cms.layouts.inc.is-core-badge')
                     </li>
@@ -87,9 +88,9 @@
             <a>
                 <span class="fa fa-list-alt" aria-hidden="true"></span>
                 <span class="d-lg-inline-block title">Posts</span>
-{{--
-                <span class="badge badge-success d-lg-inline-block notification">20</span>
---}}
+                {{--
+                                <span class="badge badge-success d-lg-inline-block notification">20</span>
+                --}}
             </a>
             <ul class="collpseableSide" id="collapse-pages">
                 <li>
@@ -109,9 +110,9 @@
             <a>
                 <span class="fa fa-list-alt" aria-hidden="true"></span>
                 <span class="d-lg-inline-block title">Orders</span>
-{{--
-                <span class="badge badge-success d-lg-inline-block notification">20</span>
---}}
+                {{--
+                                <span class="badge badge-success d-lg-inline-block notification">20</span>
+                --}}
             </a>
             <ul class="collpseableSide" id="collapse-post">
                 <li><i></i><a href="{{url('cms/order/')}}">Watch All Orders</a></li>
@@ -134,18 +135,18 @@
         </li>
         @if(Auth::user()->isAdministrator())
 
-        <li class="link {{ active('cms/user*') }}">
-            <a>
-                <span class="fa fa-user" aria-hidden="true"></span>
-                <span class="d-lg-inline-block title">Users</span>
+            <li class="link {{ active('cms/user*') }}">
+                <a>
+                    <span class="fa fa-user" aria-hidden="true"></span>
+                    <span class="d-lg-inline-block title">Users</span>
 
-            </a>
-            <ul class="collpseableSide" id="collapse-post">
-                <li><i></i><a href="{{url('cms/user/create')}}">Create New</a></li>
-                <li><i></i><a href="{{url('cms/user/')}}">Watch All Users</a></li>
-            </ul>
+                </a>
+                <ul class="collpseableSide" id="collapse-post">
+                    <li><i></i><a href="{{url('cms/user/create')}}">Create New</a></li>
+                    <li><i></i><a href="{{url('cms/user/')}}">Watch All Users</a></li>
+                </ul>
 
-        </li>
+            </li>
         @endif
 
         <li class="link {{ active('cms/tag*') }}">
@@ -183,7 +184,8 @@
             justify-content: center;
             align-items: center;
         }
-        li.link.active{
+
+        li.link.active {
             background-color: #fff;
         }
     </style>
@@ -194,19 +196,22 @@
             }
 
         }
+
         @media (min-width: 810px) {
             #side-menu #pagesListLink .collpseableSide a {
                 max-width: 5vw;
             }
 
         }
+
         #side-menu #pagesListLink .collpseableSide a {
-/*            overflow: hidden;
-            text-overflow: ellipsis;*/
+            /*            overflow: hidden;
+                        text-overflow: ellipsis;*/
             white-space: nowrap;
         }
+
         @media (max-width: 1400px) {
-            #side-menu #pagesListLink .collpseableSide li i{
+            #side-menu #pagesListLink .collpseableSide li i {
                 display: none;
             }
 

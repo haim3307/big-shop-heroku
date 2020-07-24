@@ -89,12 +89,13 @@
 @endsection
 @push('styles')
     <style>
-        .row{
+        .row {
             display: flex;
             flex-flow: column;
             flex-wrap: wrap;
         }
-        .card{
+
+        .card {
             min-width: 50vw;
         }
     </style>

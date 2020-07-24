@@ -10,26 +10,26 @@
 </template>
 
 <script>
-	import draggable from 'vuedraggable';
+    import draggable from 'vuedraggable';
 
-	export default {
-		props: ['categories'],
-		components: {draggable},
-		data: function () {
-			return {
-				subCategories: false,
-				selectedCategory: false,
-				selectedCategoryId: false
-			}
+    export default {
+        props: ['categories'],
+        components: {draggable},
+        data: function () {
+            return {
+                subCategories: false,
+                selectedCategory: false,
+                selectedCategoryId: false
+            }
 
-		},
-		mounted() {
-			console.log('categories:', this.categories);
-			console.log('Component mounted.');
-		},
-		computed: {},
-		methods: {}
-	}
+        },
+        mounted() {
+            console.log('categories:', this.categories);
+            console.log('Component mounted.');
+        },
+        computed: {},
+        methods: {}
+    }
 </script>
 
 

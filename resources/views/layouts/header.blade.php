@@ -22,8 +22,10 @@
         </div>
         <nav class="searchAndShare">
             <ul class="" style="margin-right: 10px;">
-                <li><a href="https://twitter.com/BigShop14"><img src="{{img('_img/header/twiter.png')}}" alt=""></a></li>
-                <li><a href="https://www.facebook.com/Big-Shop-2019449578308589/?modal=admin_todo_tour"><img src="{{img('_img/header/facebook.png')}}" alt=""></a></li>
+                <li><a href="https://twitter.com/BigShop14"><img src="{{img('_img/header/twiter.png')}}" alt=""></a>
+                </li>
+                <li><a href="https://www.facebook.com/Big-Shop-2019449578308589/?modal=admin_todo_tour"><img
+                            src="{{img('_img/header/facebook.png')}}" alt=""></a></li>
                 <li><a href=""><img src="{{img('_img/header/Dribbble.png')}}" alt=""></a></li>
                 <li><a href=""><img src="{{img('_img/header/last-fm.png')}}" alt=""></a></li>
                 <li><a href=""><img src="{{img('_img/header/linked-in.png')}}" alt=""></a></li>
@@ -86,8 +88,8 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
                                data-close-others="false"> <i class="fa fa-usd mr-1"></i><span
-                                        class="d-none d-sm-inline-block">USD</span><i
-                                        class="fa fa-angle-down ml-2 mr-2 d-none d-sm-inline-block"></i>
+                                    class="d-none d-sm-inline-block">USD</span><i
+                                    class="fa fa-angle-down ml-2 mr-2 d-none d-sm-inline-block"></i>
                             </a>
                             <ul class="dropdown-menu w-100" role="menu">
                                 <li class=""><a href="#"><i class="fa fa-usd mr-1"></i>USD</a>
@@ -124,6 +126,7 @@
                                             color: #878c94 !important;
                                             padding-right: 10px;
                                         }
+
                                         .goog-te-menu-value span:nth-of-type(2) {
                                             display: none !important;
                                             color: #878c94 !important;
@@ -133,9 +136,11 @@
                                             background-color: transparent !important;
                                             border: 0 !important;
                                         }
-                                        .goog-te-menu-value span[aria-hidden="true"]{
+
+                                        .goog-te-menu-value span[aria-hidden="true"] {
                                             display: none;
                                         }
+
                                         @media (max-width: 576px) {
                                             #google_translate_element {
                                                 position: absolute;
@@ -146,15 +151,15 @@
                                 @endpush
                                 <div id="google_translate_element"></div>
                                 <i
-                                        class="fa fa-angle-down ml-2 mr-2 d-none d-sm-inline-block"></i>
+                                    class="fa fa-angle-down ml-2 mr-2 d-none d-sm-inline-block"></i>
                             </a>
 
                         </li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
                                data-close-others="false"> <i class="fa fa-user mr-1"></i><span
-                                        class="d-none d-sm-inline-flex align-items-center"><span>My Account</span><i
-                                            class="fa fa-angle-down ml-2 mr-2"></i></span> </a>
+                                    class="d-none d-sm-inline-flex align-items-center"><span>My Account</span><i
+                                        class="fa fa-angle-down ml-2 mr-2"></i></span> </a>
                             <ul class="dropdown-menu w-150" role="menu">
                                 @if(!Auth::check())
                                     <li><a href="{{route('login')}}">Login</a></li>
@@ -207,10 +212,10 @@
                                 <li>
                                     <div class="cart-footer">
                                         <a href="{{url('/cart')}}" class="pull-left"><i
-                                                    class="fa fa-cart-plus mr-1"></i>View
+                                                class="fa fa-cart-plus mr-1"></i>View
                                             Cart</a>
-{{--                                        <a href="{{url('/checkout')}}" class="pull-right"><i
-                                                    class="fa fa-shopping-basket mr-1"></i>Checkout</a>--}}
+                                        {{--                                        <a href="{{url('/checkout')}}" class="pull-right"><i
+                                                                                            class="fa fa-shopping-basket mr-1"></i>Checkout</a>--}}
                                     </div>
                                 </li>
                             </ul>

@@ -1,6 +1,10 @@
-<div class="product-wrapper product"  style="position: relative;">
+<div class="product-wrapper product" style="position: relative;">
     @include('items.inc.wishlist-message',['product'=>$product->entityItem,'style'=>'top:150px'])
-    @auth @else <div class="itemMessage signToWish fade" data-wish-id="{{$product->entityItem->id}}">Please <a style="top: 150px; color: #007bff !important;" href="{{url('login')}}" class="link">login</a> in order to use the wish list</div> @endauth
+    @auth @else
+        <div class="itemMessage signToWish fade" data-wish-id="{{$product->entityItem->id}}">Please <a
+                style="top: 150px; color: #007bff !important;" href="{{url('login')}}" class="link">login</a> in order
+            to use the wish list
+        </div> @endauth
 
     <div class="product-block"
          data-product-id="{{$product->entityItem->id}}">
@@ -39,7 +43,8 @@
                     </div>
 
 
-                    <div class="yith-wcwl-add-to-wishlist add-to-wishlist-5296 addToWishB" data-wish-id="{{$product->entityItem->id}}" data-wish-url="{{$product->entityItem->url}}">
+                    <div class="yith-wcwl-add-to-wishlist add-to-wishlist-5296 addToWishB"
+                         data-wish-id="{{$product->entityItem->id}}" data-wish-url="{{$product->entityItem->url}}">
                         <div class="yith-wcwl-add-button show"
                              style="display:block">
                             <a title="Add to wishlist"
@@ -76,21 +81,21 @@
 
                     <div class="clear"></div>
 
-{{--                    <div class="yith-compare">
-                        <a title="Add to compare"
-                           href="/exgym/on-sale/?action=yith-woocompare-add-product&amp;id=5296&amp;_wpnonce=27c367e6a9"
-                           class="compare"
-                           data-product_id="5296">
-                            <i class="fa fa-retweet"></i>
-                            <span>Compare</span>
-                        </a>
-                    </div>--}}
+                    {{--                    <div class="yith-compare">
+                                            <a title="Add to compare"
+                                               href="/exgym/on-sale/?action=yith-woocompare-add-product&amp;id=5296&amp;_wpnonce=27c367e6a9"
+                                               class="compare"
+                                               data-product_id="5296">
+                                                <i class="fa fa-retweet"></i>
+                                                <span>Compare</span>
+                                            </a>
+                                        </div>--}}
                     <div class="add-cart">
                         <a title="Add to cart"
                            rel="nofollow"
                            class="button product_type_external btn btn-primary addToCartB" @include('inc.print-object',['product'=> $product->entityItem->getAttributes()])><i
-                                    class="fa fa-shopping-cart"></i><span
-                                    class="title-cart btnTitle">Add To Cart</span></a>
+                                class="fa fa-shopping-cart"></i><span
+                                class="title-cart btnTitle">Add To Cart</span></a>
                     </div>
                 </div>
 
@@ -138,9 +143,12 @@
 
 
             <div class="myRating f-row justify-content-center">
-                <star-rating :border-width="1" :show-rating="false" :rating="{{$product->entityItem->rating}}" :round-start-rating="false" :star-size="20" :read-only="true"></star-rating>
+                <star-rating :border-width="1" :show-rating="false" :rating="{{$product->entityItem->rating}}"
+                             :round-start-rating="false" :star-size="20" :read-only="true"></star-rating>
             </div>
-            <h3 class="name"><a href="{{url("shop/{$product->entityItem->c_url}/{$product->entityItem->url}")}}">{!! !strip_tags($product->title)?$product->entityItem->title:$product->title !!}</a></h3>
+            <h3 class="name"><a
+                    href="{{url("shop/{$product->entityItem->c_url}/{$product->entityItem->url}")}}">{!! !strip_tags($product->title)?$product->entityItem->title:$product->title !!}</a>
+            </h3>
 
             <div class="category-name">
                 <a href="{{url("shop/{$product->entityItem->c_url}")}}">{{$product->entityItem->c_url}}</a>
@@ -149,10 +157,10 @@
             <div class="meta">
 
                                                                                         <span class="price"><ins><span
-                                                                                                        class="woocommerce-Price-amount amount"><span
-                                                                                                            class="woocommerce-Price-currencySymbol">&#36;</span>20.00</span></ins><del><span
-                                                                                                        class="woocommerce-Price-amount amount"><span
-                                                                                                            class="woocommerce-Price-currencySymbol">&#36;</span>29.99</span></del></span>
+                                                                                                    class="woocommerce-Price-amount amount"><span
+                                                                                                        class="woocommerce-Price-currencySymbol">&#36;</span>20.00</span></ins><del><span
+                                                                                                    class="woocommerce-Price-amount amount"><span
+                                                                                                        class="woocommerce-Price-currencySymbol">&#36;</span>29.99</span></del></span>
 
 
             </div>

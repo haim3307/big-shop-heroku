@@ -64,7 +64,7 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
 
-        'cms'=> \App\Http\Middleware\CMS::class,
+        'cms' => \App\Http\Middleware\CMS::class,
         'cms.admin' => \App\Http\Middleware\CMSAdmin::class,
         'CacheControl' => \App\Http\Middleware\CacheControl::class,
     ];

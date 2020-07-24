@@ -22,16 +22,18 @@
                                 <div class="frameItem gallery-cell carousel-cell"
                                      onclick="window.location = '{{url("$cubeItem->base_url$cubeItem->url")}}'">
                                     <div class="frameItemOverflow">
-                                        <img class="Sirv" data-src="{{img("_img/{$cubeItem->img_path}/$cubeItem->main_img")}}"
+                                        <img class="Sirv"
+                                             data-src="{{img("_img/{$cubeItem->img_path}/$cubeItem->main_img")}}"
                                              alt="{{$cubeItem->title??$cubeItem->name}}">
                                     </div>
                                     <h3 class="frameItemTitle">{{$cubeItem->title??$cubeItem->name}}</h3>
                                     <div class="frameItemPrices">
                                         <span style="color: #d70a0a">${{$cubeItem->price}}</span>
                                         @isset($cubeItem->prev_price)<span
-                                                style="text-decoration: line-through;">${{$cubeItem->prev_price}}</span>@endisset
+                                            style="text-decoration: line-through;">${{$cubeItem->prev_price}}</span>@endisset
                                     </div>
-                                    <a class="allCentered  addToCartB" @click="addToCartEvent" ref="addToCart" data-product='{!! $cubeItem !!}' data-toggle="modal" data-target="#product_view"
+                                    <a class="allCentered  addToCartB" @click="addToCartEvent" ref="addToCart"
+                                       data-product='{!! $cubeItem !!}' data-toggle="modal" data-target="#product_view"
                                        :data-id="{!! $cubeItem->id !!}">
                                         <div class="allCentered">
                                             <i class="fa fa-cart-plus text-white"></i>
@@ -104,15 +106,16 @@
                 grid-row: 3;
             }
 
-/*            .mainSlidePImgFrame img {
-                min-width: 67%;
-            }*/
+            /*            .mainSlidePImgFrame img {
+                            min-width: 67%;
+                        }*/
         }
 
         @media (min-width: 810px) {
-            #mainSlider.beforeLoad{
+            #mainSlider.beforeLoad {
                 max-height: 500px;
             }
+
             .mainSlidePImgFrame {
                 grid-row: span 2;
             }
@@ -134,13 +137,13 @@
                     shopAppOBJ.data.items = res;
                     shopAppOBJ.data.itemsAvail = true;
                     Vue.nextTick(function () {
-                        if($els.length) shopAppOBJ.methods.animatedLoop($els[0]);
+                        if ($els.length) shopAppOBJ.methods.animatedLoop($els[0]);
                         reloadSirv();
                     });
 
                 }, function (e) {
                     shopAppOBJ.data.itemsAvail = false;
-                    if($els.length) shopAppOBJ.methods.animatedLoop($els[0]);
+                    if ($els.length) shopAppOBJ.methods.animatedLoop($els[0]);
                 });
                 $('.trending ul li').removeClass('trendActive');
                 $(e.target).addClass('trendActive');
@@ -153,16 +156,16 @@
         }
 
         function tplFlick() {
-/*            var $mainSliderV = document.getElementById('mainSlider');
-            new Flickity($mainSliderV, {
-                "imagesLoaded": true,
-                "pageDots": false,
-                "autoPlay": 4000,
-                "lazyLoad": true,
-                "bgLazyLoad": true
-            });
-            $mainSliderV.classList.add('show');
-            $mainSliderV.classList.remove('.beforeLoad');*/
+            /*            var $mainSliderV = document.getElementById('mainSlider');
+                        new Flickity($mainSliderV, {
+                            "imagesLoaded": true,
+                            "pageDots": false,
+                            "autoPlay": 4000,
+                            "lazyLoad": true,
+                            "bgLazyLoad": true
+                        });
+                        $mainSliderV.classList.add('show');
+                        $mainSliderV.classList.remove('.beforeLoad');*/
         }
 
         function tplFlickJQ() {
@@ -174,17 +177,27 @@
             $featured.find('.forward').on('click', function () {
                 $featured.children('.itemsFrame').flickity('next');
             });
-            $featured.find('.itemsFrame').flickity({fullscreen: true, groupCells: false, pageDots: false,"lazyLoad": true});
+            $featured.find('.itemsFrame').flickity({
+                fullscreen: true,
+                groupCells: false,
+                pageDots: false,
+                "lazyLoad": true
+            });
 
             setTimeout(function () {
                 var $mainCarou = $('.itemsDrag'), $controlCarousel = $('#controlCarousel');
-                $mainCarou.flickity({ "groupCells": true , "pageDots": false,"prevNextButtons": false,"lazyLoad":true});
+                $mainCarou.flickity({
+                    "groupCells": true,
+                    "pageDots": false,
+                    "prevNextButtons": false,
+                    "lazyLoad": true
+                });
                 $controlCarousel.attr('max', ($('.itemDragSlider .flickity-slider').children().length - 2) * 255);
                 $controlCarousel.on('input', function (e) {
 
                     $mainCarou.find('.flickity-slider').css('transform', 'translateX(-' + e.target.value + 'px)');
                 });
-                $('#mainSlider .gallery-cell').css('display','block');
+                $('#mainSlider .gallery-cell').css('display', 'block');
             })
             // !home page
 

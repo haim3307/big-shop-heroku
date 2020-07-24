@@ -1,7 +1,6 @@
-
 @extends('layouts.master')
 @section('title')
-     {{$store_name}} | Page Not Found
+    {{$store_name}} | Page Not Found
 @endsection
 @section('head')
     <style>
@@ -11,12 +10,13 @@
             border: none;
         }
 
-        .btn-group-lg>.btn, .btn-lg {
+        .btn-group-lg > .btn, .btn-lg {
             padding: 15px 20px;
             font-size: 18px;
             line-height: 1.33333;
             border-radius: 0;
         }
+
         /**
          * 6.11 404 Page
          * -----------------------------------------------------------------------------
@@ -24,10 +24,15 @@
         .notfound-page {
             font-family: Exo\ 2;
             font-weight: 700;
-            margin-bottom: 80px; }
+            margin-bottom: 80px;
+        }
+
         @media (max-width: 767px) {
             .notfound-page {
-                margin-bottom: 50px; } }
+                margin-bottom: 50px;
+            }
+        }
+
         .notfound-page .number-not-found {
             line-height: normal;
             font-size: 400px;
@@ -36,13 +41,21 @@
             -webkit-text-shadow: 2px 2px 0 #ddd;
             -moz-text-shadow: 2px 2px 0 #ddd;
             -ms-text-shadow: 2px 2px 0 #ddd;
-            -o-text-shadow: 2px 2px 0 #ddd; }
+            -o-text-shadow: 2px 2px 0 #ddd;
+        }
+
         @media (max-width: 991px) {
             .notfound-page .number-not-found {
-                font-size: 280px; } }
+                font-size: 280px;
+            }
+        }
+
         @media (max-width: 767px) {
             .notfound-page .number-not-found {
-                font-size: 130px; } }
+                font-size: 130px;
+            }
+        }
+
         @media (min-width: 768px) {
             .notfound-page .text-not-found {
                 top: 50%;
@@ -51,14 +64,22 @@
                 -webkit-transform: translateX(-50%) translateY(-50%);
                 -ms-transform: translateX(-50%) translateY(-50%);
                 -o-transform: translateX(-50%) translateY(-50%);
-                transform: translateX(-50%) translateY(-50%); } }
+                transform: translateX(-50%) translateY(-50%);
+            }
+        }
+
         .notfound-page .text-not-found h3 {
             font-size: 33px;
             color: #bf0d0d;
-            margin: 0; }
+            margin: 0;
+        }
+
         @media (max-width: 991px) {
             .notfound-page .text-not-found h3 {
-                font-size: 24px; } }
+                font-size: 24px;
+            }
+        }
+
         .notfound-page .text-not-found p {
             color: #0f0f0f;
             font-size: 16px;
@@ -95,9 +116,6 @@
                         </div><!-- #content -->
                     </div><!-- #primary -->
                 </div><!-- #main-content -->
-
-
-
 
 
             </div>

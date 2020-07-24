@@ -57,20 +57,23 @@
                             </div>-->
                             <div class="space-ten"></div>
                             <div class="btn-ground" data-dismiss="modal">
-                                <button type="button" class="btn btn-primary addToCartB" :data-product="jsonProduct()" :data-id="product.id"><span
-                                        class="fa fa-shopping-cart"></span> <span class="btnTitle">Add To Cart</span>
+                                <button :data-id="product.id" :data-product="jsonProduct()"
+                                        class="btn btn-primary addToCartB"
+                                        type="button"><span
+                                    class="fa fa-shopping-cart"></span> <span class="btnTitle">Add To Cart</span>
                                 </button>
                                 <button type="button" class="btn btn-primary addToWishB" :data-wish-id="product.id"
-                                        :data-wish-url="product.url"><span class="fa fa-heart"></span><span v-if="!product.inWishList && !product.inwishlist">Add To
+                                        :data-wish-url="product.url"><span class="fa fa-heart"></span><span
+                                    v-if="!product.inWishList && !product.inwishlist">Add To
                                     Wishlist</span><span v-else>Remove From Wishlist</span>
                                 </button>
-<!--                                <button class="btn allCentered addToWishB" :data-wish-id="product.id"
-                                        style="position: relative; padding: 0; justify-content: stretch; border-radius: 0; font-size: 16px;font-weight: 400;color: #FFFFFF;">
-                                    <div class="allCentered"
-                                         style="height: 38px; width: 42px; background-color: rgb(247, 24, 24);">
-                                        <i class="fa @if($inWishList) fa-heart @else fa-heart-o @endif"></i>
-                                    </div>
-                                </button>-->
+                                <!--                                <button class="btn allCentered addToWishB" :data-wish-id="product.id"
+                                                                        style="position: relative; padding: 0; justify-content: stretch; border-radius: 0; font-size: 16px;font-weight: 400;color: #FFFFFF;">
+                                                                    <div class="allCentered"
+                                                                         style="height: 38px; width: 42px; background-color: rgb(247, 24, 24);">
+                                                                        <i class="fa @if($inWishList) fa-heart @else fa-heart-o @endif"></i>
+                                                                    </div>
+                                                                </button>-->
                             </div>
                         </div>
                     </div>
@@ -81,25 +84,25 @@
 </template>
 
 <script>
-	export default {
-		name: "quick-product-view-modal",
-		props: ['product'],
-		mounted() {
-		},
+    export default {
+        name: "quick-product-view-modal",
+        props: ['product'],
+        mounted() {
+        },
         watch: {
             product: function updateCart(newVal, oldVal) {
-               Vue.nextTick(updateCartedButtons);
-               console.log('try to update quick watch');
-                console.log('here:',this.product);
+                Vue.nextTick(updateCartedButtons);
+                console.log('try to update quick watch');
+                console.log('here:', this.product);
 
             }
         },
-		methods: {
-			jsonProduct() {
-				return JSON.stringify(this.product);
-			},
+        methods: {
+            jsonProduct() {
+                return JSON.stringify(this.product);
+            },
         }
-	}
+    }
 </script>
 
 <style scoped>

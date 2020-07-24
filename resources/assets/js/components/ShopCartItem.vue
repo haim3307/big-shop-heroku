@@ -34,40 +34,40 @@
 </template>
 
 <script>
-	export default {
-		name: "shop-cart-item",
-		props: ['cartItem'],
-		mounted() {
-					if(!this.cartItem.quantity) this.$set(this.cartItem,'quantity',1);
-					console.log(this.cartItem,'check quan');
-		},
-		computed: {
-			main_img: function () {
-				//'http://via.placeholder.com/70x70'
-				return `${this.url}/_img/products/${this.cartItem['c_url']?this.cartItem['c_url']:this.cartItem['main_category'].url}/${this.cartItem['main_img']}`
-			},
-			itemPrice: function () {
-				return '$ ' + this.cartItem.price;
-			},
-			itemPriceTimeQuantity: function () {
-				return '$ ' + (this.cartItem.price * this.cartItem.quantity).toFixed(2);
-			}
-		},
-		methods: {
-			emitDeleteItem() {
-				this.$emit('deleteitem', this.cartItem);
-			},
-			changeQuantity(e, act) {
-				e.preventDefault();
-				if (act == '+') {
-					this.cartItem.quantity++;
-				} else {
-					this.cartItem.quantity--;
-				}
-				this.$emit('update-item-quantity', this.cartItem);
-			}
-		}
-	}
+    export default {
+        name: "shop-cart-item",
+        props: ['cartItem'],
+        mounted() {
+            if (!this.cartItem.quantity) this.$set(this.cartItem, 'quantity', 1);
+            console.log(this.cartItem, 'check quan');
+        },
+        computed: {
+            main_img: function () {
+                //'http://via.placeholder.com/70x70'
+                return `${this.url}/_img/products/${this.cartItem['c_url'] ? this.cartItem['c_url'] : this.cartItem['main_category'].url}/${this.cartItem['main_img']}`
+            },
+            itemPrice: function () {
+                return '$ ' + this.cartItem.price;
+            },
+            itemPriceTimeQuantity: function () {
+                return '$ ' + (this.cartItem.price * this.cartItem.quantity).toFixed(2);
+            }
+        },
+        methods: {
+            emitDeleteItem() {
+                this.$emit('deleteitem', this.cartItem);
+            },
+            changeQuantity(e, act) {
+                e.preventDefault();
+                if (act == '+') {
+                    this.cartItem.quantity++;
+                } else {
+                    this.cartItem.quantity--;
+                }
+                this.$emit('update-item-quantity', this.cartItem);
+            }
+        }
+    }
 </script>
 
 <style>

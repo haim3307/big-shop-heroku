@@ -7,7 +7,8 @@
         <div class="shopPage" id="app">
             <h1 class="d-none">Shop</h1>
             <main>{{--class="animate-loaded"--}}
-                <img style="display: none; margin: 0 auto; max-width: 300px; width: 100%;" src="{{img('_img/layout/Facebook-1s-200px.gif')}}" alt="">
+                <img style="display: none; margin: 0 auto; max-width: 300px; width: 100%;"
+                     src="{{img('_img/layout/Facebook-1s-200px.gif')}}" alt="">
                 @include('compontents.categories-display')
             </main>
         </div>

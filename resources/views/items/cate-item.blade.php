@@ -11,7 +11,7 @@
             <div class="allCentered buyNowWideButton" data-id="{{$cateItem['id']}}" style="
                                             ">
                 <div class="allCentered buyIconFrame "><img class="Sirv"
-                            data-src="{{img('_img/shopping-cart.png')}}" alt=""></div>
+                                                            data-src="{{img('_img/shopping-cart.png')}}" alt=""></div>
                 <span>Add to cart</span>
             </div>
         </div>

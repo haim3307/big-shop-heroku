@@ -26,23 +26,23 @@
 </template>
 
 <script>
-	import draggable from 'vuedraggable';
+    import draggable from 'vuedraggable';
 
-	export default {
-		name: "deals-table",
-		props: ['listObj'],
-		components: {draggable},
-		beforeMount() {
-		},
-		mounted() {
+    export default {
+        name: "deals-table",
+        props: ['listObj'],
+        components: {draggable},
+        beforeMount() {
+        },
+        mounted() {
 
-		},
-		computed: {
-			list() {
+        },
+        computed: {
+            list() {
                 return this.listObj.items.map(item => item.entityItem).filter(item => item && item.id);
-			}
-		}
-	}
+            }
+        }
+    }
 </script>
 
 <style>

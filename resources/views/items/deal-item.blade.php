@@ -1,4 +1,4 @@
-<div class="product-wrapper product pos-right col-md-4 col-sm-6 " >
+<div class="product-wrapper product pos-right col-md-4 col-sm-6 ">
     <div class="product-block" data-product-id="{{$deal->id}}">
         <figure class="image">
 
@@ -11,11 +11,11 @@
                      src="{{asset("_img/products/$deal->c_url/$deal->main_img")}}"
                      class="attachment-shop_catalog image-effect"
                      alt=""><img
-                        width="800"
-                        height="800"
-                        src="http://demo3.wpopal.com/exgym/wp-content/uploads/2016/01/product-3-800x800.jpg"
-                        class="image-hover wp-post-image"
-                        alt="">
+                    width="800"
+                    height="800"
+                    src="http://demo3.wpopal.com/exgym/wp-content/uploads/2016/01/product-3-800x800.jpg"
+                    class="image-hover wp-post-image"
+                    alt="">
                 <span class="onsale-wrap"><span class="onsale">-  {{$deal->options->discount->value}}%</span></span>
             </a>
 
@@ -73,21 +73,21 @@
 
                     <div class="clear"></div>
 
-{{--                    <div class="yith-compare">
-                        <a title="Add to compare"
-                           class="compare"
-                           data-product_id="5317">
-                            <i class="fa fa-retweet"></i>
-                            <span>Compare</span>
-                        </a>
-                    </div>--}}
+                    {{--                    <div class="yith-compare">
+                                            <a title="Add to compare"
+                                               class="compare"
+                                               data-product_id="5317">
+                                                <i class="fa fa-retweet"></i>
+                                                <span>Compare</span>
+                                            </a>
+                                        </div>--}}
 
                     <div class="add-cart addToCartB" @include('inc.print-object',['product'=> $deal->getAttributes()]) >
                         <a title="Add to cart"
                            rel="nofollow"
                            class="button product_type_external btn btn-primary"><i
-                                    class="fa fa-shopping-cart"></i><span
-                                    class="title-cart">Add To Cart</span></a>
+                                class="fa fa-shopping-cart"></i><span
+                                class="title-cart">Add To Cart</span></a>
                     </div>
                 </div>
             </div>
@@ -134,7 +134,7 @@
             </div>
 
             <h3 class="name"><a
-                        href="{{url("shop/$deal->c_url/$deal->url")}}">{{$deal->title}}</a>
+                    href="{{url("shop/$deal->c_url/$deal->url")}}">{{$deal->title}}</a>
             </h3>
 
             <div class="category-name">
@@ -150,7 +150,7 @@
                         </ins>
                         @if($deal->options->discount->value)
                             <del><span class="woocommerce-Price-amount amount"><span
-                                            class="woocommerce-Price-currencySymbol">$</span>{{($deal->price*$deal->options->discount->value)/100+$deal->price}}</span></del>
+                                        class="woocommerce-Price-currencySymbol">$</span>{{($deal->price*$deal->options->discount->value)/100+$deal->price}}</span></del>
                         @endif
                     </span>
 

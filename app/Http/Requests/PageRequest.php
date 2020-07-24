@@ -2,9 +2,8 @@
 
 namespace App\Http\Requests;
 
-use Illuminate\{
-    Foundation\Http\FormRequest, Http\Request
-};
+use Illuminate\{Foundation\Http\FormRequest, Http\Request};
+
 class PageRequest extends FormRequest
 {
     /**
@@ -24,10 +23,10 @@ class PageRequest extends FormRequest
      */
     public function rules(Request $request)
     {
-        $item_id = isset($request->item_id)?','.$request->item_id:'';
+        $item_id = isset($request->item_id) ? ',' . $request->item_id : '';
         return [
             'title' => 'required|max:255',
-            'url' => 'required|max:255|regex:/^[a-z\d-]+$/|unique:pages,url'.$item_id,
+            'url' => 'required|max:255|regex:/^[a-z\d-]+$/|unique:pages,url' . $item_id,
         ];
     }
 

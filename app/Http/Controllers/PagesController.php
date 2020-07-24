@@ -2,60 +2,65 @@
 
 namespace App\Http\Controllers;
 
-use App\{
-    Contact, Http\Requests\ContactRequest, PageList, Post, Product, Page
-};
+use App\{Contact, Http\Requests\ContactRequest, Product};
 use Carbon\Carbon;
-use Illuminate\Http\Request;
-use DB,Session;
+use DB;
+use Session;
 
 class PagesController extends MainController
 {
-    public function home(){
+    public function home()
+    {
         self::connectPage('home');
         Product::frameItems(self::$data);
-        Product::getTagged('man',self::$data['cateItems']);
+        Product::getTagged('man', self::$data['cateItems']);
         return view('main-pages.home', self::$data);
     }
-    public function custom($page){
-        return !self::setPage($page) && self::$data['page'] &&  !empty(self::$data['page']->content)? view('custom',self::$data):abort(404);
+
+    public function custom($page)
+    {
+        return !self::setPage($page) && self::$data['page'] && !empty(self::$data['page']->content) ? view('custom', self::$data) : abort(404);
     }
-    public function about() {
+
+    public function about()
+    {
         self::connectPage('about');
-        return view('main-pages.about',self::$data);
+        return view('main-pages.about', self::$data);
     }
-    public function contact() {
+
+    public function contact()
+    {
         self::connectPage('contact-us');
-        return view('main-pages.contact',self::$data);
+        return view('main-pages.contact', self::$data);
     }
-    public function contactPost(ContactRequest $request) {
+
+    public function contactPost(ContactRequest $request)
+    {
         $contactItem = new Contact($request->all());
-        if($contactItem->save()) Session::flash('thankYouContact','your message has been accepted and sent to the team!');
+        if ($contactItem->save()) Session::flash('thankYouContact', 'your message has been accepted and sent to the team!');
         return $this->contact();
     }
 
-    public function sale() {
+    public function sale()
+    {
         self::connectPage('sale');
-        self::$data['lists']['sales']->filter(function ($item){
-            return isset($item->options);
-        });
-        return view('main-pages.sale',self::$data);
+        self::$data['lists']['sales']->filter(fn($item) => isset($item->options));
+        return view('main-pages.sale', self::$data);
     }
-    public function deals() {
+
+    public function deals()
+    {
         self::connectPage('deals');
         self::$data['expired_deals'] = [];
-        self::$data['lists']['deals'] = self::$data['lists']['deals']->filter(function ($item){
+        self::$data['lists']['deals'] = self::$data['lists']['deals']->filter(function ($item) {
             if (isset($item) && isset($item->options) && isset($item->entityItem)) {
                 $cond = date($item->options->end_date->value) > date(Carbon::now());
-                if(!$cond) self::$data['expired_deals'][] = $item;
-                return $cond ;
-            }
-            else return false;
+                if (!$cond) self::$data['expired_deals'][] = $item;
+                return $cond;
+            } else return false;
         });
-        self::$data['lists']['deals'] = self::$data['lists']['deals']->sortBy(function ($item){
-            return date($item->options->end_date->value);
-        });
-        return view('main-pages.deals',self::$data);
+        self::$data['lists']['deals'] = self::$data['lists']['deals']->sortBy(fn($item) => date($item->options->end_date->value));
+        return view('main-pages.deals', self::$data);
     }
 
 }

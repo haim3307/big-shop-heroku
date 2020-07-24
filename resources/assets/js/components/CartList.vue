@@ -8,24 +8,24 @@
 </template>
 
 <script>
-	/*
+    /*
         import CartItem from "./CartItem";
     */
 
-	export default {
-		props: ['cartItems'],
-		mounted() {
-		},
-		methods: {
-			deleteItem(item) {
-				window.shopAppOBJ.data.cartItems = window.shopAppOBJ.data.cartItems.filter((i) => i.id != item.id);
-				window.updateCartedButtons();
-			}
-		}
-		/*
+    export default {
+        props: ['cartItems'],
+        mounted() {
+        },
+        methods: {
+            deleteItem(item) {
+                window.shopAppOBJ.data.cartItems = window.shopAppOBJ.data.cartItems.filter((i) => i.id != item.id);
+                window.updateCartedButtons();
+            }
+        }
+        /*
                 components: {CartItem},
         */
-	}
+    }
 </script>
 
 <style scoped>

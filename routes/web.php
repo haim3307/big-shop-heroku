@@ -102,7 +102,7 @@ Route::group(['middleware' => []], function () {
 
         ## Page - Part 2
         Route::patch('page/{page}/list/{pageList}', 'CMS\CMSPagesController@updatePageListItem');
-        Route::patch('page/{customPage}/{listUrl}/order','CMS\CMSPagesController@updateOrder');
+        Route::patch('page/{customPage}/{listUrl}/order', 'CMS\CMSPagesController@updateOrder');
         Route::post('page/{page?}/{pageList}/{itemId}/{entity}', 'CMS\CMSPagesController@storePageListItem');
         Route::post('page/{page}/{pageList}', 'CMS\CMSPagesController@createStorePageItem');
 
@@ -132,7 +132,7 @@ Route::group(['middleware' => []], function () {
             Route::get('user', 'CMS\CMSUsersController@index');
             */
         Route::patch('user/{user}/role', 'CMS\CMSUsersController@updateRole')->middleware('cms.admin');
-        Route::resource('user','CMS\CMSUsersController')->middleware('cms.admin');
+        Route::resource('user', 'CMS\CMSUsersController')->middleware('cms.admin');
         Route::get('/api/entities/{listUrl}/{toSearch}', 'AjaxAutoCompleteController@getByListType');
 
         ## Order
@@ -149,10 +149,10 @@ Route::group(['middleware' => []], function () {
 # Cart
     Route::get('cart', 'CartController@index');
 
-    Route::prefix('cart')->middleware('auth')->group(function (){
+    Route::prefix('cart')->middleware('auth')->group(function () {
         Route::post('/', 'CartController@storeOrderList');
     });
-    Route::prefix('checkout')->middleware('auth')->group(function (){
+    Route::prefix('checkout')->middleware('auth')->group(function () {
         Route::get('/', 'CartController@checkout');
         Route::post('/', 'CartController@checkoutPost');
     });
@@ -173,8 +173,8 @@ Route::group(['middleware' => []], function () {
     Route::get('login/facebook', 'Auth\LoginController@redirectToProvider');
     Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback');
 
-    Route::get('/api/tags',  'AjaxAutoCompleteController@getTags');
+    Route::get('/api/tags', 'AjaxAutoCompleteController@getTags');
     Route::get('/api/entities/{search}', 'AjaxAutoCompleteController@searchEntities');
 
-    Route::get('/{page}','PagesController@custom');
+    Route::get('/{page}', 'PagesController@custom');
 });

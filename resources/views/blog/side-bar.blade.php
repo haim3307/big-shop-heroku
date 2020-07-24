@@ -6,7 +6,7 @@
             <ul>
                 @foreach(\App\Category::orderBy('order', 'ASC')->get() as $category)
                     <li class="cat-item cat-item-31 current-cat"><a
-                                href="{{url('blog/category/'.$category->url)}}">{{$category->name}}</a></li>
+                            href="{{url('blog/category/'.$category->url)}}">{{$category->name}}</a></li>
                 @endforeach
 
             </ul>
@@ -45,9 +45,11 @@
 
                                 <div class="date">
                                     <i class="fa fa-calendar-o"></i>
-                                    <div class="entry-date " data-time="{{$post->created_at}}"><span class="date-day ">{{$post->created_at->day}}</span>.<span
-                                                class="date-month ">{{$post->created_at->format('M')}}</span>.<span
-                                                class="date-border "></span><span class="date-year ">{{$post->created_at->year}}</span></div>
+                                    <div class="entry-date " data-time="{{$post->created_at}}"><span
+                                            class="date-day ">{{$post->created_at->day}}</span>.<span
+                                            class="date-month ">{{$post->created_at->format('M')}}</span>.<span
+                                            class="date-border "></span><span
+                                            class="date-year ">{{$post->created_at->year}}</span></div>
                                 </div>
                             </div>
                         </div>

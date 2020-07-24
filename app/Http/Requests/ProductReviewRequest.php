@@ -2,8 +2,9 @@
 
 namespace App\Http\Requests;
 
-use Illuminate\Foundation\Http\FormRequest;
 use Auth;
+use Illuminate\Foundation\Http\FormRequest;
+
 class ProductReviewRequest extends FormRequest
 {
     /**

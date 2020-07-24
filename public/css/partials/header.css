@@ -36,7 +36,7 @@
     align-items: center;
 }
 
-.topBar ul.topBarNav>li {
+.topBar ul.topBarNav > li {
     border-right: 1px solid rgba(0, 0, 0, 0.08);
 }
 
@@ -69,17 +69,19 @@
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.08);
 }
 
-.topBar ul.topBarNav li ul[role="menu"]:not(.cart)>li {
+.topBar ul.topBarNav li ul[role="menu"]:not(.cart) > li {
     display: block;
     line-height: 30px;
     width: 100%;
     border: none;
     padding: 10px;
 }
-.topBarNav .dropdown-toggle{
+
+.topBarNav .dropdown-toggle {
     padding-bottom: 10px !important;
     margin-top: 5px;
 }
+
 .topBar ul.topBarNav li a {
     display: block;
     padding: 0 2px;
@@ -108,10 +110,11 @@
 
 /*!top left bar*/
 @media (min-width: 410px) and (max-width: 1112px) {
-    .searchAndShare>ul {
+    .searchAndShare > ul {
         padding: 2em;
     }
 }
+
 .searchAndShare input {
     color: black;
 }
@@ -144,7 +147,7 @@
         color: white;
     }
 
-    .searchAndShare>ul {
+    .searchAndShare > ul {
         flex: 1;
         display: flex;
         justify-content: space-around;
@@ -153,11 +156,11 @@
         padding: 0;
     }
 
-    .searchAndShare>ul li, .searchAndShare .input-group2 input {
+    .searchAndShare > ul li, .searchAndShare .input-group2 input {
         background-color: rgba(89, 90, 91, 0.7);
     }
 
-    .searchAndShare>ul li {
+    .searchAndShare > ul li {
         height: 33px;
         width: 33px;
         display: flex;
@@ -166,7 +169,7 @@
         border-radius: 33px;
     }
 
-    .searchAndShare>ul li:hover {
+    .searchAndShare > ul li:hover {
         background-color: #282828;
 
     }
@@ -237,14 +240,16 @@
     transition: 0.7s all;
 }
 
-.mainNav ul li:hover a,.menuBtnActive a{
+.mainNav ul li:hover a, .menuBtnActive a {
     background-color: ivory;
     color: black !important;
 }
-.routeBTN{
+
+.routeBTN {
     background-color: rgb(247, 24, 24);
 
 }
+
 @media (max-width: 1112px) {
     #mobileHamburger {
         grid-area: mobileHamburger;
@@ -286,7 +291,7 @@
         padding-top: 15px;
     }
 
-    .searchAndShare>ul {
+    .searchAndShare > ul {
         margin-bottom: 21px;
         display: flex;
         justify-content: space-between;
@@ -362,7 +367,7 @@
         align-items: center;
     }
 
-    .searchAndShare>ul {
+    .searchAndShare > ul {
         display: none;
         justify-content: space-around;
         grid-gap: 24px;
@@ -482,19 +487,22 @@
     background-color: currentColor;
     width: 100%;
 }
+
 @media (max-width: 910px) {
-    .topBarNav{
+    .topBarNav {
         flex-grow: 1;
         display: flex;
         justify-content: center;
     }
-    .topBarNav li{
+
+    .topBarNav li {
         display: grid !important;
         flex: 1;
         align-items: center;
         justify-content: center;
     }
 }
+
 @media (max-width: 410px) {
     .topBar ul.topBarNav li {
         line-height: 32px;

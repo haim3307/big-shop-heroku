@@ -4,7 +4,8 @@
         <div class="form-group">
             <label for="create_password">Create Password</label>
             <input type="password" id="create_password" class="form-control" aria-describedby="passwordHelpBlock">
-            <small id="passwordHelpBlock" class="form-text text-muted">If you don't want to change password, please leave blank.</small>
+            <small id="passwordHelpBlock" class="form-text text-muted">If you don't want to change password, please
+                leave blank.</small>
         </div>
         <div class="form-group">
             <label for="confirm_password">Confirm Password</label>

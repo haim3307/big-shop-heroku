@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\CMS;
 
 use App\OrderList;
-use App\User;
 use Illuminate\Http\Request;
 
 class CMSOrdersController extends CMSControlller
@@ -26,7 +25,7 @@ class CMSOrdersController extends CMSControlller
     {
         self::$data['items'] = [];
         OrderList::getAllOrdersPaginate(self::$data['items']);
-        return view(self::$routeName.'.index',self::$data);
+        return view(self::$routeName . '.index', self::$data);
     }
 
     /**
@@ -42,7 +41,7 @@ class CMSOrdersController extends CMSControlller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -53,7 +52,7 @@ class CMSOrdersController extends CMSControlller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -64,7 +63,7 @@ class CMSOrdersController extends CMSControlller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -75,8 +74,8 @@ class CMSOrdersController extends CMSControlller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -87,7 +86,7 @@ class CMSOrdersController extends CMSControlller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

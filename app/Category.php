@@ -2,13 +2,18 @@
 
 namespace App;
 
-use App\Http\Requests\CategoryRequest;
-use Session, URL, File, Image, Toastr,Storage;
+use File;
+use Image;
+use Session;
+use Storage;
+use Toastr;
+use URL;
 
 class Category extends MainModel
 {
     //
     protected $fillable = ['name', 'url', 'img'];
+
     public function products()
     {
         return $this->hasMany(Product::class);
@@ -23,9 +28,12 @@ class Category extends MainModel
     {
         return $this->belongsToMany(Post::class, 'post_categories');
     }
-    public function scopeUnTrash($query){
+
+    public function scopeUnTrash($query)
+    {
         return $query;//->where('url','!=','uncategorized');
     }
+
     static public function createNew($request)
     {
         $category = new self($request->all());
@@ -44,8 +52,8 @@ class Category extends MainModel
     {
         $category = self::findOrFail($id);
         $req = $request;
-        if($category->url === 'uncategorized') $req->request->remove('url');
-        if($category->update($request->all())){
+        if ($category->url === 'uncategorized') $req->request->remove('url');
+        if ($category->update($request->all())) {
             if ($request->hasFile('img')) {
                 $category->uploadImg($request, '_img/categories');
             }
@@ -64,21 +72,21 @@ class Category extends MainModel
 
     static public function deleteItem($categoryId)
     {
-        if($category = self::find($categoryId) and $category->url !== 'uncategorized'){
+        if ($category = self::find($categoryId) and $category->url !== 'uncategorized') {
             $uncategorized = Category::getByUrl('uncategorized');
             $pFolder = '_img/products/';
-            $oldPFolder = $pFolder.$category->url;
+            $oldPFolder = $pFolder . $category->url;
             $newFolder = $pFolder . 'uncategorized';
             self::checkOrCreateFolder($newFolder);
             $productOfOldCategory = $category->products();
             $postsOfOldCategory = $category->posts();
-            $productOfOldCategory->withTrashed()->get()->each(function($product) use ($oldPFolder,$pFolder,$newFolder){
-                if(File::exists(public_path($oldPFolder .'/'. $product->main_img)))
-                File::move(public_path($oldPFolder .'/'. $product->main_img), public_path($newFolder.'/'. $product->main_img));
+            $productOfOldCategory->withTrashed()->get()->each(function ($product) use ($oldPFolder, $pFolder, $newFolder) {
+                if (File::exists(public_path($oldPFolder . '/' . $product->main_img)))
+                    File::move(public_path($oldPFolder . '/' . $product->main_img), public_path($newFolder . '/' . $product->main_img));
             });
-            $productOfOldCategory->update(['category_id'=>$uncategorized->id]);
-            $postsOfOldCategory->update(['category_id'=>$uncategorized->id]);
-            return $category->delete()?1:0;
+            $productOfOldCategory->update(['category_id' => $uncategorized->id]);
+            $postsOfOldCategory->update(['category_id' => $uncategorized->id]);
+            return $category->delete() ? 1 : 0;
         }
         return 0;
     }
@@ -105,11 +113,11 @@ class Category extends MainModel
         if ($request->{'order-by-price'} == 'high') $orderPrice = 'desc';
         elseif ($request->{'order-by-price'} == 'low') $orderPrice = 'asc';
         if (isset($orderPrice)) $main_items_collection->orderBy('price', $orderPrice);
-        $merage = [];
+        $merge = [];
         if (!$main_items_collection->count()) {
-            $merage += ['max-price' => $max_price, 'min-price' => $min_price, 'product-search' => ''];
+            $merge += ['max-price' => $max_price, 'min-price' => $min_price, 'product-search' => ''];
         }
-        if ($merage) $request->merge($merage);
+        if ($merge) $request->merge($merge);
         $result = $main_items_collection->paginate(4);
         Product::setExtraPropsAll($result);
         $data += [

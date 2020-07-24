@@ -15,31 +15,31 @@
         <tbody>
         @foreach($items as $item)
 
-        @isset($item)
-            <tr>
-                <td scope="row">{{$item->id}}</td>
-                <td>
-                    <ul class="list-group">
-                        @foreach($item->list as $orderItem)
-                            <li class="list-group-item">
-                                <div>Title : {{$orderItem->item->title}}</div>
-                                <div>Quantity : {{$orderItem->quantity}}</div>
-                                <div>Price : {{$orderItem->item->price}}$</div>
+            @isset($item)
+                <tr>
+                    <td scope="row">{{$item->id}}</td>
+                    <td>
+                        <ul class="list-group">
+                            @foreach($item->list as $orderItem)
+                                <li class="list-group-item">
+                                    <div>Title : {{$orderItem->item->title}}</div>
+                                    <div>Quantity : {{$orderItem->quantity}}</div>
+                                    <div>Price : {{$orderItem->item->price}}$</div>
 
-                            </li>
-                        @endforeach
-                    </ul>
+                                </li>
+                            @endforeach
+                        </ul>
 
-                </td>
-                <td>
-                    <div><span>Name</span> : {{$item->user->name}}</div>
-                    <div><span>Email</span> : {{$item->user->email}}</div>
-                </td>
-                <td>{{$item->created_at}}</td>
-                <td>{{$item->updated_at}}</td>
-                <td></td>
-            </tr>
-        @endisset
+                    </td>
+                    <td>
+                        <div><span>Name</span> : {{$item->user->name}}</div>
+                        <div><span>Email</span> : {{$item->user->email}}</div>
+                    </td>
+                    <td>{{$item->created_at}}</td>
+                    <td>{{$item->updated_at}}</td>
+                    <td></td>
+                </tr>
+            @endisset
         @endforeach
         </tbody>
     </table>
@@ -55,8 +55,9 @@
             overflow: initial;
             text-overflow: initial;
         }
-        #createBTN{
+
+        #createBTN {
             display: none !important;
         }
-</style>
+    </style>
 @endpush

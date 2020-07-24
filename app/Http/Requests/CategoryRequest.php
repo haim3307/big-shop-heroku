@@ -24,11 +24,11 @@ class CategoryRequest extends FormRequest
      */
     public function rules(Request $request)
     {
-        $item_id = isset($request->item_id)?','.$request->item_id:'';
+        $item_id = isset($request->item_id) ? ',' . $request->item_id : '';
         return [
             'name' => 'required|max:255',
-            'url' => 'required|max:255|regex:/^[a-z\d-]+$/|unique:categories,url'.$item_id,
-/*            'description' => 'required|min:10',*/
+            'url' => 'required|max:255|regex:/^[a-z\d-]+$/|unique:categories,url' . $item_id,
+            /*            'description' => 'required|min:10',*/
             'img' => 'image'
         ];
     }

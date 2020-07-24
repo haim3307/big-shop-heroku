@@ -4,12 +4,12 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\MainController;
 use App\User;
-use App\Http\Controllers\Controller;
+use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Foundation\Auth\RegistersUsers;
-use Illuminate\Http\Request;
+
 class RegisterController extends MainController
 {
     /*
@@ -42,18 +42,22 @@ class RegisterController extends MainController
         parent::__construct();
         $this->middleware('guest');
     }
+
     public function showRegistrationForm()
     {
         self::setTitle('Register');
-        return view('auth.register',self::$data);
+        return view('auth.register', self::$data);
     }
-    private function registered(Request $request,$user){
-        Session::put('user',$user);
+
+    private function registered(Request $request, $user)
+    {
+        Session::put('user', $user);
     }
+
     /**
      * Get a validator for an incoming registration request.
      *
-     * @param  array  $data
+     * @param array $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
@@ -68,7 +72,7 @@ class RegisterController extends MainController
     /**
      * Create a new user instance after a valid registration.
      *
-     * @param  array  $data
+     * @param array $data
      * @return \App\User
      */
     protected function create(array $data)

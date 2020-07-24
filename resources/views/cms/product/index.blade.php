@@ -10,9 +10,9 @@
         @endslot
         @slot('tds')
             @verbatim
-            <td>{{$item->price}}$</td>
-            <td><a href="{{url('cms/category/'.$item->mainCategory->url)}}">{{$item->mainCategory->name}}</a></td>
-            <td>{{$item->stock}}</td>
+                <td>{{$item->price}}$</td>
+                <td><a href="{{url('cms/category/'.$item->mainCategory->url)}}">{{$item->mainCategory->name}}</a></td>
+                <td>{{$item->stock}}</td>
             @endverbatim
         @endslot
     @endcomponent

@@ -4,7 +4,6 @@ namespace App\Http\Controllers\CMS;
 
 use App\Category;
 use App\Http\Requests\CategoryRequest;
-use Illuminate\Http\Request;
 use Session;
 
 class CMSCategoryController extends CMSControlller
@@ -50,7 +49,7 @@ class CMSCategoryController extends CMSControlller
         return view(self::$routeName . '.create', self::$data + [
                 'category' => $category,
                 'entityItem' => $category,
-                ]);
+            ]);
     }
 
     public function show($categoryUrl)

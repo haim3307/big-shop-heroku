@@ -29,9 +29,9 @@
     <link rel="stylesheet" href="{{ $secondCDN }}bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
           crossorigin="anonymous">
 
-{{--
-    <link rel="stylesheet" href="{{$mainCDN}}bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.css">
---}}
+    {{--
+        <link rel="stylesheet" href="{{$mainCDN}}bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.css">
+    --}}
 
     <link rel="stylesheet" href="{{asset('css/lib/tokenize2.min.css')}}">
     <link rel="stylesheet" href="{{ $mainCDN }}toastr.js/latest/toastr.min.css">
@@ -49,12 +49,12 @@
     <link rel="stylesheet" href="{{asset('css/app.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/partials/items.css')}}">
 
-{{--
+    {{--
 
-    <script>
-        var BASE_URL = '{{url('/')}}';
-    </script>
---}}
+        <script>
+            var BASE_URL = '{{url('/')}}';
+        </script>
+    --}}
 
     @yield('head')
 
@@ -80,11 +80,11 @@
 
     <script>
         @if(Session::get('cms_status') == 1)
-				toastr.success('{{Session::get('cms_m')}}');
+        toastr.success('{{Session::get('cms_m')}}');
         @elseif(Session::get('cms_status') === -1)
-				toastr.error('{{Session::get('cms_m')}}');
+        toastr.error('{{Session::get('cms_m')}}');
         @elseif(Session::get('cms_status') === 0)
-				toastr.info('{{Session::get('cms_m')}}');
+        toastr.info('{{Session::get('cms_m')}}');
         @endif
     </script>
 </div>
@@ -126,7 +126,7 @@
     var token = $('meta[name="csrf-token"]').attr('content');
 
     var CMSAppOBJ = {el: '#CMSApp', data: {}, methods: {}, computed: {}, filters: {}, watch: {}};
-    window.BASE_URL = '{{remove_http(url(''))}}'.replace('index.php','');
+    window.BASE_URL = '{{remove_http(url(''))}}'.replace('index.php', '');
     Vue.prototype.cdnByType = {!! json_encode(Config::get('app.cdnByType')) !!};
     Vue.prototype.url = BASE_URL;
 </script>

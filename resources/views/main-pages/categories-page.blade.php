@@ -35,8 +35,8 @@
                     <li>
                         <nav class="sideSubCategoryMenu">
                             <h4 class="toggleFilterDrop filterUnit" style="    background-color: #f9f9f9;"><i
-                                        class="fa fa-angle-down"
-                                        style="margin-right: 10px;"></i><strong>Category</strong></h4>
+                                    class="fa fa-angle-down"
+                                    style="margin-right: 10px;"></i><strong>Category</strong></h4>
                             <ul class="dropFilter">
                                 {{--                                <li class="{{$selected_sub_category->name == 'all' ? 'selectedSubCategory':''}}">
                                                                     <a href="{{url('shop/'.$category->name.'/')}}">View All</a>
@@ -60,13 +60,14 @@
                             @include('items.cate-item-r',['product'=>$product])
                         @endforeach
                     </ul>
-                    <h2 class="noItems" v-else-if="!items.length && searchText" > NO PRODUCTS
+                    <h2 class="noItems" v-else-if="!items.length && searchText"> NO PRODUCTS
                         Found</h2>
                     <h2 class="noItems hide" v-else style="display: none; transition: 1.2s all;"> NO PRODUCTS
                         AVAILABLE</h2>
 
                 </div>
-                <div style="padding: 15px;">{!! $main_items->appends(Request::except('page'))->render("pagination::bootstrap-4") !!}</div>
+                <div
+                    style="padding: 15px;">{!! $main_items->appends(Request::except('page'))->render("pagination::bootstrap-4") !!}</div>
             </main>
         </form>
 
@@ -75,82 +76,83 @@
 @endsection
 @section('script')
     <script>
-			var selectedCategory = '{{$category->url}}';
-			var selectedSubCategory = '{{$category->url}}';
-			var items = {!! $main_items->toJson()??[] !!};
-			categoryImgRoute = '{{"_img/products/$category->url/"}}';
-            function tplVue() {
-                shopAppOBJ.data.selectedCategory = selectedCategory;
-                shopAppOBJ.data.selectedSubCategory = selectedSubCategory;
-                shopAppOBJ.data.items = items.data;
-                shopAppOBJ.data.categoryImgRoute = categoryImgRoute;
-                shopAppOBJ.data.itemsAvail = true;
-                shopAppOBJ.data.searchText = '{{old('product-search') }}';
-            }
+        var selectedCategory = '{{$category->url}}';
+        var selectedSubCategory = '{{$category->url}}';
+        var items = {!! $main_items->toJson()??[] !!};
+        categoryImgRoute = '{{"_img/products/$category->url/"}}';
+
+        function tplVue() {
+            shopAppOBJ.data.selectedCategory = selectedCategory;
+            shopAppOBJ.data.selectedSubCategory = selectedSubCategory;
+            shopAppOBJ.data.items = items.data;
+            shopAppOBJ.data.categoryImgRoute = categoryImgRoute;
+            shopAppOBJ.data.itemsAvail = true;
+            shopAppOBJ.data.searchText = '{{old('product-search') }}';
+        }
     </script>
     <script>
-			function tplJQ() {
-				if (!items.data.length) $('.noItems').css('display', 'block !important').removeClass('hide').css('opacity', 1).fadeIn(1500);
-				$('.toggleFilterDrop').on('click', function () {
-					$(this).toggleClass("unFolded");
-					$(this).siblings('.dropFilter').slideToggle();
-				});
-				$('#expendAll').on('click', function (e) {
-					e.preventDefault();
-					/*					$(this).addClass('filterButtonColor');
-                                        setTimeout(() => $(this).removeClass('filterButtonColor'), 300);*/
-					var $toggleFilterDrop = $('.toggleFilterDrop');
-					$toggleFilterDrop.addClass("unFolded");
-					$toggleFilterDrop.siblings('.dropFilter').slideDown();
+        function tplJQ() {
+            if (!items.data.length) $('.noItems').css('display', 'block !important').removeClass('hide').css('opacity', 1).fadeIn(1500);
+            $('.toggleFilterDrop').on('click', function () {
+                $(this).toggleClass("unFolded");
+                $(this).siblings('.dropFilter').slideToggle();
+            });
+            $('#expendAll').on('click', function (e) {
+                e.preventDefault();
+                /*					$(this).addClass('filterButtonColor');
+                                    setTimeout(() => $(this).removeClass('filterButtonColor'), 300);*/
+                var $toggleFilterDrop = $('.toggleFilterDrop');
+                $toggleFilterDrop.addClass("unFolded");
+                $toggleFilterDrop.siblings('.dropFilter').slideDown();
 
-				});
-				$('#minimizeAll').on('click', function (e) {
-					e.preventDefault();
-					var $toggleFilterDrop = $('.toggleFilterDrop');
-					$toggleFilterDrop.removeClass("unFolded");
-					$toggleFilterDrop.siblings('.dropFilter').slideUp();
-				});
-			}
+            });
+            $('#minimizeAll').on('click', function (e) {
+                e.preventDefault();
+                var $toggleFilterDrop = $('.toggleFilterDrop');
+                $toggleFilterDrop.removeClass("unFolded");
+                $toggleFilterDrop.siblings('.dropFilter').slideUp();
+            });
+        }
 
-			function tplJQUI() {
-                var selectedMinPrice = '{{old('min-price',0)}}';
-                var selectedMaxPrice = '{{old('max-price',$max_price??0)}}';
-                var maxPrice = '{{$max_price??0}}';
-                var minPrice = '{{$min_price??0}}';
-				window.oldValues = {
-					selectedMinPrice: Number(selectedMinPrice),
-					selectedMaxPrice: Number(selectedMaxPrice),
-					maxPrice:Number(maxPrice),
-					minPrice:Number(minPrice)
-				};
-				var $sliderRange = $("#slider-range");
-				$sliderRange.slider({
-					range: true,
-					min: window.oldValues['minPrice'],
-					max: window.oldValues['maxPrice'],
-					values: [window.oldValues['selectedMinPrice'], window.oldValues['selectedMaxPrice']],
-					slide: function (event, ui) {
-						$("#amountMin").val(ui.values[0]);
-						$("#amountMax").val(ui.values[1]);
-					}
-				});
-				$("#amountMin").val($sliderRange.slider("values", 0));
-				$("#amountMax").val($sliderRange.slider("values", 1));
-			}
+        function tplJQUI() {
+            var selectedMinPrice = '{{old('min-price',0)}}';
+            var selectedMaxPrice = '{{old('max-price',$max_price??0)}}';
+            var maxPrice = '{{$max_price??0}}';
+            var minPrice = '{{$min_price??0}}';
+            window.oldValues = {
+                selectedMinPrice: Number(selectedMinPrice),
+                selectedMaxPrice: Number(selectedMaxPrice),
+                maxPrice: Number(maxPrice),
+                minPrice: Number(minPrice)
+            };
+            var $sliderRange = $("#slider-range");
+            $sliderRange.slider({
+                range: true,
+                min: window.oldValues['minPrice'],
+                max: window.oldValues['maxPrice'],
+                values: [window.oldValues['selectedMinPrice'], window.oldValues['selectedMaxPrice']],
+                slide: function (event, ui) {
+                    $("#amountMin").val(ui.values[0]);
+                    $("#amountMax").val(ui.values[1]);
+                }
+            });
+            $("#amountMin").val($sliderRange.slider("values", 0));
+            $("#amountMax").val($sliderRange.slider("values", 1));
+        }
 
 
     </script>
     <script id="brandsFilterScript">
-			window.addonsJQ.push(function brandsFilter() {
-				$('.brandsFilter').find('.hiddenCheckbox').on('change', function (e) {
-					$(this).siblings('.customCheckbox').children('img').fadeToggle();
-				});
-			});
-			window.addonsJQ.push(function colorFilter() {
-				$('.colorsFilter').find('.hiddenCheckbox').on('change', function (e) {
-					$(this).siblings('.customCheckbox').children('img').fadeToggle();
-				});
-			});
+        window.addonsJQ.push(function brandsFilter() {
+            $('.brandsFilter').find('.hiddenCheckbox').on('change', function (e) {
+                $(this).siblings('.customCheckbox').children('img').fadeToggle();
+            });
+        });
+        window.addonsJQ.push(function colorFilter() {
+            $('.colorsFilter').find('.hiddenCheckbox').on('change', function (e) {
+                $(this).siblings('.customCheckbox').children('img').fadeToggle();
+            });
+        });
     </script>
     <style>
 

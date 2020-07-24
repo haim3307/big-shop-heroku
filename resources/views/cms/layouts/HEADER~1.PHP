@@ -4,11 +4,11 @@
         <ul>
             <li id="welcome" class="d-lg-block">
                 @if($user = Auth::user())
-                    Welcome back
-                    @if($user->isAdministrator())
-                        Admin -
-                    @endif
-                    <strong>{{ucwords($user->name)}}</strong>
+                Welcome back
+                @if($user->isAdministrator())
+                Admin -
+                @endif
+                <strong>{{ucwords($user->name)}}</strong>
                 @endif
 
             </li>

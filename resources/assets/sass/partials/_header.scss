@@ -1,9 +1,9 @@
-$container-width : 1112px;
+$container-width: 1112px;
 .mainHeader {
     background-color: #404040;
     color: white;
     @media (min-width: $container-width) {
-        &> div:not(.fixedBar) {
+        & > div:not(.fixedBar) {
             display: grid;
             grid-template-columns: 24px 177px;
             grid-template-rows: 67px auto 45px;
@@ -18,18 +18,24 @@ $container-width : 1112px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     font-size: 13px;
     grid-area: topBar;
+
     ul {
         margin: 0;
-        li {}
+
+        li {
+        }
     }
+
     a {
         color: #878c94;
         text-decoration: none;
     }
+
     ul.topBarNav li a {
         display: block;
         padding: 0 2px;
     }
+
     .dropdown-menu > li > a {
         display: block;
         padding: 6px 20px;
@@ -39,6 +45,7 @@ $container-width : 1112px;
         color: #878c94;
         font-size: 15px;
         white-space: nowrap;
+
         &:hover {
             color: #00BCD4;
             text-decoration: none;
@@ -57,16 +64,20 @@ $container-width : 1112px;
     list-style-type: none;
     display: flex;
     align-items: center;
+
     > li {
         border-right: 1px solid rgba(0, 0, 0, 0.08);
     }
+
     a i {
         padding: 0 5px;
     }
+
     li {
         &:last-child {
             border-right: none;
         }
+
         ul {
             background-color: #ffffff;
             position: absolute;
@@ -90,6 +101,7 @@ $container-width : 1112px;
             -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.08);
             -ms-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.08);
             box-shadow: 0 1px 5px rgba(0, 0, 0, 0.08);
+
             &[role="menu"]:not(.cart) > li {
                 display: block;
                 line-height: 30px;
@@ -135,10 +147,12 @@ $container-width : 1112px;
         justify-content: flex-end;
         grid-area: searchAndShare;
         justify-self: end;
+
         input {
             width: 190px;
             color: white;
         }
+
         > ul {
             flex: 1;
             display: flex;
@@ -146,18 +160,22 @@ $container-width : 1112px;
             list-style: none;
             margin-bottom: 0;
             padding: 0;
+
             li {
                 background-color: rgba(89, 90, 91, 0.7);
             }
         }
+
         .input-group2 input {
             background-color: rgba(89, 90, 91, 0.7);
+
             &::placeholder {
                 color: white;
                 opacity: 1;
                 /* Firefox */
             }
         }
+
         > ul li {
             height: 33px;
             width: 33px;
@@ -165,6 +183,7 @@ $container-width : 1112px;
             justify-content: center;
             align-items: center;
             border-radius: 33px;
+
             &:hover {
                 background-color: #282828;
             }
@@ -172,6 +191,7 @@ $container-width : 1112px;
     }
     .leftPaddingHeader {
         grid-area: LPH;
+
         .leftArea {
             background-color: #333333;
             height: 100%;
@@ -182,20 +202,24 @@ $container-width : 1112px;
         grid-area: mainNav;
         background-color: #333333;
         border-radius: 0 25px 0 0;
+
         ul {
             display: flex;
             list-style: none;
             max-width: 900px;
             margin-bottom: 0;
+
             li {
                 border-right: 0.5px solid #1e1e1e;
                 border-left: 0.5px solid #1e1e1e;
                 border-collapse: collapse;
                 font-size: 0.9em;
                 font-family: 'Coda', cursive;
+
                 &:last-child {
                     border-right: 0;
                 }
+
                 a {
                     text-align: center;
                     text-decoration: none;
@@ -220,6 +244,7 @@ $container-width : 1112px;
     a {
         transition: 0.7s all;
     }
+
     &:hover a {
         background-color: ivory;
         color: black !important;
@@ -251,8 +276,10 @@ $container-width : 1112px;
         position: absolute;
         width: 100%;
         background-color: #333333;
+
         li {
             font-size: 0.9em;
+
             a {
                 display: block;
                 padding: 35px 5px;
@@ -268,13 +295,16 @@ $container-width : 1112px;
         align-items: initial;
         justify-content: initial;
         padding-top: 15px;
+
         > ul {
             margin-bottom: 21px;
             display: flex;
             justify-content: space-between;
         }
+
         .input-group2 {
             margin-bottom: 21px;
+
             input {
                 width: 97%;
             }
@@ -291,6 +321,7 @@ $container-width : 1112px;
     .mainHeader {
         background-color: #404040;
         color: white;
+
         > div {
             display: grid;
             grid-template-columns: 200px 1fr 100px;
@@ -312,10 +343,12 @@ $container-width : 1112px;
         position: absolute;
     }
 }
+
 @media (max-width: 700px) {
     .mainLogo {
         display: flex;
         justify-content: center;
+
         img {
             margin-left: 20px;
             margin-bottom: 17px;
@@ -349,7 +382,10 @@ $container-width : 1112px;
         width: 6px;
         background-color: #ECECEC;
     }
-    &::-webkit-scrollbar-track {}
+
+    &::-webkit-scrollbar-track {
+    }
+
     &::-webkit-scrollbar-thumb {
         background-color: #084951;
         outline: 1px solid black;
@@ -361,20 +397,24 @@ $container-width : 1112px;
         padding: 10px;
         height: 200px;
         overflow: auto;
+
         .items {
             margin: 0;
             padding: 0;
             list-style-type: none;
+
             li {
                 overflow: hidden;
                 clear: left;
                 padding-bottom: 10px;
                 margin-bottom: 10px;
                 border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+
                 .product-image {
                     width: 60px;
                     float: left;
                 }
+
                 a {
                     margin: 0;
                     padding: 0;
@@ -382,10 +422,12 @@ $container-width : 1112px;
                     background-color: transparent;
                     display: inline;
                 }
+
                 .product-details {
                     position: relative;
                     margin-left: 60px;
                     padding: 0 15px 0 10px;
+
                     .close-icon {
                         position: absolute;
                         top: 0;
@@ -397,9 +439,11 @@ $container-width : 1112px;
             }
         }
     }
+
     .cart-footer {
         overflow: hidden;
         background-color: rgba(0, 0, 0, 0.02);
+
         a {
             text-align: center;
             padding: 10px 17px;
@@ -424,7 +468,7 @@ $container-width : 1112px;
 }
 
 .fixedBar {
-    .thirdNav{
+    .thirdNav {
         position: fixed;
         top: 0;
         right: 0;
@@ -440,6 +484,7 @@ $container-width : 1112px;
         flex-grow: 1;
         display: flex;
         justify-content: center;
+
         li {
             display: grid !important;
             flex: 1;
@@ -458,10 +503,12 @@ $container-width : 1112px;
             flex: 1;
             align-items: center;
         }
+
         flex: 1;
         display: flex;
         justify-content: space-around;
         height: 5em;
+
         > li > {
             a > i, span > i {
                 font-size: 2em;
@@ -483,20 +530,26 @@ $container-width : 1112px;
 .shopBoard {
     display: flex;
     height: 100%;
+
     > {
-        * {}
+        * {
+        }
+
         h2 a {
             color: black;
             font-size: 1em;
             border-bottom: #d70a0a 1px solid;
         }
     }
+
     h2 {
         margin-top: 0;
         padding: 20px 30px;
     }
+
     > div > ul {
         padding: 20px 30px;
+
         li a {
             color: white;
         }
@@ -505,10 +558,12 @@ $container-width : 1112px;
 
 .menuBoardItem {
     border-right: 1px dotted white;
+
     a {
         text-shadow: 0 1px 1px slategrey;
         color: white;
         text-decoration: none;
+
         &:hover {
             text-shadow: 0 1px 1px white;
             color: white;
@@ -517,7 +572,8 @@ $container-width : 1112px;
     }
 }
 
-.shopBoard > :first-child {}
+.shopBoard > :first-child {
+}
 
 
 .mainHeader .container-1112 {

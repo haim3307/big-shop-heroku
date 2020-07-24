@@ -2,13 +2,13 @@
 
 namespace App;
 
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 
 class Tag extends MainModel
 {
     //
-    protected $fillable = ['name','url'];
+    protected $fillable = ['name', 'url'];
+
     public static function boot()
     {
         static::deleting(function ($tag) {
@@ -17,12 +17,17 @@ class Tag extends MainModel
 
         parent::boot();
     }
-    public function products(){
-        return $this->belongsToMany(Product::class,'products_tags');
+
+    public function products()
+    {
+        return $this->belongsToMany(Product::class, 'products_tags');
     }
-    static public function createNew($request){
+
+    static public function createNew($request)
+    {
         self::Create($request->all());
     }
+
     static public function updateItem($id, $request)
     {
         $msg = 'Tag was not updated successfully!';
@@ -34,7 +39,9 @@ class Tag extends MainModel
         Session::flash('cms_m', $msg);
         Session::flash('cms_status', $status);
     }
-    public function posts(){
+
+    public function posts()
+    {
         return $this->belongsToMany(Post::class);
     }
 }

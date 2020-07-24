@@ -15,42 +15,42 @@
 
 <script>
 
-	export default {
-		name: "sub-category-display",
-		props: ['category', 'subCategory'],
-		computed: {
-			category_img() {
-				return `${this.url}/_img/categories/${this.category.img}`;
-			},
-			category_link() {
-				return `${this.url}/shop/${this.category.url}`;
-			},
-			subCategory_img() {
-				let path = `${this.url}/_img/`;
-				if (this.subCategory.img) {
-					path += `sub-categories/${this.subCategory.img}`;
-				} else if (this.subCategory.product_img) {
-					path += `products/${this.category.url}/${this.subCategory.product_img}`
-				} else {
+    export default {
+        name: "sub-category-display",
+        props: ['category', 'subCategory'],
+        computed: {
+            category_img() {
+                return `${this.url}/_img/categories/${this.category.img}`;
+            },
+            category_link() {
+                return `${this.url}/shop/${this.category.url}`;
+            },
+            subCategory_img() {
+                let path = `${this.url}/_img/`;
+                if (this.subCategory.img) {
+                    path += `sub-categories/${this.subCategory.img}`;
+                } else if (this.subCategory.product_img) {
+                    path += `products/${this.category.url}/${this.subCategory.product_img}`
+                } else {
                     path = 'http://via.placeholder.com/300x300?text=NO+PRODUCTS';
-				}
-				return path;
-			},
-			subCategory_link() {
-				return `${this.category_link}/${this.subCategory.url}`;
-			},
-			bgi_white() {
-				return `url('${this.url}/_img/bg_items_white.png')`;
-			}
-		},
-		methods: {
-			goTo() {
-				/*
+                }
+                return path;
+            },
+            subCategory_link() {
+                return `${this.category_link}/${this.subCategory.url}`;
+            },
+            bgi_white() {
+                return `url('${this.url}/_img/bg_items_white.png')`;
+            }
+        },
+        methods: {
+            goTo() {
+                /*
                                 window.location = `${this.url}/shop/${this.category.url}/`;
                 */
-			}
-		}
-	}
+            }
+        }
+    }
 </script>
 
 <style>

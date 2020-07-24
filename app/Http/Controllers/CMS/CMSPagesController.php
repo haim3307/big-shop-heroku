@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\CMS;
 
-use App\{
-    Category, Entity, Http\Requests\ListItemRequest, Http\Requests\PageRequest, MenuItem, PageList, PageListItem, Page, Http\Requests\CustomPageRequest
-};
-use DB, Route, Session;
+use App\{Category, Entity, Http\Requests\PageRequest, MenuItem, Page, PageList, PageListItem};
+use DB;
 use Illuminate\Http\Request;
+use Route;
+use Session;
 
 class CMSPagesController extends CMSControlller
 {
@@ -16,7 +16,7 @@ class CMSPagesController extends CMSControlller
     public function __construct()
     {
         parent::__construct();
-        self::$data['page'] = (object)['title' =>  !empty(Route::current()->action) ? explode('@', Route::current()->action['uses'])[1]:''];
+        self::$data['page'] = (object)['title' => !empty(Route::current()->action) ? explode('@', Route::current()->action['uses'])[1] : ''];
         self::$data['entity'] = 'page';
     }
 
@@ -50,11 +50,11 @@ class CMSPagesController extends CMSControlller
         return $item->update(['options' => json_encode($request->options)]) ? 1 : 0;
     }
 
-    public function updatePageListItem(Page $page,PageList $pageList, Request $request)
+    public function updatePageListItem(Page $page, PageList $pageList, Request $request)
     {
-        if(!isset($request->item_id) or !($listItem = PageListItem::findOrFail($request->item_id))) abort(404);
+        if (!isset($request->item_id) or !($listItem = PageListItem::findOrFail($request->item_id))) abort(404);
         if ($rules = json_decode($pageList->validate_layout, true)) $this->validate($request, $rules);
-        $listItem->update(['title'=>$request->title]);
+        $listItem->update(['title' => $request->title]);
         $listItem->updateItemOptions($request, $pageList);
         return redirect(self::$route . "/$page->url/$pageList->url/");
 
@@ -90,12 +90,12 @@ class CMSPagesController extends CMSControlller
 
     }
 
-    public function storePageListItem($page = null,$pageList, $itemId = null, Entity $entity = null, $saveOptions = false, Request $request)
+    public function storePageListItem($page = null, $pageList, $itemId = null, Entity $entity = null, $saveOptions = false, Request $request)
     {
 
         if (!isset($pageList->id) && !($pageList = PageList::where('url', $pageList)->first())) return;
         $newItem = PageListItem::saveNew($pageList, $entity->id ?? null, $itemId, $request);
-        if ($saveOptions) PageListItem::updateItemOptions($request,$pageList,$newItem);
+        if ($saveOptions) PageListItem::updateItemOptions($request, $pageList, $newItem);
         return $newItem;
     }
 
@@ -103,7 +103,7 @@ class CMSPagesController extends CMSControlller
     {
         if (!($pageList = PageList::where('url', $pageList)->first())) return;
         if (!($page = Page::where('url', $page)->first())) return;
-        self::storePageListItem($page,$pageList, null, null, true, $request);
+        self::storePageListItem($page, $pageList, null, null, true, $request);
         return redirect(self::$route . "/$page->url/$pageList->url");
     }
 
@@ -115,7 +115,7 @@ class CMSPagesController extends CMSControlller
 
     public function delete($pageID)
     {
-        if(!Page::isCore($pageID)){
+        if (!Page::isCore($pageID)) {
             MenuItem::where([['entity_id', '=', 2], ['entity_item_id', '=', $pageID]])->delete();
             return Page::destroy($pageID);
         }
@@ -164,10 +164,13 @@ class CMSPagesController extends CMSControlller
         }
 
     }
-    public function sale($pageList = null){
+
+    public function sale($pageList = null)
+    {
         self::connectPageManage('sale', $pageList);
         return view(self::$routeName . '.sale', self::$data);
     }
+
     public function contactUs($pageList = null)
     {
         self::connectPageManage('contact-us', $pageList);
@@ -181,9 +184,9 @@ class CMSPagesController extends CMSControlller
     {
         if ($page = Page::where('url', $customPage)->orWhere('id', $customPage)->first()) {
             self::$data['page'] = $page;
-            if(view()->exists(self::$routeName . '.' . $page->url)){
-                return Route::has(self::$routeName.'.'.$page->url)?redirect(route(self::$routeName.'.'.$page->url)):abort(404);
-            }else{
+            if (view()->exists(self::$routeName . '.' . $page->url)) {
+                return Route::has(self::$routeName . '.' . $page->url) ? redirect(route(self::$routeName . '.' . $page->url)) : abort(404);
+            } else {
                 return view(self::$routeName . '.custom', self::$data);
             }
         } else return abort(404);

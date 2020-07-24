@@ -4,13 +4,14 @@ namespace App\Http\Controllers\CMS;
 
 use App\Http\Requests\PostRequest;
 use App\Post;
-use Illuminate\Http\Request;
 
 class CMSPostController extends CMSControlller
 {
     static public $route = 'cms/post';
     static public $routeName = 'cms.post';
-    public function __construct(){
+
+    public function __construct()
+    {
         parent::__construct();
         self::$data['entity'] = 'post';
     }
@@ -22,7 +23,7 @@ class CMSPostController extends CMSControlller
      */
     public function index()
     {
-        return view(self::$routeName.'.index', self::$data + ['items'=>Post::all()]);
+        return view(self::$routeName . '.index', self::$data + ['items' => Post::all()]);
     }
 
     /**
@@ -38,7 +39,7 @@ class CMSPostController extends CMSControlller
     /**
      * Store a newly created resource in storage.
      *
-     * @param \App\Http\Requests\PostRequest  $request
+     * @param \App\Http\Requests\PostRequest $request
      * @return \Illuminate\Http\Response
      */
     public function store(PostRequest $request)
@@ -50,18 +51,18 @@ class CMSPostController extends CMSControlller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
-/*    public function show($id)
-    {
-        return ($product = Product::where('url', '=', $productUrl)->first()) ? view('cms.product.show')->with('product', $product) : abort(404);
-    }*/
+    /*    public function show($id)
+        {
+            return ($product = Product::where('url', '=', $productUrl)->first()) ? view('cms.product.show')->with('product', $product) : abort(404);
+        }*/
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -72,8 +73,8 @@ class CMSPostController extends CMSControlller
     /**
      * Update the specified resource in storage.
      *
-     * @param \App\Http\Requests\PostRequest  $request
-     * @param  int  $id
+     * @param \App\Http\Requests\PostRequest $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(PostRequest $request, $id)
@@ -85,7 +86,7 @@ class CMSPostController extends CMSControlller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return int
      */
     public function destroy($id)

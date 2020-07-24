@@ -166,6 +166,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "auto-complete-item",
   props: ['item', 'cmsMode'],
@@ -198,6 +200,8 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _AutoCompleteItem__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AutoCompleteItem */ "./resources/assets/js/components/AutoCompleteItem.vue");
+//
+//
 //
 //
 //
@@ -332,20 +336,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['cartItem'],
   mounted: function mounted() {
-    if (!this.cartItem['quantity']) this.$set(this.cartItem, 'quantity', 1);
+    var cartItem = this.cartItem;
+    if (!cartItem['quantity']) this.$set(cartItem, 'quantity', 1);
   },
   computed: {
     main_img: function main_img() {
-      if (!this.cartItem) return;
-      if (!this.cartItem['main_category'] && !('url' in this.cartItem['main_category']) && !this.cartItem['c_url']) return;
-      return "".concat(this.url, "/_img/products/").concat(this.cartItem['c_url'] ? this.cartItem['c_url'] : this.cartItem['main_category'].url, "/").concat(this.cartItem['main_img']);
+      var cartItem = this.cartItem,
+          url = this.url;
+      if (!cartItem['main_category'] && !('url' in cartItem['main_category']) && !cartItem['c_url']) return;
+      return "".concat(url, "/_img/products/").concat(cartItem['c_url'] ? cartItem['c_url'] : cartItem['main_category'].url, "/").concat(cartItem['main_img']);
     },
     url_item: function url_item() {
       //!this.cartItem['c_name'] && (this.cartItem['c_name'] = selectedCategory);
 
       /*console.log('cartItem:',this.cartItem['main_category']);
       */
-      return "".concat(this.url, "/shop/").concat(this.cartItem['c_url'] ? this.cartItem['c_url'] : this.cartItem['main_category'].url, "/").concat(this.cartItem['url']);
+      var cartItem = this.cartItem,
+          url = this.url;
+      return "".concat(url, "/shop/").concat(cartItem['c_url'] ? cartItem['c_url'] : cartItem['main_category'].url, "/").concat(cartItem['url']);
     }
   },
   methods: {
@@ -377,8 +385,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 
 /*
-       import CartItem from "./CartItem";
-   */
+    import CartItem from "./CartItem";
+*/
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['cartItems'],
   mounted: function mounted() {},
@@ -391,8 +399,8 @@ __webpack_require__.r(__webpack_exports__);
     }
   }
   /*
-                components: {CartItem},
-        */
+          components: {CartItem},
+  */
 
 });
 
@@ -472,6 +480,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
 //
 //
 //
@@ -668,7 +677,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     /*			$('.addToCartB').on('click', updateCartedButtons);
-                         console.log('options:',this.it['options']);*/
+                console.log('options:',this.it['options']);*/
   },
   props: ['it'],
   data: function data() {
@@ -882,6 +891,9 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
 //
 //
 //
@@ -1189,6 +1201,21 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "manage-page-list",
   props: ['list', 'listTitle', 'list_id', 'pageManageMode'],
@@ -1365,6 +1392,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "thumb-item",
   props: ['product', 'listObj', 'listItem'],
@@ -1487,7 +1519,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/* animations */\n#addedToCartModal{\n    z-index: 9999999999;\n}\n@-webkit-keyframes checkmark {\n0% {\n        stroke-dashoffset: 50px\n}\n100% {\n        stroke-dashoffset: 0\n}\n}\n@keyframes checkmark {\n0% {\n        stroke-dashoffset: 50px\n}\n100% {\n        stroke-dashoffset: 0\n}\n}\n@-webkit-keyframes checkmark-circle {\n0% {\n        stroke-dashoffset: 240px\n}\n100% {\n        stroke-dashoffset: 480px\n}\n}\n@keyframes checkmark-circle {\n0% {\n        stroke-dashoffset: 240px\n}\n100% {\n        stroke-dashoffset: 480px\n}\n}\n\n/* other styles */\n/* .svg svg {\n    display: none\n}\n */\n.inlinesvg .svg svg {\n    display: inline\n}\n\n/* .svg img {\n    display: none\n} */\n.icon--order-success svg path {\n    -webkit-animation: checkmark 0.25s ease-in-out 0.7s backwards;\n    animation: checkmark 0.25s ease-in-out 0.7s backwards\n}\n.icon--order-success svg circle {\n    -webkit-animation: checkmark-circle 0.6s ease-in-out backwards;\n    animation: checkmark-circle 0.6s ease-in-out backwards\n}\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/* animations */\n#addedToCartModal {\n    z-index: 9999999999;\n}\n@-webkit-keyframes checkmark {\n0% {\n        stroke-dashoffset: 50px\n}\n100% {\n        stroke-dashoffset: 0\n}\n}\n@keyframes checkmark {\n0% {\n        stroke-dashoffset: 50px\n}\n100% {\n        stroke-dashoffset: 0\n}\n}\n@-webkit-keyframes checkmark-circle {\n0% {\n        stroke-dashoffset: 240px\n}\n100% {\n        stroke-dashoffset: 480px\n}\n}\n@keyframes checkmark-circle {\n0% {\n        stroke-dashoffset: 240px\n}\n100% {\n        stroke-dashoffset: 480px\n}\n}\n\n/* other styles */\n/* .svg svg {\n    display: none\n}\n */\n.inlinesvg .svg svg {\n    display: inline\n}\n\n/* .svg img {\n    display: none\n} */\n.icon--order-success svg path {\n    -webkit-animation: checkmark 0.25s ease-in-out 0.7s backwards;\n    animation: checkmark 0.25s ease-in-out 0.7s backwards\n}\n.icon--order-success svg circle {\n    -webkit-animation: checkmark-circle 0.6s ease-in-out backwards;\n    animation: checkmark-circle 0.6s ease-in-out backwards\n}\n\n\n", ""]);
 
 // exports
 
@@ -1506,7 +1538,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\nh6[data-v-536153f2]{\n    word-wrap: break-word;\n}\n\n", ""]);
+exports.push([module.i, "\nh6[data-v-536153f2] {\n    word-wrap: break-word;\n}\n\n", ""]);
 
 // exports
 
@@ -1601,7 +1633,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, "\n.tabs li a,.tabs li{\n    cursor: pointer !important;\n}\n.ui-helper-clearfix:before, .ui-helper-clearfix:after {\n    content: \"\";\n    display: table;\n    border-collapse: collapse;\n}\n.pageList .autoCompleteWrap {\n    position: relative;\n}\n.pageList #autoCompleteInput {\n}\n.pageList .autoCompleteMenuUl {\n    width: 100%;\n}\n", ""]);
+exports.push([module.i, "\n.tabs li a, .tabs li {\n    cursor: pointer !important;\n}\n.ui-helper-clearfix:before, .ui-helper-clearfix:after {\n    content: \"\";\n    display: table;\n    border-collapse: collapse;\n}\n.pageList .autoCompleteWrap {\n    position: relative;\n}\n.pageList #autoCompleteInput {\n}\n.pageList .autoCompleteMenuUl {\n    width: 100%;\n}\n", ""]);
 
 // exports
 
@@ -23307,7 +23339,7 @@ var render = function() {
     _vm._l(_vm.list, function(item) {
       return _c("auto-complete-item", {
         key: item.id,
-        attrs: { item: item, "cms-mode": _vm.cmsMode },
+        attrs: { "cms-mode": _vm.cmsMode, item: item },
         on: {
           addToEntitesList: function($event) {
             return _vm.$emit("addToEntitesList", $event)
@@ -23347,8 +23379,8 @@ var render = function() {
         staticClass: "stripe-card",
         class: { complete: _vm.complete },
         attrs: {
-          stripe: "pk_test_JW1yiT85RcaJxWICHY6cTJCx",
-          options: _vm.stripeOptions
+          options: _vm.stripeOptions,
+          stripe: "pk_test_JW1yiT85RcaJxWICHY6cTJCx"
         },
         on: {
           change: function($event) {
@@ -23554,7 +23586,7 @@ var render = function() {
                 _c("div", { staticClass: "allCentered buyIconFrame " }, [
                   _c("img", {
                     staticClass: "Sirv",
-                    attrs: { alt: "", "data-src": _vm.url_shopping_cart }
+                    attrs: { "data-src": _vm.url_shopping_cart, alt: "" }
                   })
                 ]),
                 _vm._v(" "),
@@ -23608,7 +23640,7 @@ var render = function() {
             padding: "30px 10px"
           }
         },
-        [_vm._v(" no products available")]
+        [_vm._v(" no products\n    available")]
       )
 }
 var staticRenderFns = []
@@ -23947,7 +23979,7 @@ var render = function() {
     },
     [
       _c("input", {
-        attrs: { type: "hidden", name: "order_id" },
+        attrs: { name: "order_id", type: "hidden" },
         domProps: { value: _vm.orderId }
       }),
       _vm._v(" "),
@@ -23956,7 +23988,7 @@ var render = function() {
         _vm._v(" "),
         _c("input", {
           staticClass: "form-control",
-          attrs: { type: "email", id: "email" },
+          attrs: { id: "email", type: "email" },
           domProps: { value: _vm.email }
         })
       ]),
@@ -23976,7 +24008,7 @@ var render = function() {
             }
           ],
           staticClass: "form-control",
-          attrs: { type: "text", id: "name_on_card", name: "name_on_card" },
+          attrs: { id: "name_on_card", name: "name_on_card", type: "text" },
           domProps: { value: _vm.name_on_card },
           on: {
             input: function($event) {
@@ -23996,7 +24028,7 @@ var render = function() {
             _vm._v(" "),
             _c("input", {
               staticClass: "form-control",
-              attrs: { type: "text", id: "address", name: "address" },
+              attrs: { id: "address", name: "address", type: "text" },
               domProps: { value: _vm.info.address }
             })
           ])
@@ -24008,7 +24040,7 @@ var render = function() {
             _vm._v(" "),
             _c("input", {
               staticClass: "form-control",
-              attrs: { type: "text", id: "city", name: "city" },
+              attrs: { id: "city", name: "city", type: "text" },
               domProps: { value: _vm.info.city }
             })
           ])
@@ -24020,7 +24052,7 @@ var render = function() {
             _vm._v(" "),
             _c("input", {
               staticClass: "form-control",
-              attrs: { type: "text", id: "province", name: "province" },
+              attrs: { id: "province", name: "province", type: "text" },
               domProps: { value: _vm.info.province }
             })
           ])
@@ -24034,7 +24066,7 @@ var render = function() {
             _vm._v(" "),
             _c("input", {
               staticClass: "form-control",
-              attrs: { type: "text", id: "postalcode", name: "postalcode" },
+              attrs: { id: "postalcode", name: "postalcode", type: "text" },
               domProps: { value: _vm.info.postal_code }
             })
           ])
@@ -24046,7 +24078,7 @@ var render = function() {
             _vm._v(" "),
             _c("input", {
               staticClass: "form-control",
-              attrs: { type: "text", id: "country", name: "country" },
+              attrs: { id: "country", name: "country", type: "text" },
               domProps: { value: _vm.info.country }
             })
           ])
@@ -24058,7 +24090,7 @@ var render = function() {
             _vm._v(" "),
             _c("input", {
               staticClass: "form-control",
-              attrs: { type: "text", id: "phone", name: "phone" },
+              attrs: { id: "phone", name: "phone", type: "text" },
               domProps: { value: _vm.info.phone }
             })
           ])
@@ -24079,7 +24111,7 @@ var render = function() {
       ),
       _vm._v(" "),
       _c("input", {
-        attrs: { type: "hidden", name: "_token" },
+        attrs: { name: "_token", type: "hidden" },
         domProps: { value: _vm.csrf }
       }),
       _vm._v(" "),
@@ -24188,15 +24220,15 @@ var render = function() {
                     _vm._v(
                       " " +
                         _vm._s(_vm.product.price) +
-                        "\n                                "
+                        "\n                            "
                     ),
                     _vm.product.prev_price
                       ? _c("small", { staticClass: "pre-cost" }, [
                           _c("span", { staticClass: "fa fa-usd" }),
                           _vm._v(
-                            "\n                                    " +
+                            "\n                                " +
                               _vm._s(_vm.product.prev_price) +
-                              "\n                                "
+                              "\n                            "
                           )
                         ])
                       : _vm._e()
@@ -24216,9 +24248,9 @@ var render = function() {
                         {
                           staticClass: "btn btn-primary addToCartB",
                           attrs: {
-                            type: "button",
+                            "data-id": _vm.product.id,
                             "data-product": _vm.jsonProduct(),
-                            "data-id": _vm.product.id
+                            type: "button"
                           }
                         },
                         [
@@ -24245,7 +24277,7 @@ var render = function() {
                           !_vm.product.inWishList && !_vm.product.inwishlist
                             ? _c("span", [
                                 _vm._v(
-                                  "Add To\n                                    Wishlist"
+                                  "Add To\n                                Wishlist"
                                 )
                               ])
                             : _c("span", [_vm._v("Remove From Wishlist")])
@@ -24591,7 +24623,7 @@ var render = function() {
           _c("a", { attrs: { href: "?manage_mode=" + _vm.pageManageMode } }, [
             _c("input", {
               staticClass: "btn btn-danger",
-              attrs: { type: "button", value: "Cancel", id: "cancel" }
+              attrs: { id: "cancel", type: "button", value: "Cancel" }
             })
           ])
         ]
@@ -24962,19 +24994,20 @@ var render = function() {
             (_vm.product && (_vm.product.title || _vm.product.name))
               ? _c("h3", { staticClass: "card-title" }, [
                   _vm._v(
-                    _vm._s(
-                      _vm._f("capitalize")(
-                        _vm._f("striphtml")(
-                          _vm.$options.filters
-                            .striphtml(_vm.listItem.title)
-                            .trim().length
-                            ? _vm.listItem.title
-                            : _vm.product.title
-                            ? _vm.product.title
-                            : _vm.product.name
+                    "\n            " +
+                      _vm._s(
+                        _vm._f("capitalize")(
+                          _vm._f("striphtml")(
+                            _vm.$options.filters
+                              .striphtml(_vm.listItem.title)
+                              .trim().length
+                              ? _vm.listItem.title
+                              : _vm.product.title
+                              ? _vm.product.title
+                              : _vm.product.name
+                          )
                         )
                       )
-                    )
                   )
                 ])
               : _vm._e(),
@@ -24997,9 +25030,9 @@ var render = function() {
             _vm.product && _vm.product.description
               ? _c("p", { staticClass: "card-text" }, [
                   _vm._v(
-                    "\n                " +
+                    "\n            " +
                       _vm._s(_vm._f("striphtml")(_vm.product.description)) +
-                      "\n            "
+                      "\n        "
                   )
                 ])
               : _vm._e(),
@@ -37473,7 +37506,7 @@ window.VueComponents = function () {
         return "".concat(this.url, "/shop/").concat(this.it['c_name'], "/").concat(this.it['sc_name'], "/").concat(this.it['url']);
       }
     },
-    template: "\n                <a v-cloak\n                       class=\"list-group-item list-group-item-action text-center f-row justify-content-around align-items-center\"\n                       :id=\"selectedItem.id\" data-toggle=\"list\" :href=\"selectedItem.calc_calc_url\"\n                       role=\"tab\"\n                       aria-controls=\"profile\">\n                        <div class=\"col-3\" v-cloak>\n                            <div class=\"btn btn-info\" v-on:click=\"toggleEdit()\" v-if=\"!editMode\">\n                                <i class=\"fa fa-edit\"></i>\n                            </div>\n                            <div class=\"btn btn-info\" v-else v-on:click=\"editItem(selectedItem,1)\">\n                                <i class=\"fa fa-check\"></i>\n                            </div>\n                        </div>\n                        <span class=\"col my-text-overflow\" v-cloak style=\"text-transform: uppercase\"\n                              v-text=\"selectedItem.title\" :title=\"selectedItem.title\" v-if=\"!editMode\"></span>\n                        <div class=\"col\" v-else>\n                        <input type=\"text\" class=\"form-control text-center \" v-model=\"selectedItem.title\">\n                        </div>\n                        <div class=\"col-3\" v-if=\"!editMode\" >\n                            <div class=\"btn btn-danger\" v-on:click=\"deleteItem(selectedItem.id)\"><i class=\"fa fa-trash\"></i></div>\n                        </div>\n                        <div class=\"col-3\" v-else>\n                            <div class=\"btn btn-danger\" v-on:click=\"editItem(selectedItem,-1)\">\n                                <i class=\"fa fa-times\"></i>\n                            </div>\n                        </div>\n                    </a>\n            "
+    template: "\n            <a v-cloak\n               class=\"list-group-item list-group-item-action text-center f-row justify-content-around align-items-center\"\n               :id=\"selectedItem.id\" data-toggle=\"list\" :href=\"selectedItem.calc_calc_url\"\n               role=\"tab\"\n               aria-controls=\"profile\">\n                <div class=\"col-3\" v-cloak>\n                    <div class=\"btn btn-info\" v-on:click=\"toggleEdit()\" v-if=\"!editMode\">\n                        <i class=\"fa fa-edit\"></i>\n                    </div>\n                    <div class=\"btn btn-info\" v-else v-on:click=\"editItem(selectedItem,1)\">\n                                <i class=\"fa fa-check\"></i>\n                            </div>\n                        </div>\n                        <span class=\"col my-text-overflow\" v-cloak style=\"text-transform: uppercase\"\n                              v-text=\"selectedItem.title\" :title=\"selectedItem.title\" v-if=\"!editMode\"></span>\n                        <div class=\"col\" v-else>\n                        <input type=\"text\" class=\"form-control text-center \" v-model=\"selectedItem.title\">\n                        </div>\n                <div class=\"col-3\" v-if=\"!editMode\">\n                    <div class=\"btn btn-danger\" v-on:click=\"deleteItem(selectedItem.id)\"><i class=\"fa fa-trash\"></i>\n                    </div>\n                </div>\n                <div class=\"col-3\" v-else>\n                    <div class=\"btn btn-danger\" v-on:click=\"editItem(selectedItem,-1)\">\n                        <i class=\"fa fa-times\"></i>\n                    </div>\n                </div>\n            </a>\n        "
   });
 };
 
@@ -39101,9 +39134,9 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/admin/PhpstormProjects/big-shop-heroku/resources/assets/js/app.js */"./resources/assets/js/app.js");
-__webpack_require__(/*! /Users/admin/PhpstormProjects/big-shop-heroku/resources/assets/sass/app.scss */"./resources/assets/sass/app.scss");
-module.exports = __webpack_require__(/*! /Users/admin/PhpstormProjects/big-shop-heroku/resources/assets/sass/styles.scss */"./resources/assets/sass/styles.scss");
+__webpack_require__(/*! /home/haimt/big-shop-heroku/resources/assets/js/app.js */"./resources/assets/js/app.js");
+__webpack_require__(/*! /home/haimt/big-shop-heroku/resources/assets/sass/app.scss */"./resources/assets/sass/app.scss");
+module.exports = __webpack_require__(/*! /home/haimt/big-shop-heroku/resources/assets/sass/styles.scss */"./resources/assets/sass/styles.scss");
 
 
 /***/ })

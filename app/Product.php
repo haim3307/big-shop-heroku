@@ -2,8 +2,12 @@
 
 namespace App;
 
-use DB, Session, File, Toastr, Image;
+use DB;
+use File;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Image;
+use Session;
+use Toastr;
 
 class Product extends CMSModel
 {
@@ -15,7 +19,7 @@ class Product extends CMSModel
 
     public function tags()
     {
-        return $this->belongsToMany(Tag::class,'products_tags');
+        return $this->belongsToMany(Tag::class, 'products_tags');
     }
 
     public function reviews()
@@ -47,26 +51,33 @@ class Product extends CMSModel
     {
         return $this->where('category_id', '=', $category_id)->get();
     }
-    public function scopeWithMainCategory($query,$more=''){
-        return $query->with('mainCategory:id,url'.$more);
+
+    public function scopeWithMainCategory($query, $more = '')
+    {
+        return $query->with('mainCategory:id,url' . $more);
     }
+
     public function setRelatedProducts()
     {
         $this->relatedProducts = self::inRandomOrder()->withMainCategory()->where('id', '!=', $this->id)->limit(4)->get();
     }
-    public function setExtraProps(){
-        $this->inWishList =  WishListItem::inWishList($this->id);
-        $this->main_category =  $this->mainCategory()->first(['id','url']);
+
+    public function setExtraProps()
+    {
+        $this->inWishList = WishListItem::inWishList($this->id);
+        $this->main_category = $this->mainCategory()->first(['id', 'url']);
     }
-    static function setExtraPropsAll($data){
-        foreach ($data as $item){
+
+    static function setExtraPropsAll($data)
+    {
+        foreach ($data as $item) {
             $item->setExtraProps();
         }
     }
 
     static public function getTagged($tag_name, &$data)
     {
-        $data = self::with(['tags','mainCategory:id,url'])->whereHas('tags',function ($query) use ($tag_name){
+        $data = self::with(['tags', 'mainCategory:id,url'])->whereHas('tags', function ($query) use ($tag_name) {
             $query->where('name', '=', $tag_name);
         })->limit(4)->get();
         self::setExtraPropsAll($data);
@@ -79,7 +90,9 @@ class Product extends CMSModel
 
     static public function getItemPage($itemTitle, $mainCategory)
     {
-        return self::where('url', '=', $itemTitle)->withMainCategory(',name')->whereHas('mainCategory',function ($query) use($mainCategory){$query->where('url',$mainCategory);})->first();
+        return self::where('url', '=', $itemTitle)->withMainCategory(',name')->whereHas('mainCategory', function ($query) use ($mainCategory) {
+            $query->where('url', $mainCategory);
+        })->first();
     }
 
     static public function joinCategory($query)
@@ -94,8 +107,9 @@ class Product extends CMSModel
         return $query;
     }
 
-    public function scopeWithoutDeleted($query,$alias){
-        return $query->withTrashed()->whereRaw($alias.'.deleted_at IS NULL');
+    public function scopeWithoutDeleted($query, $alias)
+    {
+        return $query->withTrashed()->whereRaw($alias . '.deleted_at IS NULL');
     }
 
     static public function productsWithCategory()
@@ -110,16 +124,17 @@ class Product extends CMSModel
     {
         $data['frameItems'] = self::with('mainCategory:id,url')->limit(10)->get();
     }
+
     static public function createNew($request)
     {
         $product = new self($request->all() + ['main_img' => 'default.png']);
         if ($category = Category::findOrFail($request->category_id)) {
             if ($product->save()) {
                 $product->attachTags($request->tags);
-                if($request->long_description){
-                    $product->longDescription()->updateOrCreate(['long_description'=>$request->long_description]);
+                if ($request->long_description) {
+                    $product->longDescription()->updateOrCreate(['long_description' => $request->long_description]);
                 }
-                $product->uploadImg($request,"_img/products/$category->url/",['width'=>400],'main_img');
+                $product->uploadImg($request, "_img/products/$category->url/", ['width' => 400], 'main_img');
             }
             return Toastr::success('New Product Created!');
         }
@@ -132,13 +147,13 @@ class Product extends CMSModel
         if (isset($product)) {
             if ($product->update($request->all())) {
                 $product->attachTags($request->tags);
-                if($request->long_description){
-                    $product->longDescription()->updateOrCreate(['long_description'=>$request->long_description]);
+                if ($request->long_description) {
+                    $product->longDescription()->updateOrCreate(['long_description' => $request->long_description]);
                 }
                 $oldCategory = Category::find($product->category_id);
                 $pFolder = '_img/products/';
                 $oldPFolder = $pFolder . $oldCategory->url;
-                $checkIfToUpload = $product->uploadImg($request,"$pFolder{$oldCategory->url}/",['width'=>600],'main_img');
+                $checkIfToUpload = $product->uploadImg($request, "$pFolder{$oldCategory->url}/", ['width' => 600], 'main_img');
                 if (!$checkIfToUpload && isset($product->main_img) && $product->category_id != $request->category_id) {
                     $newCategory = Category::find($request->category_id);
                     File::move(public_path($oldPFolder . $product->main_img), public_path($pFolder . $newCategory->url));

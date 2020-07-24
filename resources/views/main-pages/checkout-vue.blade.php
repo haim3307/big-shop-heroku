@@ -3,7 +3,7 @@
 
 @endsection
 @section('content')
-    <div class="container" id="shopCartApp"  style="min-height: 80vh; background-color: #fff;">
+    <div class="container" id="shopCartApp" style="min-height: 80vh; background-color: #fff;">
         <div class="mt-4 p-2 pt-4">
             <h1>Payment Form</h1>
             <div class="spacer"></div>
@@ -23,7 +23,8 @@
                     </ul>
                 </div>
             @endif
-            <payment-form :order-id="{{request()->order_id}}" :info="{{auth()->user()->info??'{}'}}" :email="'{{auth()->user()->email}}'"></payment-form>
+            <payment-form :order-id="{{request()->order_id}}" :info="{{auth()->user()->info??'{}'}}"
+                          :email="'{{auth()->user()->email}}'"></payment-form>
         </div>
     </div>
 
@@ -43,7 +44,7 @@
             padding: 10px 12px;
             border-radius: 4px;
             border: 1px solid #ccd0d2;
-            box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
             -webkit-transition: box-shadow 150ms ease;
             transition: box-shadow 150ms ease;
         }

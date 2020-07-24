@@ -2,10 +2,7 @@
 
 namespace App\Http\Controllers\CMS;
 
-use App\{
-    Product, Http\Requests\ProductRequest, ProductReview, WishListItem
-};
-use Illuminate\Http\Request;
+use App\{Http\Requests\ProductRequest, Product};
 
 class CMSProductController extends CMSControlller
 {
@@ -20,7 +17,7 @@ class CMSProductController extends CMSControlller
 
     public function index()
     {
-        return view(self::$routeName.'.index', self::$data + ['items'=>Product::all()]);
+        return view(self::$routeName . '.index', self::$data + ['items' => Product::all()]);
     }
 
     public function store(ProductRequest $request)
@@ -50,6 +47,7 @@ class CMSProductController extends CMSControlller
     {
         return ($product = Product::where('url', '=', $productUrl)->first()) ? view('cms.product.show')->with('product', $product) : abort(404);
     }
+
     public function delete($productId)
     {
         return Product::destroy($productId);

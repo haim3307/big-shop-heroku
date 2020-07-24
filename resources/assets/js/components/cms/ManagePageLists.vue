@@ -18,20 +18,20 @@
 </template>
 
 <script>
-	export default {
-		name: "manage-page-lists",
-		props: ['lists', 'pageManageMode', 'selectedList'],
-        inject:['page'],
+    export default {
+        name: "manage-page-lists",
+        props: ['lists', 'pageManageMode', 'selectedList'],
+        inject: ['page'],
         mounted() {
-			console.log(this.lists);
-			//this.selectedList = this.lists[0].url;
-		},
-		methods: {
-			toTab(title) {
-				window.location = title;
-			}
-		}
-	}
+            console.log(this.lists);
+            //this.selectedList = this.lists[0].url;
+        },
+        methods: {
+            toTab(title) {
+                window.location = title;
+            }
+        }
+    }
 </script>
 
 <style>

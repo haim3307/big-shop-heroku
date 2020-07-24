@@ -9,9 +9,9 @@
             @empty($postMode)
                 <span class="reviewRating">
                     <star-rating :show-rating="false" :rating="{{$review->rating}}"
-                                                        :round-start-rating="false"
-                                                        :star-size="20"
-                                                        :read-only="true"></star-rating>
+                                 :round-start-rating="false"
+                                 :star-size="20"
+                                 :read-only="true"></star-rating>
                 </span>
             @endempty
         </div>

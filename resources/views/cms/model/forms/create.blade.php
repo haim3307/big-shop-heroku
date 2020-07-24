@@ -37,74 +37,74 @@
 </div>
 @push('scripts')
     <script>
-			$(document).ready(function () {
-				$('#{{$entity.ucwords($prop1??'title')}}').on('blur', function (e) {
-					$('#{{$entity}}Url').val($(this).val().seoFriendly());
-				});
-				$('#description,.html').summernote({
-					height: '50vh'
-				});
-/*				$('[role="tagsinput"]').tagsinput({
-                    typeahead: {
-                        source: ['fdsf','dsfsdfsd']
-                    }
-                });*/
-                $('select[data-role=tagsinput]').tokenize2({
-                    dataSource: function(search, object){
-                        $.ajax(BASE_URL+'/api/tags', {
-                            data: { search: search, start: 1 },
-                            dataType: 'json',
-                            success: function(data){
-                                var $items = [];
-                                $.each(data, function(k, v){
-                                    $items.push(v);
-                                });
-                                object.trigger('tokenize:dropdown:fill', [$items]);
-                            }
-                        });
-                    }
-                });
-/*
-                $('select[data-role=tagsinput]').tokenize2({
-                    dataSource: BASE_URL+'/api/tags',
-                    // max number of tags
-                    tokensMaxItems: 0,
+        $(document).ready(function () {
+            $('#{{$entity.ucwords($prop1??'title')}}').on('blur', function (e) {
+                $('#{{$entity}}Url').val($(this).val().seoFriendly());
+            });
+            $('#description,.html').summernote({
+                height: '50vh'
+            });
+            /*				$('[role="tagsinput"]').tagsinput({
+                                typeahead: {
+                                    source: ['fdsf','dsfsdfsd']
+                                }
+                            });*/
+            $('select[data-role=tagsinput]').tokenize2({
+                dataSource: function (search, object) {
+                    $.ajax(BASE_URL + '/api/tags', {
+                        data: {search: search, start: 1},
+                        dataType: 'json',
+                        success: function (data) {
+                            var $items = [];
+                            $.each(data, function (k, v) {
+                                $items.push(v);
+                            });
+                            object.trigger('tokenize:dropdown:fill', [$items]);
+                        }
+                    });
+                }
+            });
+            /*
+                            $('select[data-role=tagsinput]').tokenize2({
+                                dataSource: BASE_URL+'/api/tags',
+                                // max number of tags
+                                tokensMaxItems: 0,
 
-                    // allow you to create custom tokens
-                    tokensAllowCustom: false,
+                                // allow you to create custom tokens
+                                tokensAllowCustom: false,
 
-                    // max items in the dropdown
-                    dropdownMaxItems: 10,
+                                // max items in the dropdown
+                                dropdownMaxItems: 10,
 
-                    // minimum of characters required to start searching
-                    searchMinLength: 0,
+                                // minimum of characters required to start searching
+                                searchMinLength: 0,
 
-                    // specify if Tokenize2 will search from the begining of a string
-                    searchFromStart: true,
+                                // specify if Tokenize2 will search from the begining of a string
+                                searchFromStart: true,
 
-                    // choose if you want your search highlighted in the result dropdown
-                    searchHighlight: true,
+                                // choose if you want your search highlighted in the result dropdown
+                                searchHighlight: true,
 
-                    // custom delimiter
-                    delimiter: ',',
+                                // custom delimiter
+                                delimiter: ',',
 
-                    // waiting time between each search
-                    debounce: 0,
+                                // waiting time between each search
+                                debounce: 0,
 
-                    // custom placeholder text
-                    placeholder: false,
+                                // custom placeholder text
+                                placeholder: false,
 
-                    // enable sortable
-                    // requires jQuery UI
-                    /!*
-                                        sortable: true,
-                    *!/
+                                // enable sortable
+                                // requires jQuery UI
+                                /!*
+                                                    sortable: true,
+                                *!/
 
-                    // tabIndex
-                    tabIndex: 0
-                });
-*/
-			});
+                                // tabIndex
+                                tabIndex: 0
+                            });
+            */
+        });
     </script>
 @endpush
 {{--

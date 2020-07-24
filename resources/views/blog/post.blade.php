@@ -2164,14 +2164,16 @@
 
 @endsection
 @section('content')
-    <div class="post-template-default single single-post postid-3272 single-format-image kingcomposer kc-css-system masthead-fixed singular">
+    <div
+        class="post-template-default single single-post postid-3272 single-format-image kingcomposer kc-css-system masthead-fixed singular">
         <div id="page" class="hfeed site page-home-1" style="background-color: #FFFFFF">
             <div class="opal-page-inner row-offcanvas row-offcanvas-left">
                 <section id="main" class="site-main">
                     <section id="main-container" class="container mainright">
                         <div class="row">
                             @include('blog.side-bar')
-                            <div id="main-content" style="overflow: hidden;max-width: 100vw;" class="main-content col-sm-12 col-lg-9 col-md-9">
+                            <div id="main-content" style="overflow: hidden;max-width: 100vw;"
+                                 class="main-content col-sm-12 col-lg-9 col-md-9">
 
                                 <div id="primary" class="content-area">
                                     <div id="content" class="site-content" role="main">
@@ -2251,9 +2253,11 @@
                                                                 <section class="kc-elm kc-css-547646 kc_row">
                                                                     <div class="kc-row-container  kc-container">
                                                                         <div class="kc-wrap-columns">
-                                                                            <div class="kc-elm kc-css-52896 kc_col-sm-12 kc_column kc_col-sm-12">
+                                                                            <div
+                                                                                class="kc-elm kc-css-52896 kc_col-sm-12 kc_column kc_col-sm-12">
                                                                                 <div class="kc-col-container">
-                                                                                    <div class="kc-elm kc-css-352529 kc_text_block">
+                                                                                    <div
+                                                                                        class="kc-elm kc-css-352529 kc_text_block">
                                                                                         <p>{!! $post->article !!}</p>
                                                                                     </div>
                                                                                 </div>
@@ -2269,7 +2273,8 @@
                                                         <!-- .entry-header -->
 
                                                         <div class="entry-meta meta-category">
-                                                            @if($post->categories->count())<span class="cat-links d-block"><strong>Category :</strong>  @include('blog.inc.post-categories',['separator'=>','])</span>@endif
+                                                            @if($post->categories->count())<span
+                                                                class="cat-links d-block"><strong>Category :</strong>  @include('blog.inc.post-categories',['separator'=>','])</span>@endif
                                                         </div>
                                                         <!-- .entry-meta -->
 
@@ -2342,7 +2347,7 @@
                                                 @isset($previous)
                                                     <a href="{{url("blog/post/$previous->url")}}" rel="prev">
                                                         <div class="pull-left"><span
-                                                                    class="meta-nav">Previous Post</span>{{$previous->title}}
+                                                                class="meta-nav">Previous Post</span>{{$previous->title}}
                                                         </div>
                                                     </a>
                                                 @endisset
@@ -2350,7 +2355,7 @@
                                                     <a href="{{url("blog/post/$next->url")}}"
                                                        rel="next">
                                                         <div class="pull-right"><span
-                                                                    class="meta-nav">Next Post</span><span>{{$next->title}}</span>
+                                                                class="meta-nav">Next Post</span><span>{{$next->title}}</span>
                                                         </div>
                                                     </a>
                                                 @endisset
@@ -2363,7 +2368,7 @@
                                             <div id="listComments">
                                                 @forelse($post->comments as $comment)
                                                     @include('items.review-item',['postMode'=>true,'review'=>$comment])
-                                                    @empty
+                                                @empty
                                                     <h3>No comments for this post..</h3>
                                                     <br>
                                                 @endforelse
@@ -2395,8 +2400,8 @@
                                                                                           id="submit"
                                                                                           class="btn btn-primary submit"
                                                                                           value="Post Comment"> <input
-                                                                        type="hidden" name="comment_post_ID"
-                                                                        value="3272" id="comment_post_ID">
+                                                                    type="hidden" name="comment_post_ID"
+                                                                    value="3272" id="comment_post_ID">
                                                                 <input type="hidden" name="comment_parent"
                                                                        id="comment_parent" value="0">
                                                             </p>
@@ -2414,7 +2419,7 @@
                                                 </div>
                                             </div>
 
-                                        <!-- end commentform -->
+                                            <!-- end commentform -->
                                         </div>
                                         <!-- end comments -->
                                         <div class="related-posts">
@@ -2422,12 +2427,15 @@
                                                 <h4 class="related-post-title widget-title">
                                                     <span>Related posts</span>
                                                 </h4>
-                                                <div style="max-width: 94vw;" class="related-posts-content widget-content  owl-carousel-play" id="postcarousel-DU3uE" data-ride="carousel">
+                                                <div style="max-width: 94vw;"
+                                                     class="related-posts-content widget-content  owl-carousel-play"
+                                                     id="postcarousel-DU3uE" data-ride="carousel">
 
-                                                    <div class="owl-carousel" data-slide="2"  data-singleItem="true" data-navigation="true" data-pagination="true">
+                                                    <div class="owl-carousel" data-slide="2" data-singleItem="true"
+                                                         data-navigation="true" data-pagination="true">
                                                         @foreach($post->relatedPosts as $relatedPost)
                                                             <div class="carouse-item">
-                                                            @include('items.post',['post'=>$relatedPost])
+                                                                @include('items.post',['post'=>$relatedPost])
                                                             </div>
                                                         @endforeach
                                                     </div>

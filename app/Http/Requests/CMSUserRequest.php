@@ -25,11 +25,11 @@ class CMSUserRequest extends FormRequest
     public function rules(Request $request)
     {
         $item_id = isset($request->item_id) ? ',' . $request->item_id : '';
-        $password = !isset($request->item_id) ? 'required|':'';
+        $password = !isset($request->item_id) ? 'required|' : '';
         return [
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users,email' . $item_id,
-            'password' => $password.'string|min:6|confirmed',
+            'password' => $password . 'string|min:6|confirmed',
             'role_id' => 'required'
         ];
     }

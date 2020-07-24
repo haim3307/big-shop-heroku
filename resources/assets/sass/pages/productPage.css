@@ -6,17 +6,19 @@
 
 }
 
-.publicTabs nav li a{
+.publicTabs nav li a {
     text-transform: uppercase;
     padding: 11px 17px;
 }
+
 .publicTabs nav li.ui-state-default, .publicTabs nav li.ui-widget-content .publicTabs nav li.ui-state-default, .ui-widget-header .publicTabs nav li.ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active {
     border: 0;
     background: inherit;
     font-weight: normal;
     color: white;
 }
-.publicTabs nav li.activeTab,.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover{
+
+.publicTabs nav li.activeTab, .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover {
     background-color: rgb(247, 24, 24) !important;
 
 }

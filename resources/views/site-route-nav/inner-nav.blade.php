@@ -5,7 +5,7 @@
                                                                              src="{{asset('_img/d_arrow.png')}}"
                                                                              alt="">
         @if(isset($category)) <span class="siteWay"><a
-                    href="{{url('shop/'.$category->name)}}">{{$category->name}}</a></span>
+                href="{{url('shop/'.$category->name)}}">{{$category->name}}</a></span>
         @endif
     </nav>
 </nav>

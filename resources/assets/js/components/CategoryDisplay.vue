@@ -13,37 +13,37 @@
 </template>
 
 <script>
-	export default {
-		name: "category-display",
-		props: {
-			cmsMode: {
-				type: Boolean,
-				default: false,
-			}, 'isSelected': {default: false}, 'category': {default: {}}
-		},
+    export default {
+        name: "category-display",
+        props: {
+            cmsMode: {
+                type: Boolean,
+                default: false,
+            }, 'isSelected': {default: false}, 'category': {default: {}}
+        },
 
-		computed: {
-			category_img() {
-				let path = `${this.cdnByType.img}/_img/`;
-				if (this.category.img) {
-					path += `categories/${this.category.img}`;
-				} else if (this.category.product_img) {
-					path += `products/${this.category.url}/${this.category.product_img}`
-				} else {
-					path = 'http://via.placeholder.com/600x600?text=' + this.category.name;
-				}
-				return path;
-			},
-			category_link() {
-				return `${this.url}/shop/${this.category.url}`;
-			}
-		},
-		methods: {
-			emitCategorySelect() {
-				this.$emit('oncategoryselect', this.category);
-			}
-		}
-	}
+        computed: {
+            category_img() {
+                let path = `${this.cdnByType.img}/_img/`;
+                if (this.category.img) {
+                    path += `categories/${this.category.img}`;
+                } else if (this.category.product_img) {
+                    path += `products/${this.category.url}/${this.category.product_img}`
+                } else {
+                    path = 'http://via.placeholder.com/600x600?text=' + this.category.name;
+                }
+                return path;
+            },
+            category_link() {
+                return `${this.url}/shop/${this.category.url}`;
+            }
+        },
+        methods: {
+            emitCategorySelect() {
+                this.$emit('oncategoryselect', this.category);
+            }
+        }
+    }
 </script>
 <style lang="scss">
     .selectedCategory {

@@ -13,16 +13,16 @@
     <tbody>
     @foreach($items as $item)
 
-     <tr data-{{$entity}}-id="{{$item->id}}">
+        <tr data-{{$entity}}-id="{{$item->id}}">
             <th scope="row">{{$item->id}}</th>
             <td title="{{isset($prop1)?$item->$prop1:$item->title}}">{{isset($prop1)?$item->$prop1:$item->title}}</td>
             <td title="{{$item->url}}">{{$item->url}}</td>
-            {!! isset($tds)?view(['template' => $tds], ['item' => $item]):'' !!}
+            {{--{!! isset($tds)?view(['template' => $tds], ['item' => $item]):'' !!}--}}
             <td title="{{$item->created_at}}">{{$item->created_at}}</td>
             <td title="{{$item->updated_at}}">{{$item->updated_at}}</td>
             <td>
                 @if($item->url !== 'uncategorized' && empty($item->is_core))
-                @include('cms.inc.buttons.delete-btn',['entity'=>$entity,'item'=>$item ])
+                    @include('cms.inc.buttons.delete-btn',['entity'=>$entity,'item'=>$item ])
                 @endif
                 @include('cms.inc.buttons.edit-btn',['entity'=>$entity,'item'=>$item])
             </td>

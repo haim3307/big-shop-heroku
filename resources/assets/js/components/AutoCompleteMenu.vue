@@ -1,25 +1,28 @@
 <template>
     <ul class="autoCompleteMenuUl" v-show="list.length" style="">
-        <auto-complete-item v-for="item in list" :item="item" :key="item.id" @addToEntitesList="$emit('addToEntitesList',$event)" :cms-mode="cmsMode"></auto-complete-item>
+        <auto-complete-item :cms-mode="cmsMode" :item="item" :key="item.id"
+                            @addToEntitesList="$emit('addToEntitesList',$event)"
+                            v-for="item in list"></auto-complete-item>
     </ul>
 </template>
 
 <script>
     import AutoCompleteItem from './AutoCompleteItem';
-	export default {
-		components:{AutoCompleteItem},
-		mounted(){
-			console.log(this.list,'autoCompleteMenu:');
+
+    export default {
+        components: {AutoCompleteItem},
+        mounted() {
+            console.log(this.list, 'autoCompleteMenu:');
         },
-		props:['list','cmsMode'],
-		name: "auto-complete-menu",
-        methods:{
-			clickItem(item){
-				alert(item);
+        props: ['list', 'cmsMode'],
+        name: "auto-complete-menu",
+        methods: {
+            clickItem(item) {
+                alert(item);
             }
         }
 
-	}
+    }
 </script>
 
 <style>

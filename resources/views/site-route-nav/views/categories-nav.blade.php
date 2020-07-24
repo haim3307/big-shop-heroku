@@ -15,7 +15,8 @@
         </select>
     </div>
     <div style="flex: 1 33.333%;" class="input-group">
-        <input type="text" class="form-control SearchBar" placeholder="Search for..." name="product-search" value="{{old('product-search')}}">
+        <input type="text" class="form-control SearchBar" placeholder="Search for..." name="product-search"
+               value="{{old('product-search')}}">
         <span class="input-group-btn">
             <button class="btn btn-default SearchButton" type="submit">
                 <span class=" fa fa-search SearchIcon"></span>

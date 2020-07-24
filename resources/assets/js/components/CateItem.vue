@@ -12,7 +12,7 @@
                     </div>
                     <div class="allCentered buyNowWideButton" :data-id="it['id']">
                         <div class="allCentered buyIconFrame "><img
-                                alt="" :data-src="url_shopping_cart" class="Sirv"></div>
+                            :data-src="url_shopping_cart" alt="" class="Sirv"></div>
                         <span>Add to cart</span>
                     </div>
                 </div>
@@ -29,11 +29,11 @@
         props: ['it'],
         data: function () {
             return {
-                loadedItem:false
+                loadedItem: false
             }
         },
         methods: {
-            loadItem(){
+            loadItem() {
                 this.loadedItem = true;
             }
         },

@@ -34,7 +34,9 @@
     <div class="container">
         <div class="row display-table">
             <div class="col-sm-3 vertical-align text-left hidden-xs">
-                <a href="javascript:void(0);"> <img width="" src="https://lh3.googleusercontent.com/-r0Fhzz-so14/WNf9-4M65JI/AAAAAAAAD3E/ht6IhlL9gG4ujE2Hqiq70U3jBb6KQmaAQCL0B/w180-d-h43-p-rw/logo-2.png" alt=""></a>
+                <a href="javascript:void(0);"> <img alt=""
+                                                    src="https://lh3.googleusercontent.com/-r0Fhzz-so14/WNf9-4M65JI/AAAAAAAAD3E/ht6IhlL9gG4ujE2Hqiq70U3jBb6KQmaAQCL0B/w180-d-h43-p-rw/logo-2.png"
+                                                    width=""></a>
             </div>
             <!-- end col -->
             <div class="col-sm-7 vertical-align text-center">
@@ -95,10 +97,14 @@
             <!-- end col -->
             <div class="col-sm-2 vertical-align header-items hidden-xs">
                 <div class="header-item mr-5">
-                    <a href="javascript:void(0);" data-toggle="tooltip" data-placement="top" title="" data-original-title="Wishlist"> <i class="fa fa-heart-o"></i> <sub>32</sub> </a>
+                    <a data-original-title="Wishlist" data-placement="top" data-toggle="tooltip"
+                       href="javascript:void(0);"
+                       title=""> <i class="fa fa-heart-o"></i> <sub>32</sub> </a>
                 </div>
                 <div class="header-item">
-                    <a href="javascript:void(0);" data-toggle="tooltip" data-placement="top" title="" data-original-title="Compare"> <i class="fa fa-refresh"></i> <sub>2</sub> </a>
+                    <a data-original-title="Compare" data-placement="top" data-toggle="tooltip"
+                       href="javascript:void(0);"
+                       title=""> <i class="fa fa-refresh"></i> <sub>2</sub> </a>
                 </div>
             </div>
             <!-- end col -->
@@ -123,10 +129,12 @@
         <!-- Collect the nav links,  -->
         <div class="collapse navbar-collapse navbar-1" style="margin-top: 0px;">
             <ul class="nav navbar-nav">
-                <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="false">Home</a></li>
+                <li><a class="dropdown-toggle" data-close-others="false" data-hover="dropdown" data-toggle="dropdown"
+                       href="#">Home</a></li>
 
                 <li class="dropdown megaDropMenu">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="false">Shop <i class="fa fa-angle-down ml-5"></i></a>
+                    <a class="dropdown-toggle" data-close-others="false" data-hover="dropdown" data-toggle="dropdown"
+                       href="#">Shop <i class="fa fa-angle-down ml-5"></i></a>
                     <ul class="dropdown-menu row">
                         <li class="col-sm-3 col-xs-12">
                             <ul class="list-unstyled">
@@ -156,13 +164,17 @@
                             <ul class="list-unstyled">
                                 <li>Sumit Kumar</li>
                             </ul>
-                            <img src="https://lh3.googleusercontent.com/-uwagl9sPHag/WM7WQa00ynI/AAAAAAAADtA/hio87ZnTpakcchDXNrKc_wlkHEcpH6vMwCJoC/w140-h148-p-rw/profile-pic.jpg" class="img-responsive" alt="menu-img">
+                            <img
+                                alt="menu-img"
+                                class="img-responsive"
+                                src="https://lh3.googleusercontent.com/-uwagl9sPHag/WM7WQa00ynI/AAAAAAAADtA/hio87ZnTpakcchDXNrKc_wlkHEcpH6vMwCJoC/w140-h148-p-rw/profile-pic.jpg">
                         </li>
                     </ul>
                 </li>
 
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="false">Page <i class="fa fa-angle-down ml-5"></i></a>
+                    <a class="dropdown-toggle" data-close-others="false" data-hover="dropdown" data-toggle="dropdown"
+                       href="#">Page <i class="fa fa-angle-down ml-5"></i></a>
                     <ul class="dropdown-menu dropdown-menu-left">
                         <li><a href="#">About Us</a></li>
                         <li><a href="#">Register</a></li>
@@ -176,65 +188,66 @@
                         <li><a href="#">Coming Soon</a></li>
                     </ul>
                 </li>
-                <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="false">Blog</a></li>
-                <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="false">My List</a></li>
+                <li><a class="dropdown-toggle" data-close-others="false" data-hover="dropdown" data-toggle="dropdown"
+                       href="#">Blog</a></li>
+                <li><a class="dropdown-toggle" data-close-others="false" data-hover="dropdown" data-toggle="dropdown"
+                       href="#">My List</a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div>
 </nav>
 
 
-
 <script src="js/jquery-3.1.1.js"></script>
 <script src="js/bootstrap.js"></script>
 <script type="text/javascript">
-	! function($, n, e) {
-			const o = $();
-			$.fn.dropdownHover = function(e) {
-			return "ontouchstart" in document ? this : (o = o.add(this.parent()), this.each(function() {
-				function t(e) {
-					o.find(":focus").blur(), h.instantlyCloseOthers === !0 && o.removeClass("open"), n.clearTimeout(c), i.addClass("open"), r.trigger(a)
-				}
+    !function ($, n, e) {
+        const o = $();
+        $.fn.dropdownHover = function (e) {
+            return "ontouchstart" in document ? this : (o = o.add(this.parent()), this.each(function () {
+                function t(e) {
+                    o.find(":focus").blur(), h.instantlyCloseOthers === !0 && o.removeClass("open"), n.clearTimeout(c), i.addClass("open"), r.trigger(a)
+                }
 
-							const r = $(this),
-								i = r.parent(),
-								d = {
-									delay: 100,
-									instantlyCloseOthers: !0
-								},
-								s = {
-									delay: $(this).data("delay"),
-									instantlyCloseOthers: $(this).data("close-others")
-								},
-								a = "show.bs.dropdown",
-								u = "hide.bs.dropdown",
-								h = $.extend(!0, {}, d, e, s);
-							let c;
-				i.hover(function(n) {
-					return i.hasClass("open") || r.is(n.target) ? void t(n) : !0
-				}, function() {
-					c = n.setTimeout(function() {
-						i.removeClass("open"), r.trigger(u)
-					}, h.delay)
-				}), r.hover(function(n) {
-					return i.hasClass("open") || i.is(n.target) ? void t(n) : !0
-				}), i.find(".dropdown-submenu").each(function() {
-									const e = $(this);
-									let o;
-					e.hover(function() {
-						n.clearTimeout(o), e.children(".dropdown-menu").show(), e.siblings().children(".dropdown-menu").hide()
-					}, function() {
-											const t = e.children(".dropdown-menu");
-											o = n.setTimeout(function() {
-							t.hide()
-						}, h.delay)
-					})
-				})
-			}))
-		}, $(document).ready(function() {
-			$('[data-hover="dropdown"]').dropdownHover()
-		})
-	}(jQuery, this);
+                const r = $(this),
+                    i = r.parent(),
+                    d = {
+                        delay: 100,
+                        instantlyCloseOthers: !0
+                    },
+                    s = {
+                        delay: $(this).data("delay"),
+                        instantlyCloseOthers: $(this).data("close-others")
+                    },
+                    a = "show.bs.dropdown",
+                    u = "hide.bs.dropdown",
+                    h = $.extend(!0, {}, d, e, s);
+                let c;
+                i.hover(function (n) {
+                    return i.hasClass("open") || r.is(n.target) ? void t(n) : !0
+                }, function () {
+                    c = n.setTimeout(function () {
+                        i.removeClass("open"), r.trigger(u)
+                    }, h.delay)
+                }), r.hover(function (n) {
+                    return i.hasClass("open") || i.is(n.target) ? void t(n) : !0
+                }), i.find(".dropdown-submenu").each(function () {
+                    const e = $(this);
+                    let o;
+                    e.hover(function () {
+                        n.clearTimeout(o), e.children(".dropdown-menu").show(), e.siblings().children(".dropdown-menu").hide()
+                    }, function () {
+                        const t = e.children(".dropdown-menu");
+                        o = n.setTimeout(function () {
+                            t.hide()
+                        }, h.delay)
+                    })
+                })
+            }))
+        }, $(document).ready(function () {
+            $('[data-hover="dropdown"]').dropdownHover()
+        })
+    }(jQuery, this);
 </script>
 
 </body>
@@ -242,23 +255,22 @@
     .mr-5 {
         margin-right: 5px;
     }
+
     .ml-5 {
         margin-left: 5px;
     }
-    .w-100{
+
+    .w-100 {
         width: 100px;
     }
-    .w-150{
+
+    .w-150 {
         width: 150px;
     }
-    .w-250{
+
+    .w-250 {
         width: 250px;
     }
-
-
-
-
-
 
 
     /*CART/////////////////////*/
@@ -268,15 +280,17 @@
         width: 6px;
         background-color: #ECECEC;
     }
+
     .cart-items::-webkit-scrollbar-track {
 
     }
+
     .cart-items::-webkit-scrollbar-thumb {
         background-color: #084951;
         outline: 1px solid black;
     }
 
-    .leftTopNav ul.topBarNav li ul.cart .cart-items{
+    .leftTopNav ul.topBarNav li ul.cart .cart-items {
         padding: 10px;
         height: 200px;
         overflow: auto;
@@ -287,6 +301,7 @@
         padding: 0;
         list-style-type: none;
     }
+
     .leftTopNav ul.topBarNav li ul.cart .cart-items .items li {
         overflow: hidden;
         clear: left;
@@ -299,6 +314,7 @@
         width: 60px;
         float: left;
     }
+
     .leftTopNav ul.topBarNav li ul.cart .cart-items .items li a {
         margin: 0;
         padding: 0;
@@ -306,11 +322,13 @@
         background-color: transparent;
         display: inline;
     }
+
     .leftTopNav ul.topBarNav li ul.cart .cart-items .items li .product-details {
         position: relative;
         margin-left: 60px;
         padding: 0 15px 0 10px;
     }
+
     .leftTopNav ul.topBarNav li ul.cart .cart-items .items li .product-details .close-icon {
         position: absolute;
         top: 0;
@@ -318,10 +336,12 @@
         font-size: 10px;
         line-height: normal;
     }
+
     .leftTopNav ul.topBarNav li ul.cart .cart-footer {
         overflow: hidden;
         background-color: rgba(0, 0, 0, 0.02);
     }
+
     .leftTopNav ul.topBarNav li ul.cart .cart-footer a {
         text-align: center;
         padding: 10px 20px;
@@ -334,27 +354,30 @@
 
     .middleBar {
         padding: 10px 0 0 0;
-        margin: 0;min-height: 70px;
+        margin: 0;
+        min-height: 70px;
         border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     }
 
-    @media (min-width: 767px){
+    @media (min-width: 767px) {
 
         .display-table {
             display: table;
             width: 100%;
         }
+
         .vertical-align {
             display: table-cell;
             vertical-align: middle;
             float: none;
         }
+
         .grid-space-1 div[class*="col-"] {
             padding: 0 1px;
         }
     }
 
-    @media (max-width: 767px){
+    @media (max-width: 767px) {
 
         div[class^="col-"] {
             margin-bottom: 30px;
@@ -389,6 +412,7 @@
         border: 1px solid #0cd4d2;
         border-radius: 0px;
     }
+
     .middleBar .header-items .header-item {
         display: inline-block;
     }
@@ -407,6 +431,7 @@
         text-align: center;
         color: #35404f;
     }
+
     .middleBar .header-items .header-item a sub {
         position: absolute;
         bottom: -8px;
@@ -428,6 +453,7 @@
         -o-transition: all 0.2s ease-in;
         transition: all 0.2s ease-in;
     }
+
     .middleBar .header-items .header-item a:hover {
         background-color: #0cd4d2;
         color: #ffffff;
@@ -436,9 +462,9 @@
     /*/////////////////////////navbar-default///////////////*/
 
     .navbar-default {
-        -webkit-box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        -moz-box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         background-color: #ffffff;
         margin-bottom: 0;
         border: none;
@@ -448,10 +474,12 @@
         color: #0cd4d2;
         background-color: transparent;
     }
+
     .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:after {
-        border-top:solid 2px #0cd4d2;
+        border-top: solid 2px #0cd4d2;
 
     }
+
     .navbar-default .dropdown-menu {
         padding: 0;
         font-size: 14px;
@@ -482,7 +510,8 @@
         color: #878c94;
         white-space: nowrap;
     }
-    .dropdown-menu > li > a:hover{
+
+    .dropdown-menu > li > a:hover {
         color: #0cd4d2;
     }
 
@@ -491,33 +520,41 @@
          megaDropMenu
     ////////////////////////////*/
 
-    .navbar-default .container{
-        position:relative;
+    .navbar-default .container {
+        position: relative;
     }
+
     .navbar-default .navbar-collapse li.dropdown.megaDropMenu {
         position: static;
     }
 
-    .navbar-default .navbar-collapse li.dropdown.megaDropMenu .dropdown-menu{
+    .navbar-default .navbar-collapse li.dropdown.megaDropMenu .dropdown-menu {
         width: 100%;
     }
-    .navbar-default .navbar-collapse li.dropdown.megaDropMenu .dropdown-menu li ul li:first-child{
+
+    .navbar-default .navbar-collapse li.dropdown.megaDropMenu .dropdown-menu li ul li:first-child {
         padding: 20px 0px 5px 15px;
         font-size: 16px;
         text-transform: uppercase;
         /* text-align: center; */
         color: #0cd4d2;
     }
-    .navbar-default .navbar-collapse li.dropdown.megaDropMenu .dropdown-menu li ul li a{
-        display:block;color:#878c94;font-size: 14px;text-decoration:none;padding:8px 15px;
+
+    .navbar-default .navbar-collapse li.dropdown.megaDropMenu .dropdown-menu li ul li a {
+        display: block;
+        color: #878c94;
+        font-size: 14px;
+        text-decoration: none;
+        padding: 8px 15px;
     }
-    .navbar-default .navbar-collapse li.dropdown.megaDropMenu .dropdown-menu li ul li a:hover{
+
+    .navbar-default .navbar-collapse li.dropdown.megaDropMenu .dropdown-menu li ul li a:hover {
         color: #00BCD4;
         text-decoration: none;
         background-color: rgba(0, 0, 0, 0.02);
     }
 
-    .navbar-default .navbar-collapse li.dropdown.megaDropMenu .dropdown-menu img{
+    .navbar-default .navbar-collapse li.dropdown.megaDropMenu .dropdown-menu img {
         display: block;
         max-width: 100%;
         padding: 20px;

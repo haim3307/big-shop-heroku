@@ -6,12 +6,12 @@
 @push('vue-scripts')
     <script>
 
-			CMSAppOBJ.data.categories = {!! $categories !!};
-			oldItems = {!! $categories !!};
-			items = CMSAppOBJ.data.categories;
+        CMSAppOBJ.data.categories = {!! $categories !!};
+        oldItems = {!! $categories !!};
+        items = CMSAppOBJ.data.categories;
 
-			function onSubmitChangesForm() {
-				var el = $("#tabs").tabs('option', 'active') ? '.table-sortable tbody' : '.thumbnail-sortable';
-			}
+        function onSubmitChangesForm() {
+            var el = $("#tabs").tabs('option', 'active') ? '.table-sortable tbody' : '.thumbnail-sortable';
+        }
     </script>
 @endpush

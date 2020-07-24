@@ -45,7 +45,8 @@
                                             <section class="kc-elm kc-css-156444 kc_row">
                                                 <div class="kc-row-container  kc-container">
                                                     <div class="kc-wrap-columns">
-                                                        <div class="kc-elm kc-css-423488 kc_col-sm-12 kc_column kc_col-sm-12">
+                                                        <div
+                                                            class="kc-elm kc-css-423488 kc_col-sm-12 kc_column kc_col-sm-12">
                                                             <div class="kc-col-container">
                                                                 <div class="widget_products widget_products_inner">
                                                                     @if(count($lists['sales']))
@@ -76,7 +77,8 @@
                                                                         </div>
 
                                                                     @else
-                                                                        <h2 class="text-center" style="height: 500px;">No Products On Sale..</h2>
+                                                                        <h2 class="text-center" style="height: 500px;">
+                                                                            No Products On Sale..</h2>
                                                                     @endif
 
                                                                 </div>
@@ -121,25 +123,25 @@
         }
     </style>
     <script>
-			function tpl() {
+        function tpl() {
 
-			}
+        }
 
-			function tplJQBT() {
-				$('#addedToCartModal').removeClass('show');
-			}
+        function tplJQBT() {
+            $('#addedToCartModal').removeClass('show');
+        }
 
-			function tplJQ() {
-				/*
-                load.js('http://demo3.wpopal.com/exgym/wp-content/themes/exgym/js/bootstrap.min.js?ver=20130402');
-                */
+        function tplJQ() {
+            /*
+            load.js('http://demo3.wpopal.com/exgym/wp-content/themes/exgym/js/bootstrap.min.js?ver=20130402');
+            */
 
-				load.js('http://demo3.wpopal.com/exgym/wp-content/plugins/revslider/public/assets/js/jquery.themepunch.tools.min.js?ver=5.4');
-				load.js('http://demo3.wpopal.com/exgym/wp-content/plugins/kingcomposer/includes/frontend/vendors/waypoints/waypoints.min.js?ver=2.6.17').then(function () {
-					load.js('http://demo3.wpopal.com/exgym/wp-content/plugins/kingcomposer/assets/frontend/js/counter.up.min.js?ver=2.6.17');
+            load.js('http://demo3.wpopal.com/exgym/wp-content/plugins/revslider/public/assets/js/jquery.themepunch.tools.min.js?ver=5.4');
+            load.js('http://demo3.wpopal.com/exgym/wp-content/plugins/kingcomposer/includes/frontend/vendors/waypoints/waypoints.min.js?ver=2.6.17').then(function () {
+                load.js('http://demo3.wpopal.com/exgym/wp-content/plugins/kingcomposer/assets/frontend/js/counter.up.min.js?ver=2.6.17');
 
 
-				});
-			}
+            });
+        }
     </script>
 @endsection

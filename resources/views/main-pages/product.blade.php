@@ -75,7 +75,8 @@
                             <div class="innerProductDesc">
                                 <div>{!! $item->description !!}</div>
                                 @if($item->stock)
-                                    <p style="padding: 17px 0 22px 0;">In Stock - <span>{{$item->stock}}</span> available
+                                    <p style="padding: 17px 0 22px 0;">In Stock - <span>{{$item->stock}}</span>
+                                        available
                                     </p>
                                 @else
                                     <p class="text-danger">Out Of Stock!</p>
@@ -83,31 +84,42 @@
                                 <div class="callToAction f-row">
                                     {{--                                <input type="number" min="1" value="1"
                                                                            style="text-align: center; margin-right: 14px; width: 46px;">--}}
-                                    <div style="margin-right: 10px;"  class="addToCartB buyPageButtons d-flex mb-md-2 mb-lg-0">
+                                    <div style="margin-right: 10px;"
+                                         class="addToCartB buyPageButtons d-flex mb-md-2 mb-lg-0">
                                         @push('styles')
                                             <style>
-                                                .storeBTN{
-                                                    height: 38px; flex-basis: 173px; padding: 0; justify-content: stretch; border-radius: 0;
+                                                .storeBTN {
+                                                    height: 38px;
+                                                    flex-basis: 173px;
+                                                    padding: 0;
+                                                    justify-content: stretch;
+                                                    border-radius: 0;
                                                 }
-                                                .storeBTN>div,.storeBTN>span{
+
+                                                .storeBTN > div, .storeBTN > span {
                                                     height: 38px;
                                                 }
-                                                .storeBTN>span{
-                                                    background-color: #e1e1e1; padding: 0 11px;
+
+                                                .storeBTN > span {
+                                                    background-color: #e1e1e1;
+                                                    padding: 0 11px;
                                                 }
-                                                .storeBTN>div{
+
+                                                .storeBTN > div {
                                                     background-color: rgb(247, 24, 24);
                                                     width: 42px;
                                                 }
                                             </style>
                                         @endpush
-                                        <button class="btn allCentered addToCartProductPage storeBTN mr-md-2" @click="addToCartEvent" ref="addToCart" data-product='{!! $item !!}' data-toggle="modal" data-target="#product_view"
+                                        <button class="btn allCentered addToCartProductPage storeBTN mr-md-2"
+                                                @click="addToCartEvent" ref="addToCart" data-product='{!! $item !!}'
+                                                data-toggle="modal" data-target="#product_view"
                                                 :data-id="{!! $item->id !!}">
                                             <div class="allCentered">
                                                 <img src="{{img('_img/Shopping Cart 3.png')}}" alt=""></div>
                                             <span class="allCentered btnTitle">Add to cart</span>
                                         </button>
-                                        <button class="btn allCentered buyNow storeBTN"  @click="buyNow">
+                                        <button class="btn allCentered buyNow storeBTN" @click="buyNow">
                                             <div class="allCentered">
                                                 <img src="{{img('_img/Shopping Cart 3.png')}}" alt=""></div>
                                             <span class="allCentered buyNow">Buy Now</span>
@@ -121,7 +133,8 @@
                     </div>
                 </div>
                 <div class="publicTabs" id="publicTabs">
-                    <nav style="background-color: #252525; border-bottom: 4px solid #f71818; border-radius: 0px 10px 10px 10px ;">
+                    <nav
+                        style="background-color: #252525; border-bottom: 4px solid #f71818; border-radius: 0px 10px 10px 10px ;">
                         <ul class="d-flex">
                             <li><a class="allCentered text-white" href="#reviews">Reviews</a></li>
                             <li><a class="allCentered text-white" href="#description">Description</a></li>
@@ -148,7 +161,7 @@
                                             </h2>
                                             <div class="input-g-group d-grid g-col-md-3">
                                                 <label for="commentRating">Rating (<span
-                                                            class="myAlert">required</span>):</label>
+                                                        class="myAlert">required</span>):</label>
                                                 <star-rating v-model="rating" :show-rating="false" :rating="3"
                                                              :round-start-rating="false" :star-size="20"></star-rating>
                                                 <input type="hidden" :value="rating" name="rating">
@@ -171,7 +184,7 @@
                                             <div class="input-g-group d-grid g-col g-col-md-12"
                                                  style="grid-template-rows: 30px 1fr;">
                                                 <label for="commentContent">Your review (<span
-                                                            class="myAlert">required</span>):</label>
+                                                        class="myAlert">required</span>):</label>
                                                 <textarea style="min-height: 93px;" class="form-control"
                                                           name="description"
                                                           id="commentContent"></textarea>
@@ -179,7 +192,9 @@
                                         </form>
                                     </section>
                                 @else
-                                    <p>You have to <a class="link" href="{{route('login',['rt'=>url()->current().'#userReview'])}}">login</a> in order to add a review</p>
+                                    <p>You have to <a class="link"
+                                                      href="{{route('login',['rt'=>url()->current().'#userReview'])}}">login</a>
+                                        in order to add a review</p>
                                 @endif
                             </div>
                         </div>
@@ -189,7 +204,7 @@
                                 <div>
                                     {!! $item->longDescription->long_description !!}
                                 </div>
-                                @else
+                            @else
                                 <h2 style="margin: 30px 0 19px 0;">No description available..</h2>
 
                             @endisset
@@ -231,7 +246,7 @@
         function tpl() {
             shopAppOBJ.data.rating = 3;
             shopAppOBJ.methods.buyNow = function (e) {
-                addToCartEventJQ.call(this.$refs.addToCart,e);
+                addToCartEventJQ.call(this.$refs.addToCart, e);
                 window.location = BASE_URL + '/cart';
             }
         }
@@ -270,6 +285,7 @@
         .ui-widget-content a {
             color: #007bff;
         }
+
         .frameMy {
             top: 50px;
             left: 38px;

@@ -26,12 +26,12 @@
         }
     </style>
     <script>
-			$(document).ready(function () {
-				$('#customPageNote').summernote({
-					placeholder: 'Write Page Here...',
-					tabsize: 2,
-					height: '60vh'
-				});
-			});
+        $(document).ready(function () {
+            $('#customPageNote').summernote({
+                placeholder: 'Write Page Here...',
+                tabsize: 2,
+                height: '60vh'
+            });
+        });
     </script>
 @endpush

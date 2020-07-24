@@ -4,23 +4,23 @@
     <input type="hidden" name="manage_mode" :value="pageManageMode">
     <input type="submit" value="Save Changes" class="btn btn-primary">
     <div class="col-2"><input type="hidden" name="order" id="order"></div>
-	<a href=""><input type="button" value="Cancel" id="cancel" class="btn btn-danger"></a>
+    <a href=""><input type="button" value="Cancel" id="cancel" class="btn btn-danger"></a>
 </form>
 @push('scripts')
     <script>
-			var oldItems;
-			var items;
+        var oldItems;
+        var items;
 
-			function onSubmitChangesForm() {
-			}
+        function onSubmitChangesForm() {
+        }
 
-			$('#changesOrderForm').on('submit', function (e) {
-				e.preventDefault();
-				onSubmitChangesForm();
-				$('#order').val(items.map(function (product) {
-					return product.id
-				}).join());
-				$(this).unbind('submit').submit();
-			});
+        $('#changesOrderForm').on('submit', function (e) {
+            e.preventDefault();
+            onSubmitChangesForm();
+            $('#order').val(items.map(function (product) {
+                return product.id
+            }).join());
+            $(this).unbind('submit').submit();
+        });
     </script>
 @endpush
