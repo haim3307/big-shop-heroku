@@ -61,8 +61,6 @@
             }
         },
         mounted() {
-            console.log(this.product, 'item:');
-            console.log(this.listItem, 'list-item:');
         },
         computed: {
             main_img() {
@@ -79,7 +77,6 @@
             },
             editItem(mode) {
                 let _self = this;
-                console.log(_self.url);
                 if (mode == -1) this.editMode = false;
                 $.ajax({
                     method: 'PATCH',

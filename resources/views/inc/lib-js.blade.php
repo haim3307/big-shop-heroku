@@ -8,7 +8,6 @@
     };
 
     function updateCartedButtons(e) {
-        //console.log('--------update cart-----------');
         var dq = document.querySelectorAll;
         document.querySelectorAll('.addToCartB,.storeBTN').forEach(function ($el) {
             $el.removeAttribute('disabled');
@@ -24,10 +23,7 @@
                     $toDisable.push($findBtn);
                 }
             });
-            console.log(new Date().toLocaleTimeString(), 'toDisable:', $toDisable, $mainBTN);
-
             function disable($btnI) {
-                console.log('$btnI', $btnI);
                 if ($btnI.querySelectorAll('.buyNow').length) $btnI = document.querySelector('.addToCartProductPage');
                 $btnI.setAttribute('disabled', 'disabled');
                 var $btnTitle = $btnI.getElementsByClassName('btnTitle');
@@ -54,7 +50,6 @@
 
     load.js('https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js')
         .then(function () {
-            //console.log('1.jquery here');
             load.js('https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js').then(function () {
                 load.js('https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js').then(function () {
                     jQuery(function ($) {
@@ -77,7 +72,6 @@
                             var categoryId = $el.data('category-id');
                             var $btn = $el;
                             var product = $btn.data('product') || $btn.get()[0].dataset;
-                            //console.log(product);
                             product.quantity = product.quantity ? Number(product.quantity) : 1;
                             $('#product_view').modal('show');
                             shopAppOBJ.data.quickProduct = product;
@@ -153,9 +147,7 @@
 
                 });
 
-                /*
-                                $('.addToCartB').on('click', addToCartEvent);
-                */
+                $('.addToCartB').on('click', addToCartEvent);
 
                 load.js('https://code.jquery.com/ui/1.12.1/jquery-ui.min.js')
                     .then(function () {
@@ -163,8 +155,6 @@
 
                     })
                     .catch(function (e) {
-                        console.log(e);
-                        console.log('Oh no, epic failure!1');
                     });
                 $('.topBarNav .dropdown-menu').on('click', function (e) {
                     e.stopPropagation();
@@ -339,8 +329,6 @@
 
 
                 }).catch(function (e) {
-                console.log(e);
-                console.log('Oh no, epic failure!');
             });
 
         });

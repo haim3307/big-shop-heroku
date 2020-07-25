@@ -5,16 +5,12 @@
  */
 import Datetime from 'vue-datetime-2';
 import moment from 'moment';
-import StarRating from 'vue-star-rating'
+import StarRating from 'vue-star-rating';
 //changes
 /*
 require('./bootstrap');
 */
 
-
-/*
-window.Vue = require('vue');
-*/
 /*
 window.Popper = require('popper.js').default;
 */
@@ -191,7 +187,6 @@ window.VueComponents = function () {
     });
 };
 window.vueShopCart = function (shopAppOBJ) {
-    console.log('got:', shopAppOBJ);
     shopAppOBJ.data.cartItems = (Array.isArray(localList) ? localList : []).filter(function (item) {
         return item && item.id && item.title;
     });
@@ -220,7 +215,6 @@ window.vueShopCart = function (shopAppOBJ) {
         this.totalSubPrice = 1;
     };
     shopAppOBJ.methods.addToCartEvent = addToCartEvent;
-    console.log('returning:', shopAppOBJ);
     return shopAppOBJ;
 };
 

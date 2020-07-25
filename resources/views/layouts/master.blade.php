@@ -44,9 +44,13 @@
         }
     </script>
     <script>
-        var localList = (JSON.parse(localStorage.getItem('cartItems')) || []).filter(function (item) {
-            return item.id;
-        }).map(function (item) {
+        let cartItems = [];
+        try {
+            cartItems = JSON.parse(localStorage.getItem('cartItems'));
+        } catch (e) {
+            cartItems = []
+        }
+        var localList = cartItems.filter(item => item.id).map(item => {
             if (item.main_category && typeof item.main_category === 'string') item.main_category = JSON.parse(item.main_category);
             return item;
         });
@@ -95,7 +99,6 @@
         window.url = '{{env('APP_URL')}}';
         window.token = '{{ csrf_token() }}';
         window.categoriesWithFilters = {!! \App\Category::with('filters')->get() !!};
-        console.log(categoriesWithFilters);
         window.BASE_URL = '{{remove_http(url(''))}}'.replace('index.php', '');
         window.loggedIn = '{{Auth::check()?1:0}}';
         @if(Session::has('clear_cart')) window.clearCart = true; @endif
@@ -276,12 +279,6 @@
     <quick-product-view-modal :product="quickProduct"></quick-product-view-modal>
 
 </div>
-@if(Request::server('HTTP_HOST') != 'localhost:8000')
-    {{--    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-        <script src="https://use.fontawesome.com/07b0ce5d10.js" async></script>
-        <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>--}}
-
-@endif
 <script>
     function onImgLoad(selector, callback) {
         $(selector).each(function () {
@@ -376,6 +373,11 @@
         text-align: center;
     }
 </style>
+
+<script src="{{ asset('js/manifest.js') }}"></script>
+<script src="{{ asset('js/vendor.js') }}"></script>
+<script src="{{ asset('js/bootstrap.js') }}"></script>
+
 @include('inc.load-vue')
 @yield('script')
 @include('inc.lib-js')

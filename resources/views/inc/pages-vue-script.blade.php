@@ -7,7 +7,6 @@
     CMSAppOBJ.methods.togglePageManageMode = function (mode) {
         CMSAppOBJ.data.pageManageMode = mode;
     };
-    console.log(CMSAppOBJ.data.lists);
     Vue.prototype.page = {url: '{{$page->url}}'};
     CMSAppOBJ.provide = function () {
         return {

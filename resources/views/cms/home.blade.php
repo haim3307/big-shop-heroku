@@ -59,8 +59,6 @@
     <script>
         $(document).ready(function () {
             $.each(['product', 'user'], function (index, entity) {
-                console.log(entity);
-
                 $('.delete' + entity.capitalize()).on('click', function (e) {
                     const _self = $(this);
                     $.ajax({

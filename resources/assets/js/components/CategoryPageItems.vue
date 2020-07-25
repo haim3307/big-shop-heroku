@@ -22,8 +22,6 @@
         props: {},
 
         mounted() {
-            console.log(this.items);
-            console.log('Component mounted.');
         }
     }
 </script>

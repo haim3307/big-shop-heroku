@@ -23,8 +23,6 @@
         props: ['lists', 'pageManageMode', 'selectedList'],
         inject: ['page'],
         mounted() {
-            console.log(this.lists);
-            //this.selectedList = this.lists[0].url;
         },
         methods: {
             toTab(title) {

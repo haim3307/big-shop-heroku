@@ -81,7 +81,6 @@
             }
         },
         mounted() {
-            console.log(this.list, 'list:');
             Vue.nextTick(function () {
                 $('#cancel').on('click', function (e) {
                     CMSAppOBJ.data.items = items;
@@ -90,22 +89,18 @@
         },
         methods: {
             addToEntitesListTrigger(item) {
-                console.log('new item', item);
                 $.ajax({
                     url: `${this.url}/cms/page/${this.page.url}/${this.listTitle}/${item.id}/${item.entity_id}`,
                     method: "POST",
                 }).then(res => {
-                    console.log('toAdd', res);
                     this.list.items.push(res);
                 });
             },
             deleteItem(item) {
-                console.log(item, 'to DELETE');
                 $.ajax({
                     method: 'DELETE',
                     url: this.url + '/cms/page/list/' + item.id
                 }).then((res) => {
-                    console.log(res);
                     if (res == '1') {
                         this.list.items = this.list.items.filter(listitem => listitem.id != item.id);
                         toastr.success('List item deleted');

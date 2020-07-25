@@ -31,12 +31,12 @@ mix.options({
 });
 
 mix
-    .js('resources/assets/js/app.js', 'js/app.js')
     .js('resources/assets/js/bootstrap.js', 'js/bootstrap.js')
+    .js('resources/assets/js/app.js', 'js/app.js')
     .sass('resources/assets/sass/app.scss', 'css/app.css')
     .sass('resources/assets/sass/styles.scss', 'css/styles1.css');
 
-
+mix.extract();
 /*mix.then(() => {
 	minifier.minify(base+'js/app.js');
   minifier.minify(base+'css/app.css');

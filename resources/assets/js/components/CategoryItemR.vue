@@ -36,8 +36,6 @@
 <script>
     export default {
         mounted() {
-            /*			$('.addToCartB').on('click', updateCartedButtons);
-                        console.log('options:',this.it['options']);*/
         },
         props: ['it'],
         data: function () {

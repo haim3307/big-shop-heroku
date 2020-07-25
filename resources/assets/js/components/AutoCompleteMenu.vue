@@ -12,7 +12,6 @@
     export default {
         components: {AutoCompleteItem},
         mounted() {
-            console.log(this.list, 'autoCompleteMenu:');
         },
         props: ['list', 'cmsMode'],
         name: "auto-complete-menu",

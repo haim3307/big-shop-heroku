@@ -16,8 +16,6 @@
         props: {},
 
         mounted() {
-            console.log(this.items);
-            console.log('Component mounted.');
             let _self = this, $tags = $('.trending ul li');
             $tags.on('click', function (e) {
                 //, e => _self.items = window.items

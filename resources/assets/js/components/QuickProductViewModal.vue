@@ -15,7 +15,8 @@
                         <div class="g-col-md-6 product_content">
                             <h4>Product Id: <span>{{product.id}}</span></h4>
                             <div class="rating">
-                                <star-rating :show-rating="false" :rating="product.rating" :round-start-rating="false"
+                                <star-rating :show-rating="false" :rating="parseInt(product.rating)"
+                                             :round-start-rating="false"
                                              :star-size="20" :read-only="true"></star-rating>
                             </div>
                             <p v-html="product.description"></p>
@@ -90,11 +91,8 @@
         mounted() {
         },
         watch: {
-            product: function updateCart(newVal, oldVal) {
+            product(newVal, oldVal) {
                 Vue.nextTick(updateCartedButtons);
-                console.log('try to update quick watch');
-                console.log('here:', this.product);
-
             }
         },
         methods: {

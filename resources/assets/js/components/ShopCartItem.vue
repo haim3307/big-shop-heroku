@@ -39,7 +39,6 @@
         props: ['cartItem'],
         mounted() {
             if (!this.cartItem.quantity) this.$set(this.cartItem, 'quantity', 1);
-            console.log(this.cartItem, 'check quan');
         },
         computed: {
             main_img: function () {

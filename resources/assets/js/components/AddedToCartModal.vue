@@ -40,7 +40,6 @@
     export default {
         props: ['product', 'message'],
         mounted() {
-            console.log('modal here!');
         }
     }
 </script>

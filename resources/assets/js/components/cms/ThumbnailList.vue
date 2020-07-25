@@ -18,7 +18,6 @@
         components: {draggable},
         methods: {},
         mounted() {
-            console.log('thumblist', this.listObj);
         }
 
     }

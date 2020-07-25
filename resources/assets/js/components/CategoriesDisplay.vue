@@ -24,8 +24,6 @@
 
         },
         mounted() {
-            console.log('categories:', this.categories);
-            console.log('Component mounted.');
         },
         computed: {},
         methods: {}

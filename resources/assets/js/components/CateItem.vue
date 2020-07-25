@@ -24,7 +24,6 @@
 <script>
     export default {
         mounted() {
-            console.log('Component mounted124.');
         },
         props: ['it'],
         data: function () {

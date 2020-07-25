@@ -371,11 +371,6 @@
 
 
                                                                             <div class="widget_products" id="Gwyes">
-                                                                                <style>
-                                                                                    .products-inner {
-                                                                                        grid-auto-rows: 700px;
-                                                                                    }
-                                                                                </style>
                                                                                 <div class="products-inner f-row">
                                                                                     @foreach($lists['deals'] as $deal)
                                                                                         <div
@@ -463,6 +458,11 @@
     <style>
         .row {
             display: flex !important;
+        }
+    </style>
+    <style>
+        .products-inner {
+            grid-auto-rows: 700px;
         }
     </style>
     <script>
