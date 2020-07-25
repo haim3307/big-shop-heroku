@@ -89,3 +89,39 @@ if (!function_exists('remove_http')) {
     }
 }
 
+if (!function_exists('renderBlade')) {
+
+    function renderBlade($string, $data = null)
+    {
+        if (!$data) {
+            $data = [];
+        }
+
+        $data['__env'] = app(\Illuminate\View\Factory::class);
+
+        $php = Blade::compileString($string);
+
+        $obLevel = ob_get_level();
+        ob_start();
+        extract($data, EXTR_SKIP);
+
+        try {
+            eval('?' . '>' . $php);
+        } catch (Exception $e) {
+            while (ob_get_level() > $obLevel) {
+                ob_end_clean();
+            }
+
+            throw $e;
+        } catch (Throwable $e) {
+            while (ob_get_level() > $obLevel) {
+                ob_end_clean();
+            }
+
+            throw new FatalThrowableError($e);
+        }
+
+        return ob_get_clean();
+    }
+}
+

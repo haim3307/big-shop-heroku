@@ -17,7 +17,7 @@
             <th scope="row">{{$item->id}}</th>
             <td title="{{isset($prop1)?$item->$prop1:$item->title}}">{{isset($prop1)?$item->$prop1:$item->title}}</td>
             <td title="{{$item->url}}">{{$item->url}}</td>
-            {{--{!! isset($tds)?view(['template' => $tds], ['item' => $item]):'' !!}--}}
+            {!! renderBlade($tds,[ 'item' => $item]) !!}
             <td title="{{$item->created_at}}">{{$item->created_at}}</td>
             <td title="{{$item->updated_at}}">{{$item->updated_at}}</td>
             <td>

@@ -1,7 +1,7 @@
 @extends('cms.model.index')
 
 @section('index-content')
-    @component('cms.model.inc.data-table',['items'=>\App\User::all(),'entity'=>$entity,'prop1'=>'name'])
+    @component('cms.model.inc.data-table',[ 'items'=>\App\User::all() , 'entity'=>$entity , 'prop1'=>'name' ])
         @slot('ths')
             <th scope="col">Email</th>
             <th scope="col">Role</th>
