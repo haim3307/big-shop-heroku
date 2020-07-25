@@ -113,8 +113,8 @@
         <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     --}}
 
-    <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="{{asset('css/app.min.css')}}">
-    <link rel="stylesheet" href="{{ asset('css/styles1.css')}}">
+    <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="{{ mix('css/app.css') }}">
+    <link rel="stylesheet" href="{{ mix('css/styles1.css')}}">
     <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'"
           href="https://unpkg.com/flickity@2.1.1/dist/flickity.min.css">
     <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'"
@@ -374,9 +374,9 @@
     }
 </style>
 
-<script src="{{ asset('js/manifest.js') }}"></script>
-<script src="{{ asset('js/vendor.js') }}"></script>
-<script src="{{ asset('js/bootstrap.js') }}"></script>
+<script src="{{ mix('js/manifest.js') }}"></script>
+<script src="{{ mix('js/vendor.js') }}"></script>
+<script src="{{ mix('js/bootstrap.js') }}"></script>
 
 @include('inc.load-vue')
 @yield('script')
