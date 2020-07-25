@@ -36,6 +36,9 @@ class UserController extends MainController
         if ($request->hasFile('profile_img')) {
             $user->uploadImg($request, '_img/profiles', ['width' => 300], 'profile_img');
         }
+        unset($requestAll['submit']);
+        unset($requestAll['profile_img']);
+
         if (empty($userInfo)) {
             $userInfo = new UserInfo($requestAll);
             $user->info()->save($userInfo);
