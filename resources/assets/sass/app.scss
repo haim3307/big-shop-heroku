@@ -122,6 +122,13 @@ $num-breakpoints: length($grid-breakpoints);
             .#{$class-slug2}-#{$size-name} {
                 grid-auto-flow: column
             }
+            .d-#{$size-name}-grid {
+                display: grid !important;
+            }
+
+            .d-#{$size-name}-inline-grid {
+                display: grid !important;
+            }
             @for $i from 2 through $grid-columns {
                 .#{$class-slug}-#{$size-name}-#{$i} {
                     grid-template-columns: repeat(#{$i}, 1fr)
