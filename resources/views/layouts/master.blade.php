@@ -51,7 +51,7 @@
     <script>
         let cartItems = [];
         try {
-            cartItems = JSON.parse(localStorage.getItem('cartItems'));
+            cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
         } catch (e) {
             cartItems = []
         }
