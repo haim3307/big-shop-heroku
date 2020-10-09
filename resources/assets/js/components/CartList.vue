@@ -15,9 +15,8 @@
     export default {
         props: ['cartItems'],
         methods: {
-			deleteItem(item) {
-				const cartItems = window.shopAppOBJ.data;
-				cartItems = cartItems.filter((i) => i.id != item.id);
+            deleteItem(item) {
+                window.shopAppOBJ.data.cartItems = window.shopAppOBJ.data.cartItems.filter((i) => i.id != item.id);
                 window.updateCartedButtons();
             }
         }
