@@ -32,7 +32,7 @@
 @section('script')
     <style>
         .spacer {
-            margin-bottom: 24px;
+            margin-block-end: 24px;
         }
 
         /**

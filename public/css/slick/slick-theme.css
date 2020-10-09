@@ -112,7 +112,7 @@ inset-inline-start: -25px;
 
 /* Dots */
 .slick-dotted.slick-slider {
-    margin-bottom: 30px;
+    margin-block-end: 30px;
 }
 
 .slick-dots {

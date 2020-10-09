@@ -66,7 +66,7 @@
 }
 
 #mainSlideItem1 p a, #mainSlideItem1 .p a {
-    margin-top: 31px;
+    margin-block-start: 31px;
     border-radius: 10px;
     background-color: #d70a0a;
     color: white;
@@ -107,7 +107,7 @@ inset-inline-end: -100px;
 @media (min-width: 910px) {
     #mainSlideItem1 {
         padding-inline-start: 75px;
-        padding-right: 75px;
+        padding-inline-end: 75px;
     }
 }
 

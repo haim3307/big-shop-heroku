@@ -13,7 +13,7 @@
 
         </ul>
     </div>
-    <div class="col-md-2 d-flex" style="text-align: right;flex-flow: column;">
+    <div class="col-md-2 d-flex" style="text-align: end;flex-flow: column;">
 
         <nav class="navbar bg-faded d-md-none">
             <button style="z-index: 99999999999; position: relative;" type="button" id="sidebarCollapse"
@@ -110,7 +110,7 @@
         <div class="d-grid align-items-center" style="padding: 0 20px;">
             <form action="{{url('logout')}}" method="POST">
                 {{csrf_field()}}
-                <label for="submit" class="d-block" style="min-width: 70px; margin-bottom: 0;" href="">
+                <label for="submit" class="d-block" style="min-width: 70px; margin-block-end: 0;" href="">
                 <span class="link">
                 <i class="fa fa-sign-out" aria-hidden="true"></i>
                 <span>Logout</span>

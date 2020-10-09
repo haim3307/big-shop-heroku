@@ -24,12 +24,12 @@
         .notfound-page {
             font-family: Exo\ 2;
             font-weight: 700;
-            margin-bottom: 80px;
+            margin-block-end: 80px;
         }
 
         @media (max-width: 767px) {
             .notfound-page {
-                margin-bottom: 50px;
+                margin-block-end: 50px;
             }
         }
 

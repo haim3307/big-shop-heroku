@@ -104,7 +104,7 @@
             min-height: 42px;
             display: block;
             padding: 10px 15px;
-            margin-bottom: 5px;
+            margin-block-end: 5px;
             border-radius: 0;
             font-size: 14px;
             color: #555;
@@ -114,7 +114,7 @@
         }
 
         #sidebar_wid_menu li a i {
-            padding-right: 10px;
+            padding-inline-end: 10px;
         }
 
         #sidebar_wid_menu li a:hover {

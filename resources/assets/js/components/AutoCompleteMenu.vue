@@ -26,7 +26,7 @@ inset-inline-end: 0;
 inset-block-start: 26px;
         background-color: rgba(125, 125, 125, 0.7);
         width: 90%;
-        border-bottom: 1px solid lightgrey
+        border-block-end: 1px solid lightgrey
     }
 
     @media (max-width: 1112px) {

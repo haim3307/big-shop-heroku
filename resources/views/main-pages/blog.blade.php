@@ -9,11 +9,11 @@
             font-weight: 700;
             padding: 0 0 21px 0;
             margin: 0;
-            margin-bottom: 32px !important;
+            margin-block-end: 32px !important;
             color: #000;
             font-family: Exo\ 2;
             text-transform: uppercase;
-            border-bottom: 1px solid #ececec;
+            border-block-end: 1px solid #ececec;
             position: relative;
         }
     </style>

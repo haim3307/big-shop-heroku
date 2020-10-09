@@ -19,7 +19,7 @@
                     <div id="cartSummary">
                         <strong class="cartTitle">SHOPPING CART SUMMARY</strong>
                         <hr style="margin: 14px 0 29px 0;">
-                        <div class="d-grid-row" style="margin-bottom: 10px"><span class="gray149"
+                        <div class="d-grid-row" style="margin-block-end: 10px"><span class="gray149"
                                                                                   style="letter-spacing: 0.4px;">CART SUBTOTAL</span><span
                                 class="bigGrayWide" v-cloak>${{totalSubPriceCoined | fixed}}</span>
                         </div>
@@ -45,13 +45,13 @@
                         </div>
                         @verbatim
                     </div>
-                    <div id="useCoupon" class="d-grid" style="margin-top: 38px;">
+                    <div id="useCoupon" class="d-grid" style="margin-block-start: 38px;">
                         <strong class="cartTitle">USE COUPON CODE</strong>
                         <hr style="margin: 13px 0 18px 0;">
                         <p class="gray149" style="font-size: 13px;">If you have your promotional coupon code. just
                             rewrite it to form and apply</p>
                         <input type="text" placeholder="ENTER COUPON CODE" style="height: 36px; padding: 17px; ">
-                        <div style="width: 91px;height: 32px; margin-top: 10px;" class="checkoutBtn allCentered">APPLY
+                        <div style="width: 91px;height: 32px; margin-block-start: 10px;" class="checkoutBtn allCentered">APPLY
                         </div>
                     </div>
                 </div>

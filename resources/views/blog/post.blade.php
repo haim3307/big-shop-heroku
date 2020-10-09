@@ -14,7 +14,7 @@
     <link rel='stylesheet' id="kc-css-render" href={{asset('css/specialRender.css')}} type='text/css' media='all'/>
     <style>
         .blog-post, article.post {
-            margin-top: 0;
+            margin-block-start: 0;
         }
 
         .blog-post .owl-controls, article.post .owl-controls {
@@ -31,20 +31,20 @@
         }
 
         .blog-post.blog-post-grid .entry-meta, article.blog-post-grid.post .entry-meta {
-            margin-top: 41px;
+            margin-block-start: 41px;
         }
 
         @media (max-width: 992px) and (min-width: 768px) {
             .blog-post.blog-post-grid .entry-meta, article.blog-post-grid.post .entry-meta {
-                margin-top: 3px;
-                margin-bottom: 0;
+                margin-block-start: 3px;
+                margin-block-end: 0;
             }
         }
 
         @media (max-width: 480px) {
             .blog-post.blog-post-grid .entry-meta, article.blog-post-grid.post .entry-meta {
-                margin-top: 30px;
-                margin-bottom: 0;
+                margin-block-start: 30px;
+                margin-block-end: 0;
             }
         }
 
@@ -58,8 +58,8 @@
         }
 
         .blog-post.blog-post-grid .content-full, article.blog-post-grid.post .content-full {
-            margin-top: 15px;
-            margin-bottom: 15px;
+            margin-block-start: 15px;
+            margin-block-end: 15px;
         }
 
         @media (max-width: 992px) and (min-width: 768px) {
@@ -163,8 +163,8 @@ inset-block-end: 0;
         }
 
         .blog-post article.post, article.post article.post {
-            padding-bottom: 0;
-            margin-bottom: 0;
+            padding-block-end: 0;
+            margin-block-end: 0;
         }
 
         .blog-post .image-thumnail, article.post .image-thumnail {
@@ -172,14 +172,14 @@ inset-block-end: 0;
         }
 
         .blog-post .bottom-blog .entry-content, article.post .bottom-blog .entry-content {
-            margin-top: -5px;
-            margin-bottom: 5px;
+            margin-block-start: -5px;
+            margin-block-end: 5px;
         }
 
         .blog-post .bottom-blog .entry-title, article.post .bottom-blog .entry-title {
             font-size: 16px;
             line-height: 20px;
-            margin-top: 0;
+            margin-block-start: 0;
         }
 
         .blog-post .bottom-blog .entry-title a, article.post .bottom-blog .entry-title a {
@@ -217,7 +217,7 @@ inset-block-end: 0;
 
         .blog-post .content-full .content .bottom, article.post .content-full .content .bottom {
             padding-top: 33px;
-            padding-bottom: 15px;
+            padding-block-end: 15px;
         }
 
         @media (max-width: 767px) {
@@ -228,8 +228,8 @@ inset-block-end: 0;
 
         .blog-post .content-full .content .bottom .entry-meta, article.post .content-full .content .bottom .entry-meta {
             text-align: start;
-            margin-top: 0;
-            margin-bottom: 15px;
+            margin-block-start: 0;
+            margin-block-end: 15px;
         }
 
         .blog-post .content-full .entry-title a:hover, article.post .content-full .entry-title a:hover {
@@ -269,8 +269,8 @@ inset-block-end: 0;
         .single-post .opal-social-share {
             position: relative;
             padding-inline-start: 60px;
-            margin-top: -35px;
-            margin-bottom: 15px;
+            margin-block-start: -35px;
+            margin-block-end: 15px;
         }
 
         .single-post .opal-social-share [class^=bo-social-] {
@@ -319,8 +319,8 @@ inset-inline-start: 0;
         }
 
         .single-post article.post div.page-links, .single-post article.post footer.entry-meta {
-            margin-top: 15px;
-            margin-bottom: 15px;
+            margin-block-start: 15px;
+            margin-block-end: 15px;
         }
 
         .single-post article .content-image {
@@ -350,19 +350,19 @@ inset-inline-start: 0;
         .single-post article h1.entry-title {
             font-size: 28px;
             line-height: 32px;
-            margin-top: 33px;
+            margin-block-start: 33px;
         }
 
         @media (max-width: 992px) {
             .single-post article h1.entry-title {
                 font-size: 18px;
                 line-height: 24px;
-                margin-top: 15px;
+                margin-block-start: 15px;
             }
         }
 
         .single-post .entry-content {
-            margin-top: 15px !important;
+            margin-block-start: 15px !important;
         }
 
         @media (min-width: 992px) {
@@ -376,7 +376,7 @@ inset-inline-start: 0;
         }
 
         .single-post .entry-content p {
-            margin-bottom: 15px !important;
+            margin-block-end: 15px !important;
             line-height: 26px;
         }
 
@@ -429,11 +429,11 @@ inset-inline-start: 0;
         }
 
         .tag .search-category {
-            margin-top: 20px;
+            margin-block-start: 20px;
         }
 
         .archive .blog-post, .archive article.post {
-            margin-top: 0;
+            margin-block-start: 0;
         }
 
         article {
@@ -445,8 +445,8 @@ inset-inline-start: 0;
             line-height: 26px;
             overflow: hidden;
             font-family: Exo\ 2;
-            margin-top: 0;
-            margin-bottom: 15px;
+            margin-block-start: 0;
+            margin-block-end: 15px;
             color: #000;
         }
 
@@ -459,22 +459,22 @@ inset-inline-start: 0;
         }
 
         article.post {
-            margin-bottom: 30px;
+            margin-block-end: 30px;
             padding: 0;
             background: transparent;
         }
 
         article.post.sticky .entry-meta {
-            margin-top: 8px;
+            margin-block-start: 8px;
         }
 
         article.post:last-child {
-            border-bottom: none;
+            border-block-end: none;
         }
 
         article.post .entry-content {
-            margin-top: 15px;
-            margin-bottom: 15px;
+            margin-block-start: 15px;
+            margin-block-end: 15px;
             font-size: 14px;
             line-height: 24px;
         }
@@ -490,7 +490,7 @@ inset-inline-start: 0;
         article .post-content span a {
             display: inline-block;
             color: #bf0d0d;
-            margin-top: 10px;
+            margin-block-start: 10px;
         }
 
         article .post-content span a:hover {
@@ -499,13 +499,13 @@ inset-inline-start: 0;
 
         article .post-content a {
             display: block;
-            margin-top: 10px;
+            margin-block-start: 10px;
             color: #bf0d0d;
         }
 
         .related-posts {
             background: transparent;
-            margin-top: 30px;
+            margin-block-start: 30px;
         }
 
         .related-posts:hover .carousel-controls_v1 {
@@ -526,11 +526,11 @@ inset-inline-start: 0;
         }
 
         .related-posts .widget {
-            margin-bottom: 0;
+            margin-block-end: 0;
         }
 
         .related-posts article.post .post-thumbnail {
-            margin-top: 0;
+            margin-block-start: 0;
             padding: 0;
         }
 
@@ -544,7 +544,7 @@ inset-inline-start: 0;
         }
 
         .related-posts .bottom-blog {
-            margin-top: 15px;
+            margin-block-start: 15px;
         }
 
         .related-posts .blog-post .content-full .content .bottom .entry-content p, .related-posts article.post .content-full .content .bottom .entry-content p {
@@ -556,7 +556,7 @@ inset-inline-start: 0;
         .comments {
             padding: 0;
             background: transparent;
-            margin-top: 30px;
+            margin-block-start: 30px;
             clear: both;
         }
 
@@ -574,11 +574,11 @@ inset-inline-start: 0;
 
         .comments .the-comment {
             padding-top: 25px;
-            padding-bottom: 33px;
+            padding-block-end: 33px;
             border-top: 1px solid #ececec;
-            border-bottom: 1px solid #ececec;
-            margin-top: 22px;
-            margin-bottom: 35px;
+            border-block-end: 1px solid #ececec;
+            margin-block-start: 22px;
+            margin-block-end: 35px;
         }
 
         .comments .the-comment div.avatar {
@@ -599,7 +599,7 @@ inset-inline-start: 0;
         .comments .form-control {
             background: #fff;
             border: 1px solid #ececec;
-            margin-top: 15px;
+            margin-block-start: 15px;
         }
 
         .comments textarea.form-control {
@@ -650,7 +650,7 @@ inset-inline-start: 0;
 
         .comments .commentlists {
             padding-inline-start: 0;
-            margin-bottom: 10px;
+            margin-block-end: 10px;
         }
 
         .comment-navigation .previous {
@@ -665,7 +665,7 @@ inset-inline-start: 0;
     <style>
 
         .widget {
-            margin-bottom: 30px;
+            margin-block-end: 30px;
             position: relative;
             z-index: 1;
             font-size: 15px;
@@ -677,19 +677,19 @@ inset-inline-start: 0;
             line-height: 22px;
             font-weight: 700;
             padding: 0;
-            padding-bottom: 21px;
+            padding-block-end: 21px;
             margin: 0;
-            margin-bottom: 32px !important;
+            margin-block-end: 32px !important;
             color: #000;
             font-family: Exo\ 2;
             text-transform: uppercase;
-            border-bottom: 1px solid #ececec;
+            border-block-end: 1px solid #ececec;
             position: relative;
         }
 
         @media (max-width: 1199px) {
             .widget-woof .woof_container .widget h4, .widget .widget-title, .widget .widget-woof .woof_container h4, .widget .widgettitle {
-                margin-bottom: 20px !important;
+                margin-block-end: 20px !important;
             }
         }
 
@@ -729,17 +729,17 @@ inset-inline-start: 0;
         }
 
         .sidebar .widget:not(.widget-woof) {
-            margin-bottom: 52px;
+            margin-block-end: 52px;
         }
 
         @media (max-width: 1199px) {
             .sidebar .widget:not(.widget-woof) {
-                margin-bottom: 30px;
+                margin-block-end: 30px;
             }
         }
 
         .sidebar .widget .widget-woof {
-            margin-bottom: 0;
+            margin-block-end: 0;
         }
 
         .sidebar .widget .textwidget li {
@@ -747,12 +747,12 @@ inset-inline-start: 0;
         }
 
         .sidebar .widget.widget_sp_image {
-            margin-top: 57px;
+            margin-block-start: 57px;
         }
 
         @media (max-width: 1199px) {
             .sidebar .widget.widget_sp_image {
-                margin-bottom: 35px;
+                margin-block-end: 35px;
             }
         }
 
@@ -771,7 +771,7 @@ inset-inline-start: 0;
         .widget ol, .widget ul {
             list-style: none;
             padding: 0;
-            margin-bottom: 0;
+            margin-block-end: 0;
         }
 
         /* List Style Widgets*/
@@ -810,7 +810,7 @@ inset-inline-start: 0;
         }
 
         .widget_categories li li:last-child, .widget_pages li li:last-child {
-            padding-bottom: 0;
+            padding-block-end: 0;
         }
 
         .widget_recent_comments .comment-author-link {
@@ -818,14 +818,14 @@ inset-inline-start: 0;
         }
 
         .widget.widget_archive > ul > li, .widget.widget_categories > ul > li, .widget.widget_links > ul > li, .widget.widget_meta > ul > li, .widget.widget_pages > ul > li, .widget.widget_product_categories > ul > li, .widget.widget_recent_comments > ul > li, .widget.widget_recent_entries > ul > li {
-            border-bottom: 1px solid #ececec;
+            border-block-end: 1px solid #ececec;
             position: relative;
-            margin-bottom: 23px;
+            margin-block-end: 23px;
             padding-inline-start: 16px;
         }
 
         .widget.widget_archive > ul > li:last-child, .widget.widget_categories > ul > li:last-child, .widget.widget_links > ul > li:last-child, .widget.widget_meta > ul > li:last-child, .widget.widget_pages > ul > li:last-child, .widget.widget_product_categories > ul > li:last-child, .widget.widget_recent_comments > ul > li:last-child, .widget.widget_recent_entries > ul > li:last-child {
-            margin-bottom: 0;
+            margin-block-end: 0;
         }
 
         .widget.widget_archive > ul > li:after, .widget.widget_categories > ul > li:after, .widget.widget_links > ul > li:after, .widget.widget_meta > ul > li:after, .widget.widget_pages > ul > li:after, .widget.widget_product_categories > ul > li:after, .widget.widget_recent_comments > ul > li:after, .widget.widget_recent_entries > ul > li:after {
@@ -839,7 +839,7 @@ inset-inline-start: 0;
         }
 
         .widget.widget_archive > ul > li > ul.children, .widget.widget_categories > ul > li > ul.children, .widget.widget_links > ul > li > ul.children, .widget.widget_meta > ul > li > ul.children, .widget.widget_pages > ul > li > ul.children, .widget.widget_product_categories > ul > li > ul.children, .widget.widget_recent_comments > ul > li > ul.children, .widget.widget_recent_entries > ul > li > ul.children {
-            margin-bottom: 10px;
+            margin-block-end: 10px;
         }
 
         .widget.widget_archive ul li a, .widget.widget_categories ul li a, .widget.widget_links ul li a, .widget.widget_meta ul li a, .widget.widget_pages ul li a, .widget.widget_product_categories ul li a, .widget.widget_recent_comments ul li a, .widget.widget_recent_entries ul li a {
@@ -913,7 +913,7 @@ inset-block-start: 8px;
 
         .widget.widget_meta abbr[data-original-title], .widget.widget_meta abbr[title] {
             cursor: pointer;
-            border-bottom: none;
+            border-block-end: none;
             text-decoration: none;
         }
 
@@ -924,11 +924,11 @@ inset-block-start: 8px;
         }
 
         .widget-woof .woof_container .widget.widget_rss h4 img, .widget.widget_rss .widget-title img, .widget.widget_rss .widget-woof .woof_container h4 img {
-            margin-top: -4px;
+            margin-block-start: -4px;
         }
 
         .widget.widget_rss ul li {
-            margin-bottom: 25px;
+            margin-block-end: 25px;
         }
 
         .widget.widget_rss ul li .rss-date {
@@ -944,13 +944,13 @@ inset-block-start: 8px;
             font-style: normal;
             font-weight: 700;
             display: block;
-            margin-top: 10px;
+            margin-block-start: 10px;
             color: #000;
             text-transform: capitalize;
         }
 
         .widget.widget_rss ul li:last-child {
-            margin-bottom: 0;
+            margin-block-end: 0;
         }
 
         .widget.widget_text .textwidget {
@@ -962,13 +962,13 @@ inset-block-start: 8px;
             padding-top: 0;
             border-left: 0;
             border-right: 0;
-            border-bottom: 0;
-            margin-bottom: 11px;
+            border-block-end: 0;
+            margin-block-end: 11px;
         }
 
         .widget.widget_text img {
-            margin-top: 5px;
-            margin-bottom: 5px;
+            margin-block-start: 5px;
+            margin-block-end: 5px;
         }
 
         .widget.widget_text p.wp-caption-text {
@@ -997,7 +997,7 @@ inset-block-start: 8px;
         }
 
         .widget.widget_tag_cloud .tagcloud {
-            margin-top: -10px;
+            margin-block-start: -10px;
         }
 
         .widget.widget_tag_cloud .tagcloud a {
@@ -1010,7 +1010,7 @@ inset-block-start: 8px;
             text-transform: capitalize;
             display: inline-block;
             border: 1px solid #ececec;
-            margin-top: 10px;
+            margin-block-start: 10px;
             margin-inline-end: 3px;
         }
 
@@ -1026,7 +1026,7 @@ inset-block-start: 8px;
             font-size: 12px;
             text-transform: uppercase;
             font-weight: 700;
-            margin-top: 5px;
+            margin-block-start: 5px;
             color: #bf0d0d;
         }
 
@@ -1037,7 +1037,7 @@ inset-block-start: 8px;
         .widget_wpopal_recent_post .item-post.media {
             border-top: 1px solid #ececec;
             padding-top: 20px;
-            padding-bottom: 20px;
+            padding-block-end: 20px;
             margin: 0;
         }
 
@@ -1051,7 +1051,7 @@ inset-block-start: 8px;
         }
 
         .widget_wpopal_recent_post .item-post.media .media-body .entry-title {
-            padding-right: 15px;
+            padding-inline-end: 15px;
         }
 
         .widget_wpopal_recent_post .item-post.media .media-body > p {
@@ -1063,9 +1063,9 @@ inset-block-start: 8px;
         }
 
         .widget_wpopal_recent_post .post-stick-layout .item-post.media.item-big a.image {
-            padding-right: 0;
+            padding-inline-end: 0;
             width: 100%;
-            margin-bottom: 10px;
+            margin-block-end: 10px;
         }
 
         .widget_wpopal_recent_post .post-stick-layout .item-post.media.item-big .entry-title {
@@ -1097,7 +1097,7 @@ inset-block-start: 8px;
 
         /* Text Widget */
         .widget_text > div > :last-child {
-            margin-bottom: 0;
+            margin-block-end: 0;
         }
 
         /* widget image */
@@ -1112,7 +1112,7 @@ inset-block-start: 8px;
         }
 
         .widget_calendar caption {
-            margin-bottom: 5px;
+            margin-block-end: 5px;
             font-size: 14px;
             padding: 0;
             text-transform: capitalize;
@@ -1141,8 +1141,8 @@ inset-block-start: 8px;
         }
 
         .widget_calendar #next {
-            padding-right: 5px;
-            text-align: right;
+            padding-inline-end: 5px;
+            text-align: end;
         }
 
         .widget_calendar #today {
@@ -1157,17 +1157,17 @@ inset-block-start: 8px;
     </style>
     <style>
         .sidebar .widget_wpopal_latest_posts {
-            border-bottom: none;
+            border-block-end: none;
         }
 
         .sidebar .blog-post, .sidebar article.post {
-            margin-top: 18px;
+            margin-block-start: 18px;
         }
 
         .sidebar .blog-post .content-blog, .sidebar article.post .content-blog {
             background: #fff;
             overflow: hidden;
-            margin-bottom: 30px;
+            margin-block-end: 30px;
         }
 
         .sidebar .blog-post .image-thumnail, .sidebar article.post .image-thumnail {
@@ -1210,8 +1210,8 @@ inset-block-start: 8px;
         .single-post .opal-social-share {
             position: relative;
             padding-inline-start: 60px;
-            margin-top: -35px;
-            margin-bottom: 15px;
+            margin-block-start: -35px;
+            margin-block-end: 15px;
         }
 
         .single-post .opal-social-share [class^=bo-social-] {
@@ -1260,8 +1260,8 @@ inset-inline-start: 0;
         }
 
         .single-post article.post div.page-links, .single-post article.post footer.entry-meta {
-            margin-top: 15px;
-            margin-bottom: 15px;
+            margin-block-start: 15px;
+            margin-block-end: 15px;
         }
 
         .single-post article .content-image {
@@ -1291,19 +1291,19 @@ inset-inline-start: 0;
         .single-post article h1.entry-title {
             font-size: 28px;
             line-height: 32px;
-            margin-top: 33px;
+            margin-block-start: 33px;
         }
 
         @media (max-width: 992px) {
             .single-post article h1.entry-title {
                 font-size: 18px;
                 line-height: 24px;
-                margin-top: 15px;
+                margin-block-start: 15px;
             }
         }
 
         .single-post .entry-content {
-            margin-top: 15px !important;
+            margin-block-start: 15px !important;
         }
 
         @media (min-width: 992px) {
@@ -1317,7 +1317,7 @@ inset-inline-start: 0;
         }
 
         .single-post .entry-content p {
-            margin-bottom: 15px !important;
+            margin-block-end: 15px !important;
             line-height: 26px;
         }
 
@@ -1358,7 +1358,7 @@ inset-inline-start: 0;
     </style>
     <style>
         .tag-links {
-            margin-top: -10px;
+            margin-block-start: -10px;
         }
 
         .tag-links a {
@@ -1371,7 +1371,7 @@ inset-inline-start: 0;
             text-transform: capitalize;
             display: inline-block;
             border: 1px solid #ececec;
-            margin-top: 10px;
+            margin-block-start: 10px;
             margin-inline-end: 7px;
         }
 
@@ -1411,8 +1411,8 @@ inset-inline-start: 0;
             color: #b0b0b0;
             font-size: 12px;
             text-transform: uppercase;
-            margin-bottom: 15px;
-            margin-top: 15px;
+            margin-block-end: 15px;
+            margin-block-start: 15px;
             width: 100%;
             overflow: hidden;
         }
@@ -1442,7 +1442,7 @@ inset-inline-start: 0;
 
         #comments #respond h4.title {
             font-size: 24px;
-            margin-top: 0;
+            margin-block-start: 0;
             color: #0f0f0f;
             font-family: Exo\ 2;
         }
@@ -1452,8 +1452,8 @@ inset-inline-start: 0;
             color: #b0b0b0;
             font-size: 12px;
             text-transform: uppercase;
-            margin-bottom: 15px;
-            margin-top: 15px;
+            margin-block-end: 15px;
+            margin-block-start: 15px;
             width: 100%;
             overflow: hidden;
         }
@@ -1509,7 +1509,7 @@ inset-inline-start: 0;
         }
 
         .entry-meta span.edit-link {
-            margin-top: 0;
+            margin-block-start: 0;
         }
 
         .entry-meta .featured-post {
@@ -1566,7 +1566,7 @@ inset-inline-end: -9px;
         }
 
         .nav-links {
-            margin-bottom: 0;
+            margin-block-end: 0;
             border: 1px solid #ececec;
             position: relative;
         }
@@ -1591,7 +1591,7 @@ inset-inline-end: 0;
         }
 
         .nav-links a > div {
-            padding-bottom: 20px;
+            padding-block-end: 20px;
             padding-top: 20px;
             font-size: 14px;
             line-height: 26px;
@@ -1601,20 +1601,20 @@ inset-inline-end: 0;
 
         @media (max-width: 767px) {
             .nav-links a > div {
-                padding-bottom: 10px;
+                padding-block-end: 10px;
                 padding-top: 10px;
                 font-size: 12px;
             }
         }
 
         .nav-links a > div.pull-right {
-            text-align: right;
-            padding-right: 30px;
+            text-align: end;
+            padding-inline-end: 30px;
         }
 
         @media (max-width: 767px) {
             .nav-links a > div.pull-right {
-                padding-right: 12px;
+                padding-inline-end: 12px;
             }
         }
 
@@ -1655,7 +1655,7 @@ inset-inline-end: 0;
             display: block;
             text-transform: uppercase;
             font-size: 14px;
-            margin-bottom: 7px;
+            margin-block-end: 7px;
             position: relative;
         }
 

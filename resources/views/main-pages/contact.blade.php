@@ -86,7 +86,7 @@ inset-inline-start: 0;
         body.kc-css-system .kc-css-702426 {
             background: transparent url(http://demo3.wpopal.com/exgym/wp-content/uploads/2014/03/contact.jpg) center center/cover no-repeat fixed;
             padding-top: 110px;
-            padding-bottom: 100px;
+            padding-block-end: 100px;
         }
 
         body.kc-css-system .kc-css-828788.kc_title, body.kc-css-system .kc-css-828788 .kc_title, body.kc-css-system .kc-css-828788 .kc_title a.kc_title_link {
@@ -95,8 +95,8 @@ inset-inline-start: 0;
             font-size: 22px;
             font-weight: 600;
             text-transform: uppercase;
-            margin-top: 0;
-            margin-bottom: 0;
+            margin-block-start: 0;
+            margin-block-end: 0;
         }
 
         body.kc-css-system .kc-css-292836 .divider_inner {
@@ -107,8 +107,8 @@ inset-inline-start: 0;
         }
 
         body.kc-css-system .kc-css-292836 {
-            margin-top: 2px;
-            margin-bottom: 16px;
+            margin-block-start: 2px;
+            margin-block-end: 16px;
         }
 
         body.kc-css-system .kc-css-153174 {
@@ -126,8 +126,8 @@ inset-inline-start: 0;
             font-size: 22px;
             font-weight: 600;
             text-transform: uppercase;
-            margin-top: 0;
-            margin-bottom: 0;
+            margin-block-start: 0;
+            margin-block-end: 0;
         }
 
         body.kc-css-system .kc-css-391219 .divider_inner {
@@ -138,8 +138,8 @@ inset-inline-start: 0;
         }
 
         body.kc-css-system .kc-css-391219 {
-            margin-top: 2px;
-            margin-bottom: 16px;
+            margin-block-start: 2px;
+            margin-block-end: 16px;
         }
 
         body.kc-css-system .kc-css-612566 {
@@ -157,8 +157,8 @@ inset-inline-start: 0;
             font-size: 22px;
             font-weight: 600;
             text-transform: uppercase;
-            margin-top: 0;
-            margin-bottom: 0;
+            margin-block-start: 0;
+            margin-block-end: 0;
         }
 
         body.kc-css-system .kc-css-829695 .divider_inner {
@@ -169,8 +169,8 @@ inset-inline-start: 0;
         }
 
         body.kc-css-system .kc-css-829695 {
-            margin-top: 2px;
-            margin-bottom: 16px;
+            margin-block-start: 2px;
+            margin-block-end: 16px;
         }
 
         body.kc-css-system .kc-css-9751 {
@@ -190,8 +190,8 @@ inset-inline-start: 0;
             line-height: 24px;
             text-transform: uppercase;
             text-align: center;
-            margin-top: 100px;
-            margin-bottom: 0;
+            margin-block-start: 100px;
+            margin-block-end: 0;
         }
 
         body.kc-css-system .kc-css-622355 .divider_inner {
@@ -203,12 +203,12 @@ inset-inline-start: 0;
 
         body.kc-css-system .kc-css-622355 {
             text-align: center;
-            margin-top: 2px;
-            margin-bottom: 25px;
+            margin-block-start: 2px;
+            margin-block-end: 25px;
         }
 
         body.kc-css-system .kc-css-507320 {
-            margin-bottom: 40px;
+            margin-block-end: 40px;
         }
 
         body.kc-css-system .kc-css-227663, body.kc-css-system .kc-css-227663 p {
@@ -219,7 +219,7 @@ inset-inline-start: 0;
         }
 
         body.kc-css-system .kc-css-227663 p {
-            margin-bottom: 0;
+            margin-block-end: 0;
         }
 
         body.kc-css-system .kc-css-320150 {
@@ -227,13 +227,13 @@ inset-inline-start: 0;
         }
 
         body.kc-css-system .kc-css-561405 {
-            margin-bottom: 42px;
+            margin-block-end: 42px;
         }
 
         @media only screen and (max-width: 1024px) {
             body.kc-css-system .kc-css-702426 {
                 padding-top: 50px;
-                padding-bottom: 50px;
+                padding-block-end: 50px;
             }
 
             body.kc-css-system .kc-css-91913 {
@@ -265,7 +265,7 @@ inset-inline-start: 0;
 
             body.kc-css-system .kc-css-496842.kc_title, body.kc-css-system .kc-css-496842 .kc_title, body.kc-css-system .kc-css-496842 .kc_title a.kc_title_link {
                 font-size: 28px;
-                margin-top: 50px;
+                margin-block-start: 50px;
             }
 
             body.kc-css-system .kc-css-227663, body.kc-css-system .kc-css-227663 p {
@@ -273,7 +273,7 @@ inset-inline-start: 0;
             }
 
             body.kc-css-system .kc-css-561405 {
-                margin-bottom: 15px;
+                margin-block-end: 15px;
             }
         }
 
@@ -298,18 +298,18 @@ inset-inline-start: 0;
             }
 
             body.kc-css-system .kc-css-507320 {
-                margin-bottom: 30px;
+                margin-block-end: 30px;
                 width: 100%;
             }
         }
 
         @media only screen and (max-width: 767px) {
             body.kc-css-system .kc-css-757254 {
-                margin-top: 30px;
+                margin-block-start: 30px;
             }
 
             body.kc-css-system .kc-css-618507 {
-                margin-top: 30px;
+                margin-block-start: 30px;
             }
 
             body.kc-css-system .kc-css-227663, body.kc-css-system .kc-css-227663 p {

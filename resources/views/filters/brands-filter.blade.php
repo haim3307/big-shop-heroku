@@ -5,7 +5,7 @@
         <ul style="padding: 20px 30px 0 30px;">
 
             @foreach($brands as $brandCheck)
-                <li class="d-flex justify-content-between" style="padding-bottom: 13px;">
+                <li class="d-flex justify-content-between" style="padding-block-end: 13px;">
                     <input id="checkBox{{ucfirst($brandCheck->name)}}"
                            name="check-box-{{$brandCheck->id}}"
                            @if(old('check-box-'.$brandCheck->id) == 'on') checked

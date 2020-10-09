@@ -133,7 +133,7 @@
                 </div>
                 <div class="publicTabs" id="publicTabs">
                     <nav
-                        style="background-color: #252525; border-bottom: 4px solid #f71818; border-radius: 0px 10px 10px 10px ;">
+                        style="background-color: #252525; border-block-end: 4px solid #f71818; border-radius: 0px 10px 10px 10px ;">
                         <ul class="d-flex">
                             <li><a class="allCentered text-white" href="#reviews">Reviews</a></li>
                             <li><a class="allCentered text-white" href="#description">Description</a></li>
@@ -310,7 +310,7 @@ inset-inline-start: 14px;
             height: 39px;
             background-color: #eeeeee;
             position: relative;
-            border-bottom: 3px solid #c9c9c9;
+            border-block-end: 3px solid #c9c9c9;
         }
 
         .innerRelatedProducts .threeDTitle h2 {

@@ -9,7 +9,7 @@
         grid-template-columns: minmax(auto, 350px) 1fr;
         grid-template-rows: 70px 1fr;
         grid-template-areas: 'SiteRouteWay SiteRouteWay SiteRouteWay';
-        margin-top: 34px;
+        margin-block-start: 34px;
     }
 
 }
@@ -24,7 +24,7 @@
 }
 
 .sideSubCategoryMenu ul li {
-    border-bottom: 1px solid #e8e8e8;
+    border-block-end: 1px solid #e8e8e8;
     text-align: center;
     display: flex;
     align-items: center;

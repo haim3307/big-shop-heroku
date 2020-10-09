@@ -16,7 +16,7 @@
         body.kc-css-system .kc-css-277214 {
             background: transparent url({{asset('_img/layout/about_us3.jpg')}}) center center/cover no-repeat fixed;
             padding-top: 80px;
-            padding-bottom: 80px;
+            padding-block-end: 80px;
         }
     </style>
 @endsection

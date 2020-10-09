@@ -19,7 +19,7 @@
         }</style>
     <style type="text/css" id="kc-css-render">
         body.kc-css-system .kc-css-423488 {
-            padding-right: 0;
+            padding-inline-end: 0;
             padding-inline-start: 0;
         }
     </style>

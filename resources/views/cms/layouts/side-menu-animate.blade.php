@@ -195,7 +195,7 @@
             background: #fff;
             border: none;
             border-radius: 0;
-            margin-bottom: 40px;
+            margin-block-end: 40px;
             box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
         }
 
@@ -208,7 +208,7 @@
         .line {
             width: 100%;
             height: 1px;
-            border-bottom: 1px dashed #ddd;
+            border-block-end: 1px dashed #ddd;
             margin: 40px 0;
         }
 
@@ -243,7 +243,7 @@
 
         #sidebar ul.components {
             padding: 20px 0;
-            border-bottom: 1px solid #47748b;
+            border-block-end: 1px solid #47748b;
         }
 
         #sidebar ul p {
@@ -288,7 +288,7 @@ inset-inline-end: 20px;
             font-size: 0.9em !important;
             display: block;
             border-radius: 5px;
-            margin-bottom: 5px;
+            margin-block-end: 5px;
         }
 
         a.download {

@@ -3,7 +3,7 @@
     <li>
         <a :href="item_link" @click.prevent="checkCMS()"
            class="f-row container-fluid"
-           style="margin-bottom: 20px; cursor: pointer;text-decoration: none; color: white;">
+           style="margin-block-end: 20px; cursor: pointer;text-decoration: none; color: white;">
             <div class="col-2 allCentered">
                 <img style="position: absolute;" class="img-fluid" :src="main_img" alt="">
             </div>

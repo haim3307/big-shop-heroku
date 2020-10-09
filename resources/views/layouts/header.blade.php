@@ -38,7 +38,7 @@
                         #allSiteSearch {
                             padding: 5px 9px;
                             border-radius: 20px;
-                            margin-bottom: 3px;
+                            margin-block-end: 3px;
                             max-height: 82vh;
                             width: 100%;
                         }
@@ -67,7 +67,7 @@
         <nav class="thirdNav">
 
             <nav class="topBar d-grid grid-col-12 align-items-center text-center" style="height: 100%">
-                <div class="g-col-12 g-col-lg-4" style="color: #878c94;     padding-bottom: 5px;">
+                <div class="g-col-12 g-col-lg-4" style="color: #878c94;     padding-block-end: 5px;">
                     @if($user = Auth::user())
                         Welcome back
                         @if($user->isAdministrator())
@@ -106,7 +106,7 @@
 
                                             var $el = new google.translate.TranslateElement({
                                                 pageLanguage: 'en',
-                                                includedLanguages: 'en,es,fr,ru',
+                                                includedLanguages: 'he,ar,en,es,fr,ru',
                                                 layout: google.translate.TranslateElement.InlineLayout.SIMPLE
                                             }, 'google_translate_element');
                                             //document.querySelector('.topBarNav').classList.add('show');
@@ -124,7 +124,7 @@ inset-block-start: -3px;
 
                                         .goog-te-menu-value span {
                                             color: #878c94 !important;
-                                            padding-right: 10px;
+                                            padding-inline-end: 10px;
                                         }
 
                                         .goog-te-menu-value span:nth-of-type(2) {

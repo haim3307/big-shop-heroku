@@ -74,7 +74,7 @@
         align-items: center;
         border-radius: 50px;
         position: absolute;
-inset-inline-end: 5px;
+inset-inline-start: 5px;
 inset-block-start: -20px;
     }
 </style>

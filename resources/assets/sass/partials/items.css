@@ -225,7 +225,7 @@
 
     .catesItemR .partA {
         grid-area: partA;
-        padding-right: 15px;
+        padding-inline-end: 15px;
     }
 
     .catesItemR .partB {

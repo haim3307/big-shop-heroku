@@ -33,7 +33,7 @@
 <style>
     @media (max-width: 1000px) {
         #chooseList {
-            margin-bottom: 20px;
+            margin-block-end: 20px;
         }
     }
 </style>

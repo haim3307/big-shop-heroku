@@ -1,7 +1,7 @@
 <template>
-    <div class="shopCartItem d-grid grid-col-sm-12" style="border-bottom: 2px lightgray solid; padding: 22px 1em;">
+    <div class="shopCartItem d-grid grid-col-sm-12" style="border-block-end: 2px lightgray solid; padding: 22px 1em;">
         <div class="g-col-xl-8 g-col-md-6  g-col-sm-7 d-grid-row grid-col-sm-12">
-            <div class="g-col-xl-2 g-col-4 allCentered" style="padding-right: 20px;     overflow: hidden;
+            <div class="g-col-xl-2 g-col-4 allCentered" style="padding-inline-end: 20px;     overflow: hidden;
     height: 70px;"><img class="img-fluid" :src="main_img" alt=""></div>
             <h3 class="g-col-xl-10 g-col-8" style="text-transform: capitalize">{{cartItem.title | capitalize}}</h3>
         </div>

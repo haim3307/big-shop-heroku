@@ -37,8 +37,8 @@ body.kc-css-system .kc-css-582254 .kc_title a.kc_title_link {
     font-weight: 600;
     line-height: 24px;
     text-transform: uppercase;
-    margin-top: 0;
-    margin-bottom: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
 }
 
 body.kc-css-system .kc-css-448446 .divider_inner {
@@ -49,8 +49,8 @@ body.kc-css-system .kc-css-448446 .divider_inner {
 }
 
 body.kc-css-system .kc-css-448446 {
-    margin-top: 0;
-    margin-bottom: 18px;
+    margin-block-start: 0;
+    margin-block-end: 18px;
 }
 
 body.kc-css-system .kc-css-779247,
@@ -61,7 +61,7 @@ body.kc-css-system .kc-css-779247 p {
 }
 
 body.kc-css-system .kc-css-779247 p {
-    margin-bottom: 0;
+    margin-block-end: 0;
 }
 
 body.kc-css-system .kc-css-197227 {
@@ -77,8 +77,8 @@ body.kc-css-system .kc-css-979187 .kc_title a.kc_title_link {
     font-weight: 600;
     line-height: 24px;
     text-transform: uppercase;
-    margin-top: 0;
-    margin-bottom: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
 }
 
 body.kc-css-system .kc-css-427451 .divider_inner {
@@ -89,8 +89,8 @@ body.kc-css-system .kc-css-427451 .divider_inner {
 }
 
 body.kc-css-system .kc-css-427451 {
-    margin-top: 0;
-    margin-bottom: 18px;
+    margin-block-start: 0;
+    margin-block-end: 18px;
 }
 
 body.kc-css-system .kc-css-619783,
@@ -101,12 +101,12 @@ body.kc-css-system .kc-css-619783 p {
 }
 
 body.kc-css-system .kc-css-619783 p {
-    margin-bottom: 0;
+    margin-block-end: 0;
 }
 
 body.kc-css-system .kc-css-274792 {
     padding-top: 40px;
-    padding-bottom: 0;
+    padding-block-end: 0;
 }
 
 body.kc-css-system .kc-css-711636.kc_title,
@@ -118,8 +118,8 @@ body.kc-css-system .kc-css-711636 .kc_title a.kc_title_link {
     font-weight: 600;
     line-height: 24px;
     text-transform: uppercase;
-    margin-top: 0;
-    margin-bottom: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
 }
 
 body.kc-css-system .kc-css-171864 .divider_inner {
@@ -130,8 +130,8 @@ body.kc-css-system .kc-css-171864 .divider_inner {
 }
 
 body.kc-css-system .kc-css-171864 {
-    margin-top: 0;
-    margin-bottom: 18px;
+    margin-block-start: 0;
+    margin-block-end: 18px;
 }
 
 body.kc-css-system .kc-css-928399,
@@ -142,7 +142,7 @@ body.kc-css-system .kc-css-928399 p {
 }
 
 body.kc-css-system .kc-css-928399 p {
-    margin-bottom: 0;
+    margin-block-end: 0;
 }
 
 body.kc-css-system .kc-css-172671.kc_title,
@@ -154,8 +154,8 @@ body.kc-css-system .kc-css-172671 .kc_title a.kc_title_link {
     font-weight: 600;
     line-height: 24px;
     text-transform: uppercase;
-    margin-top: 0;
-    margin-bottom: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
 }
 
 body.kc-css-system .kc-css-696246 .divider_inner {
@@ -166,8 +166,8 @@ body.kc-css-system .kc-css-696246 .divider_inner {
 }
 
 body.kc-css-system .kc-css-696246 {
-    margin-top: 0;
-    margin-bottom: 18px;
+    margin-block-start: 0;
+    margin-block-end: 18px;
 }
 
 body.kc-css-system .kc-css-241548,
@@ -178,7 +178,7 @@ body.kc-css-system .kc-css-241548 p {
 }
 
 body.kc-css-system .kc-css-241548 p {
-    margin-bottom: 0;
+    margin-block-end: 0;
 }
 
 body.kc-css-system .kc-css-933099 {
@@ -188,7 +188,7 @@ body.kc-css-system .kc-css-933099 {
 body.kc-css-system .kc-css-277214 {
     background: transparent url(http://demo3.wpopal.com/exgym/wp-content/uploads/2014/06/about_us3.jpg) center center/cover no-repeat fixed;
     padding-top: 80px;
-    padding-bottom: 80px;
+    padding-block-end: 80px;
 }
 
 body.kc-css-system .kc-css-46290 h4 {
@@ -236,8 +236,8 @@ body.kc-css-system .kc-css-499737 .kc_title a.kc_title_link {
     font-weight: 600;
     line-height: 24px;
     text-transform: uppercase;
-    margin-top: 0;
-    margin-bottom: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
 }
 
 body.kc-css-system .kc-css-581060 .divider_inner {
@@ -248,8 +248,8 @@ body.kc-css-system .kc-css-581060 .divider_inner {
 }
 
 body.kc-css-system .kc-css-581060 {
-    margin-top: 0;
-    margin-bottom: 18px;
+    margin-block-start: 0;
+    margin-block-end: 18px;
 }
 
 body.kc-css-system .kc-css-317751,
@@ -260,7 +260,7 @@ body.kc-css-system .kc-css-317751 p {
 }
 
 body.kc-css-system .kc-css-317751 p {
-    margin-bottom: 0;
+    margin-block-end: 0;
 }
 
 body.kc-css-system .kc-css-160890.kc_title,
@@ -272,8 +272,8 @@ body.kc-css-system .kc-css-160890 .kc_title a.kc_title_link {
     font-weight: 600;
     line-height: 24px;
     text-transform: uppercase;
-    margin-top: 0;
-    margin-bottom: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
 }
 
 body.kc-css-system .kc-css-277038 .divider_inner {
@@ -284,8 +284,8 @@ body.kc-css-system .kc-css-277038 .divider_inner {
 }
 
 body.kc-css-system .kc-css-277038 {
-    margin-top: 0;
-    margin-bottom: 18px;
+    margin-block-start: 0;
+    margin-block-end: 18px;
 }
 
 body.kc-css-system .kc-css-985123 {
@@ -386,7 +386,7 @@ body.kc-css-system .kc-css-573623 {
     }
 
     body.kc-css-system .kc-css-366075 {
-        margin-top: 40px;
+        margin-block-start: 40px;
     }
 
     body.kc-css-system .kc-css-241548,
@@ -397,19 +397,19 @@ body.kc-css-system .kc-css-573623 {
 
     body.kc-css-system .kc-css-277214 {
         padding-top: 50px;
-        padding-bottom: 50px;
+        padding-block-end: 50px;
     }
 
     body.kc-css-system .kc-css-315790 {
-        margin-top: 20px;
+        margin-block-start: 20px;
     }
 
     body.kc-css-system .kc-css-533444 {
-        margin-top: 20px;
+        margin-block-start: 20px;
     }
 
     body.kc-css-system .kc-css-691125 {
-        margin-top: 20px;
+        margin-block-start: 20px;
     }
 
     body.kc-css-system .kc-css-317751,

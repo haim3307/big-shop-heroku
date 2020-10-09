@@ -73,7 +73,7 @@ html, body {
 }
 
 #sidebar .link > ul > li {
-    padding-bottom: 10px;
+    padding-block-end: 10px;
 }
 
 #sidebar a:hover, #sidebar span:hover {
@@ -110,7 +110,7 @@ html, body {
 }
 
 #sidebar .collpseableSide li {
-    padding-right: 20px;
+    padding-inline-end: 20px;
     padding-top: 10px;
 }
 
@@ -140,7 +140,7 @@ html, body {
 
 #nav-header {
     background-color: #fff;
-    border-bottom: 1px solid #e7eaec;
+    border-block-end: 1px solid #e7eaec;
 }
 
 #nav-header #headSearch {
@@ -242,9 +242,9 @@ inset-inline-end: 0;
 
 
 .page_title {
-    padding-right: 18px;
+    padding-inline-end: 18px;
     margin: 20px 0;
-    border-bottom: 1px solid #eee;
+    border-block-end: 1px solid #eee;
 }
 
 .content-inner {
@@ -259,7 +259,7 @@ inset-inline-end: 0;
 }
 
 .search-row {
-    margin-bottom: 30px;
+    margin-block-end: 30px;
 }
 
 .btn-primary {
@@ -313,13 +313,13 @@ inset-inline-end: 0;
 }
 
 .settings-row {
-    border-bottom: 1px #eee solid;
-    padding-bottom: 10px;
-    margin-bottom: 10px;
+    border-block-end: 1px #eee solid;
+    padding-block-end: 10px;
+    margin-block-end: 10px;
 }
 
 .settings-row h4 {
-    margin-bottom: 3px;
+    margin-block-end: 3px;
 }
 
 .settings-row p {
@@ -336,16 +336,16 @@ inset-inline-end: 0;
 
 /*home*/
 .admin-content-con {
-    margin-top: 20px;
+    margin-block-start: 20px;
     background-color: white;
     border-top: 4px solid #e7eaec;
     padding: 15px;
 }
 
 .admin-content-con header {
-    margin-bottom: 20px;
-    border-bottom: 1px #eee solid;
-    padding-bottom: 10px;
+    margin-block-end: 20px;
+    border-block-end: 1px #eee solid;
+    padding-block-end: 10px;
 }
 
 .admin-content-con h5 {
@@ -367,7 +367,7 @@ inset-inline-end: 0;
 }
 
 .commenter-head-dash {
-    margin-bottom: 6px;
+    margin-block-end: 6px;
 }
 
 .commenter-date-dash {
@@ -395,7 +395,7 @@ inset-inline-end: 0;
 
 #articlesPage header {
     padding-top: 10px;
-    padding-bottom: 20px;
+    padding-block-end: 20px;
 }
 
 /*
@@ -431,7 +431,7 @@ inset-inline-end: 0;
 
 .article-row p {
     font-size: 18px;
-    margin-bottom: 0;
+    margin-block-end: 0;
     font-weight: 600;
 }
 
@@ -599,7 +599,7 @@ inset-block-end: 0;
 }
 .bestTitlesItem .bottominfo .binfoTitle {
     flex: 50%;
-    margin-top: 10px;
+    margin-block-start: 10px;
     max-height: 50%;
 }
 

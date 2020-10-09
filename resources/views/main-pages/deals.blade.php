@@ -15,7 +15,7 @@
         }</style>
     <style type="text/css" id="kc-css-render">
         body.kc-css-system .kc-css-423488 {
-            padding-right: 0;
+            padding-inline-end: 0;
             padding-inline-start: 0;
         }
     </style>
@@ -59,7 +59,7 @@ inset-inline-start: 20px;
         }
 
         .woo-deals .owl-item .product-block .caption {
-            padding-bottom: 40px;
+            padding-block-end: 40px;
         }
 
         .woo-deals .time .timer-left {
@@ -90,8 +90,8 @@ inset-inline-start: 20px;
         .woo-deals .countdown-times b {
             font-size: 18px;
             line-height: 24px;
-            margin-top: 5px;
-            margin-bottom: 2px;
+            margin-block-start: 5px;
+            margin-block-end: 2px;
         }
 
         @media (max-width: 1199px) {
@@ -166,7 +166,7 @@ inset-block-end: auto;
         }
 
         .product-block-v3.product-block .name {
-            margin-bottom: 8px;
+            margin-block-end: 8px;
         }
 
         @media (max-width: 991px) {
@@ -216,7 +216,7 @@ inset-block-end: auto;
         }
 
         .kc_accordion_wrapper, .kc_tabs {
-            margin-bottom: 24px;
+            margin-block-end: 24px;
         }
 
         .kc_wrapper.ui-tabs {
@@ -261,7 +261,7 @@ inset-block-end: auto;
             list-style: none;
             border-right: 1px solid #fff;
             border-left: none !important;
-            border-bottom: none !important;
+            border-block-end: none !important;
             margin: 0;
             float: left;
             color: #333;

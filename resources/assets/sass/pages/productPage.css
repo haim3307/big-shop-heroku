@@ -24,12 +24,12 @@
 }
 
 .productPage {
-    margin-bottom: 16px;
+    margin-block-end: 16px;
 }
 
 .productPage header {
-    margin-top: 32px;
-    margin-bottom: 20px;
+    margin-block-start: 32px;
+    margin-block-end: 20px;
 }
 
 .productPage main {
@@ -186,7 +186,7 @@
 .review {
     grid-gap: 13px;
     min-height: 95px;
-    margin-bottom: 23px;
+    margin-block-end: 23px;
 
 }
 
@@ -206,7 +206,7 @@
     grid-gap: 17px;
     background-color: #fafafa;
     padding: 16px;
-    margin-top: 0;
+    margin-block-start: 0;
     border: 1px solid #e7e7e7;
 
 }

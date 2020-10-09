@@ -185,7 +185,7 @@
         }
 
         .owlHomeItem p a, .owlHomeItem .p a, .shopNow {
-            margin-top: 31px;
+            margin-block-start: 31px;
             border-radius: 10px;
             background-color: #d70a0a;
             color: white;

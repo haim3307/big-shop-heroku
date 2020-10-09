@@ -11,7 +11,7 @@
                     <button id="expendAll" class="allCentered materialButton">Expand All</button>
 
                 </div>
-                <ul class="d-grid filtersUl" style="    padding-bottom: 57px;">
+                <ul class="d-grid filtersUl" style="    padding-block-end: 57px;">
                     <li>
                         <div class="filterUnit" style=" background-color: #f6f6f6;">
                             <h4 class="toggleFilterDrop"><i class="fa fa-angle-down"
@@ -245,7 +245,7 @@ inset-inline-start: 50%;
 
         /*!search bar*/
         .filtersUl > li {
-            border-bottom: 1px solid #e6e6e6;
+            border-block-end: 1px solid #e6e6e6;
         }
 
         #filterActions > span {

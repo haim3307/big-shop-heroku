@@ -1,7 +1,7 @@
 @extends('cms.cms')
 @section('content')
 
-    <div class="container-fluid" style="margin-top: 20px;" id="CMSApp">
+    <div class="container-fluid" style="margin-block-start: 20px;" id="CMSApp">
 
         <div class="g-row">
             <div class="g-col-md-5">

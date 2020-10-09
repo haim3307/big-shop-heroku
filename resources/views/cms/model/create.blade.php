@@ -3,7 +3,7 @@
     <link rel="stylesheet" href="{{asset('css/cms/fileUpload.css')}}">
 @endsection
 @section('content')
-    <div style="margin-top: 20px;"></div>
+    <div style="margin-block-start: 20px;"></div>
     @include('cms.model.forms.create')
 
 @endsection
