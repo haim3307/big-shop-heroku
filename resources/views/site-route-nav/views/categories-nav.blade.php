@@ -1,7 +1,7 @@
 @extends('layouts.site-route-nav')
 @section('sectionB')
     {{--    <img src="{{asset('_img/grid-4-icon.png')}}" alt="">
-        <img src="{{asset('_img/grid-1-icon.png')}}" style="padding-left: 9px;" alt="">
+        <img src="{{asset('_img/grid-1-icon.png')}}" style="padding-inline-start: 9px;" alt="">
         <select name="" id="">
             <option value="">Lorem ipsum dolor.</option>
             <option value="">Lorem ipsum dolor.</option>

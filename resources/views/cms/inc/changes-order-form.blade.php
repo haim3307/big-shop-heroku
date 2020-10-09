@@ -1,5 +1,5 @@
 <form id="changesOrderForm" class="f-row justify-content-center p-2" method="POST"
-      style="background-color: cornflowerblue; position: sticky; z-index: 999; width: 100%; top: 0;" action="">
+      style="background-color: cornflowerblue; position: sticky; z-index: 999; width: 100%;inset-block-start: 0;" action="">
     {{csrf_field()}}
     <input type="hidden" name="manage_mode" :value="pageManageMode">
     <input type="submit" value="Save Changes" class="btn btn-primary">

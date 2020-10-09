@@ -18,36 +18,43 @@
 </template>
 
 <script>
-    export default {
-        props: ['cartItem'],
+	import { ref, computed } from "@vue/composition-api";
 
-        mounted() {
-            let {cartItem} = this;
-            if (!cartItem['quantity']) this.$set(cartItem, 'quantity', 1);
-        },
-        computed: {
-            main_img() {
-                let {cartItem, url} = this;
-                if (!cartItem['main_category'] && !('url' in cartItem['main_category']) && !cartItem['c_url']) return;
-                return `${url}/_img/products/${cartItem['c_url'] ? cartItem['c_url'] : cartItem['main_category'].url}/${cartItem['main_img']}`;
-            },
-            url_item() {
-                //!this.cartItem['c_name'] && (this.cartItem['c_name'] = selectedCategory);
-                /*console.log('cartItem:',this.cartItem['main_category']);
-				*/
-                let {cartItem, url} = this;
+	export default {
+		props: ['cartItem'],
+
+		setup(){
+			let { cartItem,url } = this;
+
+			const url_item = computed(() => {
                 return `${url}/shop/${cartItem['c_url'] ? cartItem['c_url'] : cartItem['main_category'].url}/${cartItem['url']}`;
-            }
-        },
-        methods: {
-            emitDeleteItem() {
-                this.$emit('deleteItem', this.cartItem);
-            },
+			});
 
-        }
-    }
+			const main_img = computed(() => {
+			    if(!cartItem['main_category'] && !('url' in cartItem['main_category']) && !cartItem['c_url']) return;
+				return `${url}/_img/products/${cartItem['c_url']? cartItem['c_url'] : cartItem['main_category'].url}/${cartItem['main_img']}`;
+			});
+
+			const methods = {
+				emitDeleteItem() {
+					this.$emit('deleteItem', cartItem);
+				}
+			};
+
+			return {
+				url_item,
+				main_img,
+				...methods
+			}
+		},
+		mounted() {
+			let { cartItem } = this;
+			if (!cartItem['quantity']) this.$set(cartItem, 'quantity', 1);
+		}
+	}
 </script>
 
 <style scoped>
 
 </style>
+

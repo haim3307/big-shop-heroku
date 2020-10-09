@@ -58,8 +58,8 @@
 
         @media (min-width: 768px) {
             .notfound-page .text-not-found {
-                top: 50%;
-                left: 50%;
+inset-block-start: 50%;
+inset-inline-start: 50%;
                 position: absolute;
                 -webkit-transform: translateX(-50%) translateY(-50%);
                 -ms-transform: translateX(-50%) translateY(-50%);

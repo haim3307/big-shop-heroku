@@ -17,13 +17,13 @@
 
         .opal-contact-us .one-one {
             position: relative;
-            padding-left: 30px;
+            padding-inline-start: 30px;
         }
 
         .opal-contact-us .one-one .fa {
             position: absolute;
-            top: 0;
-            left: 0;
+inset-block-start: 0;
+inset-inline-start: 0;
             line-height: 42px;
             color: #bf0d0d;
         }
@@ -115,7 +115,7 @@
             color: #ffffff;
             font-size: 15px;
             font-weight: 300;
-            text-align: left;
+            text-align: start;
             text-transform: capitalize;
             line-height: 36px;
         }
@@ -146,7 +146,7 @@
             color: #ffffff;
             font-size: 15px;
             font-weight: 300;
-            text-align: left;
+            text-align: start;
             text-transform: capitalize;
             line-height: 36px;
         }
@@ -177,7 +177,7 @@
             color: #ffffff;
             font-size: 15px;
             font-weight: 300;
-            text-align: left;
+            text-align: start;
             text-transform: capitalize;
             line-height: 36px;
         }
@@ -237,7 +237,7 @@
             }
 
             body.kc-css-system .kc-css-91913 {
-                padding-left: 15px;
+                padding-inline-start: 15px;
             }
 
             body.kc-css-system .kc-css-153174 {
@@ -246,7 +246,7 @@
             }
 
             body.kc-css-system .kc-css-757254 {
-                padding-left: 15px;
+                padding-inline-start: 15px;
             }
 
             body.kc-css-system .kc-css-612566 {
@@ -255,7 +255,7 @@
             }
 
             body.kc-css-system .kc-css-618507 {
-                padding-left: 15px;
+                padding-inline-start: 15px;
             }
 
             body.kc-css-system .kc-css-9751 {

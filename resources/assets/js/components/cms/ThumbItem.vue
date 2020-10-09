@@ -1,7 +1,5 @@
 <template>
-
-
-    <div v-if="listItem && listItem.id" class="card col-md-6 col-xl-4" :id="listItem.id">
+	<div v-if="listItem && listItem.id" class="card col-md-6 col-xl-4" :id="listItem.id">
         <div class="thumbnailActions">
             <a :href="url+'/cms/page/'+page.url+'/'+listItem.page_list_id+'/'+listItem.id+'/edit'"
                class="btn btn-primary"
@@ -20,8 +18,8 @@
             <p class="card-text" v-if="product && product.description">
                 {{product.description | striphtml}}
             </p>
-            <div class="productExtraAttrs">
-                <div v-if="listItem.options" v-for="(extraAttr,extraAttrTitle) in listItem.options">
+            <div class="productExtraAttrs" v-if="listItem.options">
+                <div v-for="(extraAttr,extraAttrTitle) in listItem.options" :key="extraAttrTitle">
                     <strong>{{extraAttrTitle | jsonTitleToHuman | capitalize}} : </strong>
 
                     <span>
@@ -32,14 +30,6 @@
                     </span>
 
                 </div>
-                <!--                <div v-if="editMode">
-                                    <div class="btn btn-info" @click="editItem(1)">
-                                        <i class="fa fa-check"></i>
-                                    </div>
-                                    <div class="btn btn-danger" @click="editItem(-1)">
-                                        <i class="fa fa-times"></i>
-                                    </div>
-                                </div>-->
             </div>
 
         </div>
@@ -49,22 +39,22 @@
 </template>
 
 <script>
-    export default {
-        name: "thumb-item",
-        props: ['product', 'listObj', 'listItem'],
-        data() {
-            return {}
-        },
-        filters: {
-            jsonTitleToHuman(val) {
-                return val.replace('_', ' ');
+	export default {
+		name: "thumb-item",
+		props: ['product', 'listObj','listItem'],
+		data() {
+            return {
+
             }
-        },
-        mounted() {
-        },
-        computed: {
-            main_img() {
-                return this.url + '/_img' + (this.product.c_url ? '/products/' + this.product.c_url : this.product.img_path) + '/' + (this.product.main_img || this.product.img);
+		},
+		filters: {
+			jsonTitleToHuman(val) {
+				return val.replace('_',' ');
+			}
+		},
+        computed:{
+			main_img(){
+				return this.url+'/_img'+(this.product.c_url?'/products/'+this.product.c_url:this.product.img_path)+'/'+(this.product.main_img || this.product.img);
             }
         },
         methods: {
@@ -104,3 +94,4 @@
 <style scoped>
 
 </style>
+

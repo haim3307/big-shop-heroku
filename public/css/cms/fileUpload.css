@@ -113,9 +113,9 @@
 .box.is-error .box__error {
     display: block;
     position: absolute;
-    top: 50%;
-    right: 0;
-    left: 0;
+inset-block-start: 50%;
+inset-inline-end: 0;
+inset-inline-start: 0;
 
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);

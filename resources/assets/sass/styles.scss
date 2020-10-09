@@ -19,7 +19,7 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0.2em;
     padding: 0 15px 0 46px;
     border: none;
-    text-align: left;
+    text-align: start;
     line-height: 34px;
     white-space: nowrap;
     border-radius: 0.2em;
@@ -28,11 +28,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .loginBtn:before {
-    content: "";
-    box-sizing: border-box;
-    position: absolute;
-    top: 0;
-    left: 0;
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+    inset-block-start: 0;
+inset-inline-start: 0;
     width: 34px;
     height: 100%;
 }

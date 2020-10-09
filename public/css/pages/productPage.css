@@ -77,8 +77,8 @@
     font-size: 12px;
     font-weight: 400;
     line-height: 20px;
-    text-align: left;
-    margin-left: 0;
+    text-align: start;
+    margin-inline-start: 0;
 }
 
 .innerProductDesc .callToAction {
@@ -119,7 +119,7 @@
     color: #272727;
     font-size: 30px; /* Approximation due to font substitution */
     font-weight: 400;
-    text-align: left;
+    text-align: start;
 }
 
 .productTitle .productAlert {
@@ -128,7 +128,7 @@
     font-size: 16px; /* Approximation due to font substitution */
     font-weight: 400;
     line-height: 20px; /* Approximation due to font substitution */
-    text-align: left;
+    text-align: start;
     text-transform: capitalize;
 }
 

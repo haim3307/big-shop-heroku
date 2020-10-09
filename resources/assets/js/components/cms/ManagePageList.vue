@@ -78,50 +78,51 @@
                 autoCompleteEntitiesList: [],
                 autoCompleteInput: '',
                 displayMode: 'thumbnail'
-            }
+			}
         },
-        mounted() {
-            Vue.nextTick(function () {
-                $('#cancel').on('click', function (e) {
-                    CMSAppOBJ.data.items = items;
-                });
-            });
-        },
-        methods: {
-            addToEntitesListTrigger(item) {
-                $.ajax({
-                    url: `${this.url}/cms/page/${this.page.url}/${this.listTitle}/${item.id}/${item.entity_id}`,
-                    method: "POST",
-                }).then(res => {
-                    this.list.items.push(res);
-                });
-            },
-            deleteItem(item) {
-                $.ajax({
-                    method: 'DELETE',
-                    url: this.url + '/cms/page/list/' + item.id
-                }).then((res) => {
+        setup(){
+            const {url,page,listTitle,list,autoCompleteInput,autoCompleteEntitiesList,order} = this;
+            const { items } = list;
+
+            const methods = {
+                async addToEntitesListTrigger(item) {
+                    const { id,entity_id } = item;
+                    const res = await $.ajax({
+                        url: `${url}/cms/page/${page.url}/${listTitle}/${id}/${entity_id}`,
+                        method: "POST",
+                    });
+                    items.push(res);
+                },
+                async deleteItem(item) {
+                    const res = await $.ajax({
+                        method: 'DELETE',
+                        url: url + '/cms/page/list/' + item.id
+                    });
                     if (res == '1') {
-                        this.list.items = this.list.items.filter(listitem => listitem.id != item.id);
+                        items = items.filter(listitem => listitem.id != item.id);
                         toastr.success('List item deleted');
                     } else toastr.error('List item delete failed');
-
-                });
-            },
-            onSubmitForm(e) {
-                e.preventDefault();
-                this.order = this.list.items.map(product => product.list_item_id).join();
-                Vue.nextTick(() => $(e.target).unbind('submit').submit());
-            },
-            getAutoComplete() {
-                let url = !this.listTitle ? `api/entities` : `cms/api/entities/${this.listTitle}`;
-                $.ajax({
-                    url: `${this.url}/${url}/${this.autoCompleteInput}`,
-                    method: "GET",
-                }).then(res => this.autoCompleteEntitiesList = res);
+                },
+                onSubmitForm(e) {
+                    e.preventDefault();
+                    order = items.map(product => product.list_item_id).join();
+                    Vue.nextTick(() => $(e.target).unbind('submit').submit());
+                },
+                async getAutoComplete() {
+                    autoCompleteEntitiesList = await $.ajax({
+                        url: `${url}/${!listTitle ? `api/entities` : `cms/api/entities/${listTitle}`}/${autoCompleteInput}`,
+                        method: "GET",
+                    });
+                }
             }
-        }
-    }
+            return {
+                ...methods
+            }
+        },
+		mounted() {
+			Vue.nextTick(() => $('#cancel').on('click', e => CMSAppOBJ.data.items = items));
+		}
+	}
 </script>
 
 <style>
@@ -139,11 +140,8 @@
         position: relative;
     }
 
-    .pageList #autoCompleteInput {
-
-    }
-
     .pageList .autoCompleteMenuUl {
         width: 100%;
     }
 </style>
+

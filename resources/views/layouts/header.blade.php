@@ -21,7 +21,7 @@
     padding-top: 2px;" src="{{img('_img/header/bars.svg')}}" alt=""></i>
         </div>
         <nav class="searchAndShare">
-            <ul class="" style="margin-right: 10px;">
+            <ul class="" style="margin-inline-end: 10px;">
                 <li><a href="https://twitter.com/BigShop14"><img src="{{img('_img/header/twiter.png')}}" alt=""></a>
                 </li>
                 <li><a href="https://www.facebook.com/Big-Shop-2019449578308589/?modal=admin_todo_tour"><img
@@ -50,8 +50,8 @@
                             cursor: pointer;
                             color: white;
                             position: absolute;
-                            right: 9px;
-                            bottom: 7px;
+                            inset-block-end: 7px;
+                            inset-inline-end: 7px;
                         }
 
                     </style>
@@ -98,7 +98,7 @@
                         </li>
                         <li id="translateLi">
                             <a style="cursor: pointer;" href="javascript:void(0)" class="d-sm-flex align-items-center">
-                                <i class="fa fa-language ml-2" style="position: relative; top: -3px;"></i>
+                                <i class="fa fa-language ml-2" style="position: relative;inset-block-start: -3px;"></i>
                                 @push('scripts')
                                     <script defer>
 
@@ -119,7 +119,7 @@
                                             flex-flow: row-reverse;
                                             align-items: center;
                                             position: relative;
-                                            top: -3px;
+inset-block-start: -3px;
                                         }
 
                                         .goog-te-menu-value span {

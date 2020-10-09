@@ -37,11 +37,9 @@
     </div>
 </template>
 <script>
-    export default {
-        props: ['product', 'message'],
-        mounted() {
-        }
-    }
+	export default {
+		props: ['product','message']
+	}
 </script>
 
 <style>
@@ -135,3 +133,4 @@
 
 
 </style>
+

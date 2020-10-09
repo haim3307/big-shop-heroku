@@ -1,6 +1,6 @@
 <div class="filterUnit">
     <h4 class="toggleFilterDrop"><i class="fa fa-angle-down"
-                                    style="margin-right: 10px;"></i><strong>Brand</strong></h4>
+                                    style="margin-inline-end: 10px;"></i><strong>Brand</strong></h4>
     <div class="brandsFilter dropFilter">
         <ul style="padding: 20px 30px 0 30px;">
 

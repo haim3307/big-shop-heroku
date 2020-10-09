@@ -253,11 +253,11 @@
 </body>
 <style>
     .mr-5 {
-        margin-right: 5px;
+        margin-inline-end: 5px;
     }
 
     .ml-5 {
-        margin-left: 5px;
+        margin-inline-start: 5px;
     }
 
     .w-100 {
@@ -325,14 +325,14 @@
 
     .leftTopNav ul.topBarNav li ul.cart .cart-items .items li .product-details {
         position: relative;
-        margin-left: 60px;
+        margin-inline-start: 60px;
         padding: 0 15px 0 10px;
     }
 
     .leftTopNav ul.topBarNav li ul.cart .cart-items .items li .product-details .close-icon {
         position: absolute;
-        top: 0;
-        right: 0;
+inset-block-start: 0;
+inset-inline-end: 0;
         font-size: 10px;
         line-height: normal;
     }
@@ -434,8 +434,8 @@
 
     .middleBar .header-items .header-item a sub {
         position: absolute;
-        bottom: -8px;
-        right: -8px;
+inset-block-end: -8px;
+inset-inline-end: -8px;
         width: 20px;
         height: 20px;
         line-height: 20px;

@@ -16,23 +16,30 @@
 </template>
 
 <script>
-    export default {
-        name: "auto-complete-item",
-        props: ['item', 'cmsMode'],
-        computed: {
-            main_img() {
-                if (/{(.*?)}/.test(this.item.img_path)) this.item.img_path = this.item.img_path.replace('{category-url}', this.item.base_url_var_val);
-                return this.url + '/_img' + this.item.img_path + '/' + this.item.img;
-            },
-            item_link() {
-                if (/{(.*?)}/.test(this.item.base_url)) this.item.base_url = this.item.base_url.replace('{category-url}', this.item.base_url_var_val);
-                return this.url + this.item.base_url + this.item.url;
+import { computed } from '@vue/composition-api';
+	export default {
+		name: "auto-complete-item",
+        props: ['item','cmsMode'],
+        setup(){
+            const { url,item,cmsMode,$emit } = this;
+            let { img_path,base_url,iurl,img,base_url_var_val } = item;
+
+            const fiilPlaceholder = (path) => (/{(.*?)}/.test(path) ? path.replace('{category-url}', base_url_var_val) : path);
+
+            const item_link = computed(() => url  + fiilPlaceholder(base_url)  + iurl);
+            const main_img = computed(() => `${url}/_img${fiilPlaceholder(img_path)}/${img}`);
+
+            const methods = {
+                checkCMS(){
+                    if(!cmsMode) window.location = item_link;
+                    else $emit('addToEntitesList',item);
+                }
             }
-        },
-        methods: {
-            checkCMS() {
-                if (!this.cmsMode) window.location = this.item_link;
-                else this.$emit('addToEntitesList', this.item);
+
+            return {
+                ...methods,
+                item_link,
+                main_img
             }
         }
     }
@@ -44,3 +51,4 @@
     }
 
 </style>
+

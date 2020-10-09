@@ -232,7 +232,7 @@
         }
 
         #sidebar.active {
-            margin-left: -250px;
+            margin-inline-start: -250px;
             transform: rotateY(100deg);
         }
 
@@ -269,14 +269,14 @@
         .dropdown-toggle::after {
             display: block;
             position: absolute;
-            top: 50%;
-            right: 20px;
+inset-block-start: 50%;
+inset-inline-end: 20px;
             transform: translateY(-50%);
         }
 
         ul ul a {
             font-size: 0.9em !important;
-            padding-left: 30px !important;
+            padding-inline-start: 30px !important;
         }
 
         ul.CTAs {
@@ -298,7 +298,7 @@
 
         @media (max-width: 768px) {
             #sidebar {
-                margin-left: -250px;
+                margin-inline-start: -250px;
                 transform: rotateY(90deg);
                 position: absolute;
                 z-index: 999999;
@@ -306,7 +306,7 @@
             }
 
             #sidebar.active {
-                margin-left: 0;
+                margin-inline-start: 0;
                 transform: none;
             }
 

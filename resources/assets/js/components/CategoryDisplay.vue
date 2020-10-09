@@ -13,34 +13,39 @@
 </template>
 
 <script>
-    export default {
-        name: "category-display",
-        props: {
-            cmsMode: {
-                type: Boolean,
-                default: false,
-            }, 'isSelected': {default: false}, 'category': {default: {}}
-        },
+import { computed } from '@vue/composition-api';
+	export default {
+		name: "category-display",
+		props: {
+			cmsMode: {
+				type: Boolean,
+				default: false,
+			}, 'isSelected': {default: false}, 'category': {default: {}}
+		},
+		setup(){
+			const { $emit,category,cdnByType,url } = this;
+			const { url:curl,product_img,img: cimg,name:cname } = category;
 
-        computed: {
-            category_img() {
-                let path = `${this.cdnByType.img}/_img/`;
-                if (this.category.img) {
-                    path += `categories/${this.category.img}`;
-                } else if (this.category.product_img) {
-                    path += `products/${this.category.url}/${this.category.product_img}`
-                } else {
-                    path = 'http://via.placeholder.com/600x600?text=' + this.category.name;
-                }
-                return path;
-            },
-            category_link() {
-                return `${this.url}/shop/${this.category.url}`;
-            }
-        },
-        methods: {
-            emitCategorySelect() {
-                this.$emit('oncategoryselect', this.category);
+			const computed = {
+				category_link : computed(() => `${url}/shop/${curl}`),
+				category_img: computed(() => {
+					let path = `${cdnByType.img}/_img/`;
+					if (cimg) {
+						path += `categories/${cimg}`;
+					} else if (product_img) {
+						path += `products/${curl}/${product_img}`
+					} else {
+						path = 'http://via.placeholder.com/600x600?text=' + cname;
+					}
+					return path;
+				})
+            };
+
+			return {
+				emitCategorySelect() {
+					$emit('oncategoryselect', category);
+				},
+				...computed
             }
         }
     }
@@ -63,3 +68,4 @@
         transform: scale(1.2);
     }
 </style>
+

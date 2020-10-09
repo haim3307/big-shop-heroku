@@ -45,6 +45,7 @@
         "webpack-require-http": "^0.4.3"
     },
     "dependencies": {
+        "@vue/composition-api": "^0.5.0",
         "bootstrap-vue": "^2.0.0-rc.13",
         "moment": "^2.24.0",
         "stripe": "^6.25.1",

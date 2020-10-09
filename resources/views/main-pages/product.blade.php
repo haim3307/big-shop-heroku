@@ -13,7 +13,7 @@
                             <div class="productImgStage p-md-4">
                                 <div class="frameMy" style="position: absolute; z-index: 2;">
                                     <img src="{{img('_img/layout/price.png')}}" alt="">
-                                    <p class="text-white" style="position: relative; top: -50px; left: 20px;">
+                                    <p class="text-white" style="position: relative;inset-block-start: -50px;inset-inline-start: 20px;">
                                         ${{$item->price}}</p>
                                 </div>
                                 <div style="border: 1px lightgrey solid;      margin: 10px;">
@@ -83,9 +83,8 @@
                                 @endif
                                 <div class="callToAction f-row">
                                     {{--                                <input type="number" min="1" value="1"
-                                                                           style="text-align: center; margin-right: 14px; width: 46px;">--}}
-                                    <div style="margin-right: 10px;"
-                                         class="addToCartB buyPageButtons d-flex mb-md-2 mb-lg-0">
+                                                                           style="text-align: center; margin-inline-end: 14px; width: 46px;">--}}
+                                    <div style="margin-inline-end: 10px;"  class="addToCartB buyPageButtons d-flex mb-md-2 mb-lg-0">
                                         @push('styles')
                                             <style>
                                                 .storeBTN {
@@ -287,14 +286,14 @@
         }
 
         .frameMy {
-            top: 50px;
-            left: 38px;
+inset-block-start: 50px;
+inset-inline-start: 38px;
         }
 
         @media (max-width: 765px) {
             .frameMy {
-                top: 11px;
-                left: 14px;
+inset-block-start: 11px;
+inset-inline-start: 14px;
             }
         }
 
@@ -318,13 +317,13 @@
             height: 100%;
             display: block;
             position: absolute;
-            top: 5px;
+inset-block-start: 5px;
         }
 
         @media (min-width: 810px) {
             .innerRelatedProducts .threeDTitle {
                 max-width: 203px;
-                margin-left: 24px;
+                margin-inline-start: 24px;
             }
 
         }
@@ -352,7 +351,7 @@
         .itemStage .carousel-cell {
             width: 100%;
             height: 400px;
-            margin-right: 10px;
+            margin-inline-end: 10px;
             border-radius: 5px;
             counter-increment: carousel-cell;
         }

@@ -9,9 +9,14 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta name="keywords" content="life style store,sport,camping,playground,JavaScript">
-    {{--
-        <link rel="manifest" href="{{asset('/manifest.webmanifest')}}">
-    --}}
+    <style>
+        body{
+            direction: rtl;
+        }
+    </style>
+{{--
+    <link rel="manifest" href="{{asset('/manifest.webmanifest')}}">
+--}}
     {{--global lists--}}
     @inject('masterLayout','App\Services\MasterData')
     {{--!global lists--}}
@@ -246,7 +251,7 @@
         }
 
         body {
-            top: 0 !important;
+inset-block-start: 0 !important;
         }
 
         .goog-te-gadget-icon {
@@ -308,10 +313,8 @@
     }
 </style>
 <style>
-    .itemMessage {
-        position: absolute;
-        top: {{$top??0}};
-        right: {{$right??0}};
+    .itemMessage{
+        position: absolute;top: {{$top??0}};inset-inline-end: {{$right??0}};
         z-index: 100;
         padding: 10px;
         color: white;
@@ -341,7 +344,7 @@
 
     .quickViewB i {
         position: relative;
-        top: -3px;
+inset-block-start: -3px;
     }
 
     .quickViewWrap {

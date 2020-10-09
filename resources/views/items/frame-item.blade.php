@@ -11,7 +11,7 @@
         <h3 class="my-text-overflow">{{ucfirst($frameItem->title)}}</h3>
         <div class="frameItemPrices">
             @if(isset($frameItem->prev_price))
-                <s style=" margin-right: 20px">${{$frameItem->prev_price}}</s>
+                <s style=" margin-inline-end: 20px">${{$frameItem->prev_price}}</s>
             @endif
             <span style="color: #d70a0a;">${{$frameItem->price}}</span>
         </div>

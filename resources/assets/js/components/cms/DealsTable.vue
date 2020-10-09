@@ -11,8 +11,8 @@
             <th>Created At</th>
         </tr>
         </thead>
-        <draggable :list="listObj.items" :options="{animation:200,handle:'.fa-arrows-alt'}" :element="'tbody'">
-            <tr v-if="product && product.id" v-for="product in list" :id="product.id">
+        <draggable v-if="product && product.id" :list="listObj.items" :options="{animation:200,handle:'.fa-arrows-alt'}" :element="'tbody'">
+            <tr v-for="product in list" :key="product.id" :id="product.id">
                 <th scope="row"><span class="fa fa-arrows-alt"></span>{{product.id}}</th>
                 <td>{{product.title}}</td>
                 <td>{{product.url}}</td>
@@ -27,24 +27,21 @@
 
 <script>
     import draggable from 'vuedraggable';
+    import { computed } from '@vue/composition-api';
 
-    export default {
-        name: "deals-table",
-        props: ['listObj'],
+	export default {
+		name: "deals-table",
+		props: ['listObj'],
         components: {draggable},
-        beforeMount() {
-        },
-        mounted() {
-
-        },
-        computed: {
-            list() {
-                return this.listObj.items.map(item => item.entityItem).filter(item => item && item.id);
-            }
+        setup(){
+            return {
+                list: computed(self => self.listObj.items.map(item => item.entityItem).filter(item => item && item.id))
+			}
         }
-    }
+	}
 </script>
 
 <style>
 
 </style>
+

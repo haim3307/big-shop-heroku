@@ -13,15 +13,12 @@
     }
 </style>
 <script>
-    export default {
-        data: function () {
-            return {
-                items: window.items, itemsAvail: true
-            }
-        },
-        props: {},
-
-        mounted() {
-        }
-    }
+	export default {
+		data: function () {
+			return {
+				items: window.items, itemsAvail: true
+			}
+		},
+		props: {}
+	}
 </script>

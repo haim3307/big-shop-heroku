@@ -96,7 +96,7 @@
                 <div class="time">
                     <div class="timer-left">
                         Time
-                        Left:
+inset-inline-start:
                     </div>
                     <div class="pts-countdown clearfix"
                          data-countdown="countdown"

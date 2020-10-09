@@ -16,7 +16,7 @@
     <style type="text/css" id="kc-css-render">
         body.kc-css-system .kc-css-423488 {
             padding-right: 0;
-            padding-left: 0;
+            padding-inline-start: 0;
         }
     </style>
     <style>
@@ -43,10 +43,10 @@
         /*style Deal products EXGYM*/
         .woo-deals .owl-item:nth-child(2n) .product-block:after {
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
+inset-block-start: 0;
+inset-inline-start: 0;
+inset-inline-end: 0;
+inset-block-end: 0;
             content: "";
             background: transparent;
             border: 10px solid #bf0d0d;
@@ -54,8 +54,8 @@
         }
 
         .woo-deals .owl-item .product-block span.onsale-wrap .onsale, .woo-deals .owl-item .product-block span.onsale-wrap .sale-off {
-            top: 20px;
-            left: 20px;
+inset-block-start: 20px;
+inset-inline-start: 20px;
         }
 
         .woo-deals .owl-item .product-block .caption {
@@ -115,18 +115,18 @@
 
         .woo-deals .time-wrapper {
             position: absolute;
-            bottom: 53px;
-            left: 0;
-            right: 0;
+inset-block-end: 53px;
+inset-inline-start: 0;
+inset-inline-end: 0;
         }
 
         @media (max-width: 991px) {
             .woo-deals .time-wrapper {
-                top: 50%;
-                left: 50%;
+inset-block-start: 50%;
+inset-inline-start: 50%;
                 width: 100%;
-                right: auto;
-                bottom: auto;
+inset-inline-end: auto;
+inset-block-end: auto;
                 -webkit-transform: translateX(-50%) translateY(-50%);
                 -ms-transform: translateX(-50%) translateY(-50%);
                 -o-transform: translateX(-50%) translateY(-50%);
@@ -137,7 +137,7 @@
         /****/
         /*style product-list EXGYM*/
         .product-block-v3.product-block {
-            text-align: left;
+            text-align: start;
         }
 
         .product-block-v3.product-block .image {
@@ -184,8 +184,8 @@
 
         #page {
             position: relative;
-            margin-left: auto;
-            margin-right: auto;
+            margin-inline-start: auto;
+            margin-inline-end: auto;
             overflow-x: hidden;
         }
 
@@ -281,7 +281,7 @@
         @media (min-width: 992px) {
             .product-block:hover .image:before {
                 width: 100%;
-                left: 0;
+inset-inline-start: 0;
                 visibility: visible;
                 opacity: 1;
             }
@@ -296,8 +296,8 @@
                 visibility: hidden;
                 pointer-events: none;
                 position: absolute;
-                bottom: 0;
-                left: 50%;
+inset-block-end: 0;
+inset-inline-start: 50%;
                 background: rgba(191, 13, 13, .75);
                 opacity: 0;
                 width: 0;

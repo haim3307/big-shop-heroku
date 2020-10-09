@@ -16,15 +16,16 @@
         props: {},
 
         mounted() {
-            let _self = this, $tags = $('.trending ul li');
-            $tags.on('click', function (e) {
+            let $tags = $('.trending ul li');
+			$tags.on('click',  e => {
                 //, e => _self.items = window.items
-                $.ajax({url: _self.url + '/home/tags/' + $(e.target).data('tag')}).then((res) => {
-                    _self.items = res;
-                    _self.itemsAvail = true;
-                }, e => _self.itemsAvail = false);
+                $.ajax({url: this.url+'/home/tags/' + $(e.target).data('tag')})
+					.then(res => {
+						this.items = res;
+						this.itemsAvail = true;
+                }, e => this.itemsAvail = false);
                 $tags.removeClass('trendActive');
-                $(this).addClass('trendActive');
+                $(e.target).addClass('trendActive');
             });
         }
     }

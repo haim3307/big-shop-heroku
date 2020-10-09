@@ -8,20 +8,11 @@
 
 <script>
     import AutoCompleteItem from './AutoCompleteItem';
-
-    export default {
-        components: {AutoCompleteItem},
-        mounted() {
-        },
-        props: ['list', 'cmsMode'],
-        name: "auto-complete-menu",
-        methods: {
-            clickItem(item) {
-                alert(item);
-            }
-        }
-
-    }
+	export default {
+		components:{AutoCompleteItem},
+		props:['list','cmsMode'],
+		name: "auto-complete-menu"
+	}
 </script>
 
 <style>
@@ -29,10 +20,10 @@
         position: absolute;
         z-index: 1111;
         margin: 10px auto;
-        left: -3px;
-        right: 0;
+inset-inline-start: -3px;
+inset-inline-end: 0;
         padding: 10px;
-        top: 26px;
+inset-block-start: 26px;
         background-color: rgba(125, 125, 125, 0.7);
         width: 90%;
         border-bottom: 1px solid lightgrey
@@ -50,3 +41,4 @@
         }
     }
 </style>
+

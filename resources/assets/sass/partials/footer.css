@@ -18,7 +18,7 @@ footer footer ul {
 }
 
 footer footer ul li {
-    margin-left: 15px;
+    margin-inline-start: 15px;
 }
 
 footer footer ul li a, .copyRights {
@@ -28,7 +28,7 @@ footer footer ul li a, .copyRights {
     font-size: 13px;
     font-weight: 400;
     line-height: 22px;
-    text-align: left;
+    text-align: start;
 }
 
 footer footer .container-1112-footer {
@@ -57,7 +57,7 @@ footer footer .container-1112-footer {
     font-size: 12px;
     font-weight: 400;
     line-height: 20px;
-    text-align: left;
+    text-align: start;
 }
 
 .WhoWeAre > ul {
@@ -78,7 +78,7 @@ footer footer .container-1112-footer {
     font-size: 13px;
     font-weight: 400;
     line-height: 22px;
-    text-align: left;
+    text-align: start;
     display: grid;
     grid-template-columns: auto 1fr;
     grid-column-gap: 13px;
@@ -107,7 +107,7 @@ footer footer .container-1112-footer {
     font-size: 12px;
     font-weight: 400;
     line-height: 23px;
-    text-align: left;
+    text-align: start;
 }
 
 .Tweets ul li {
@@ -120,7 +120,7 @@ footer footer .container-1112-footer {
     font-size: 12px;
     font-weight: 400;
     line-height: 22px;
-    text-align: left;
+    text-align: start;
 }
 
 .Tweets ul li img {
@@ -128,7 +128,7 @@ footer footer .container-1112-footer {
 }
 
 .backToTop {
-    margin-left: 20px;
+    margin-inline-start: 20px;
 }
 
 @media (max-width: 1112px) {
@@ -198,7 +198,8 @@ footer footer .container-1112-footer {
     font-size: 24px; /* Approximation due to font substitution */
     font-weight: 400;
     line-height: 22px; /* Approximation due to font substitution */
-    text-align: left;
+    text-align: start;
 }
 
 /*!footer*/
+

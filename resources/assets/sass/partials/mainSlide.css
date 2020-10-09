@@ -27,7 +27,7 @@
 
 .gallery-cell {
     width: 100%;
-    margin-right: 10px;
+    margin-inline-end: 10px;
     counter-increment: gallery-cell;
 }
 
@@ -80,11 +80,11 @@
 
 /*@media (min-width: 1300px) {
     .mainSlide .flickity-prev-next-button.previous {
-        left: -100px;
+inset-inline-start: -100px;
     }
 
     .mainSlide .flickity-prev-next-button.next {
-        right: -100px;
+inset-inline-end: -100px;
     }
 }*/
 
@@ -106,7 +106,7 @@
 
 @media (min-width: 910px) {
     #mainSlideItem1 {
-        padding-left: 75px;
+        padding-inline-start: 75px;
         padding-right: 75px;
     }
 }

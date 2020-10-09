@@ -12,17 +12,14 @@
 <script>
     import draggable from 'vuedraggable';
 
-    export default {
-        name: "thumbnail-list",
-        props: ['listObj'],
-        components: {draggable},
-        methods: {},
-        mounted() {
-        }
-
-    }
+	export default {
+		name: "thumbnail-list",
+		props: ['listObj'],
+		components: {draggable}
+	}
 </script>
 
 <style>
 
 </style>
+

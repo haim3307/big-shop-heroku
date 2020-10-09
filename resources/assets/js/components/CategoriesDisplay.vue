@@ -22,47 +22,40 @@
                 selectedCategoryId: false
             }
 
-        },
-        mounted() {
-        },
-        computed: {},
-        methods: {}
-    }
+		}
+	}
 </script>
 
 
-<style>
-    .categoriesDisplay ul {
-        /*            display: grid;
-                    grid-template-columns: repeat(4,1fr);*/
-        grid-auto-rows: 374px;
-        grid-gap: 15px;
-
-    }
-
-    .categoriesDisplay .categoryModelItem {
-        display: grid;
-        grid-template-rows: 1fr 60px;
-        border-radius: 3px;
-        overflow: hidden;
-    }
-
-    .categoriesDisplay .categoryModelItem h3 {
-        display: flex;
-        align-items: center;
-        padding-left: 15px;
-        color: grey;
-        text-transform: capitalize;
+<style lang="scss">
+    .categoriesDisplay{
+        ul {
+            grid-auto-rows: 374px;
+            grid-gap: 15px;
+        }
+        .categoryModelItem {
+            display: grid;
+            grid-template-rows: 1fr 60px;
+            border-radius: 3px;
+            overflow: hidden;
+            h3 {
+                display: flex;
+                align-items: center;
+                padding-inline-start: 15px;
+                color: grey;
+                text-transform: capitalize;
+            }
+        }
     }
 
     .categoryFrame {
         overflow: hidden;
+        img {
+            max-width: 170%;
+            height: auto;
+        }
     }
 
-    .categoryFrame img {
-        max-width: 170%;
-        height: auto;
-    }
 
     .categoryInfo {
         background-color: #fff;
@@ -81,7 +74,8 @@
         align-items: center;
         border-radius: 50px;
         position: absolute;
-        right: 5px;
-        top: -20px;
+inset-inline-end: 5px;
+inset-block-start: -20px;
     }
 </style>
+

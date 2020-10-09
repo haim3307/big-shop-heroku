@@ -15,7 +15,7 @@
                     <li>
                         <div class="filterUnit" style=" background-color: #f6f6f6;">
                             <h4 class="toggleFilterDrop"><i class="fa fa-angle-down"
-                                                            style="margin-right: 10px;"></i><strong>Price</strong></h4>
+                                                            style="margin-inline-end: 10px;"></i><strong>Price</strong></h4>
                             <div class="priceRangeFilter dropFilter">
                                 <div class="input-group justify-content-around">
                                     <label for="amountMin" class="rangeInputs allCentered ui-corner-all">
@@ -35,8 +35,8 @@
                     <li>
                         <nav class="sideSubCategoryMenu">
                             <h4 class="toggleFilterDrop filterUnit" style="    background-color: #f9f9f9;"><i
-                                    class="fa fa-angle-down"
-                                    style="margin-right: 10px;"></i><strong>Category</strong></h4>
+                                        class="fa fa-angle-down"
+                                        style="margin-inline-end: 10px;"></i><strong>Category</strong></h4>
                             <ul class="dropFilter">
                                 {{--                                <li class="{{$selected_sub_category->name == 'all' ? 'selectedSubCategory':''}}">
                                                                     <a href="{{url('shop/'.$category->name.'/')}}">View All</a>
@@ -193,8 +193,8 @@
         .materialButton:after {
             content: '';
             position: absolute;
-            top: 50%;
-            left: 50%;
+inset-block-start: 50%;
+inset-inline-start: 50%;
             width: 5px;
             height: 5px;
             background: rgba(255, 255, 255, .5);
@@ -355,7 +355,7 @@
         .priceRangeFilter .ui-slider-handle {
             width: 20px;
             height: 20px;
-            top: -5px;
+inset-block-start: -5px;
         }
 
         .hide {

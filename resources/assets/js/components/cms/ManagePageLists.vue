@@ -4,7 +4,7 @@
             <h4>Choose A List To Manage</h4>
             <ul class="list-group">
                 <li class="list-group-item list-group-item-action" :class="{active:selectedList==list.url}"
-                    v-for="list in lists" @click="toTab(url+'/cms/page/'+page.url+'/'+list.url)">
+                    v-for="list in lists" :key="list.url" @click="toTab(url + '/cms/page/' + page.url + '/' + list.url)">
                     {{list.title | capitalize}}
                 </li>
             </ul>
@@ -18,18 +18,16 @@
 </template>
 
 <script>
-    export default {
-        name: "manage-page-lists",
-        props: ['lists', 'pageManageMode', 'selectedList'],
-        inject: ['page'],
-        mounted() {
-        },
-        methods: {
-            toTab(title) {
-                window.location = title;
-            }
-        }
-    }
+	export default {
+		name: "manage-page-lists",
+		props: ['lists', 'pageManageMode', 'selectedList'],
+        inject:['page'],
+		methods: {
+			toTab(title) {
+				window.location = title;
+			}
+		}
+	}
 </script>
 
 <style>
@@ -39,3 +37,4 @@
         }
     }
 </style>
+

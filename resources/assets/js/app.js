@@ -6,6 +6,8 @@
 import Datetime from 'vue-datetime-2';
 import moment from 'moment';
 import StarRating from 'vue-star-rating';
+import VueCompositionApi from "@vue/composition-api";
+
 //changes
 /*
 require('./bootstrap');
@@ -36,6 +38,8 @@ if ('serviceWorker' in navigator) {
 }
 
 window.VueComponents = function () {
+	Vue.use(VueCompositionApi);
+
     Vue.config.devtools = true;
     Vue.filter('formatDate', function (value) {
         if (value) {

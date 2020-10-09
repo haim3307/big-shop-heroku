@@ -35,12 +35,12 @@
                     }
 
                     .owl-prev {
-                        left: 5px;
+inset-inline-start: 5px;
                     }
 
                     .owl-next {
                         /*width: 15px;*/
-                        right: 5px;
+inset-inline-end: 5px;
                     }
 
                     .owl-prev i, .owl-next i {
@@ -52,8 +52,8 @@
                         position: absolute;
                         background: hsla(0, 0%, 100%, .75) !important;
                         border: none;
-                        top: 0;
-                        bottom: 0;
+inset-block-start: 0;
+inset-block-end: 0;
                         width: 54px;
                         height: 54px;
                         border-radius: 50%;

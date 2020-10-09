@@ -23,8 +23,6 @@
 
 <script>
     export default {
-        mounted() {
-        },
         props: ['it'],
         data: function () {
             return {
@@ -37,14 +35,13 @@
             }
         },
         computed: {
-            // a computed getter
-            url_main_img: function () {
+            url_main_img () {
                 return `${this.cdnByType.img}/${!window.categoryImgRoute ? '_img/main-items-by-cates/' : window.categoryImgRoute}${this.it['main_img']}`;
             },
-            url_shopping_cart: function () {
+            url_shopping_cart () {
                 return `${this.cdnByType.img}/_img/shopping-cart.png`;
             },
-            url_item: function () {
+            url_item () {
                 /*				!this.it['c_name'] && (this.it['c_name'] = selectedCategory);
                                 !this.it['sc_name'] && (this.it['sc_name'] = selectedSubCategory);*/
                 return `${this.url}/shop/${this.it['c_name']}/${this.it['sc_name']}/${this.it['url']}`;
@@ -52,3 +49,4 @@
         }
     }
 </script>
+

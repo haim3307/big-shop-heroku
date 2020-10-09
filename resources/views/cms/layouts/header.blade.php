@@ -61,12 +61,12 @@
 
                     @media (max-width: 768px) {
                         #sidebar {
-                            margin-left: -250px;
+                            margin-inline-start: -250px;
                             transform: rotateY(90deg);
                         }
 
                         #sidebar.active {
-                            margin-left: 0;
+                            margin-inline-start: 0;
                             transform: none;
                         }
 

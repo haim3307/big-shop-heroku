@@ -136,7 +136,7 @@
     font-size: 12px;
     font-weight: 400;
     line-height: 20px;
-    text-align: left;
+    text-align: start;
 }
 
 @media (max-width: 800px) {
@@ -275,7 +275,7 @@
     font-size: 12px;
     font-weight: 400;
     line-height: 20px;
-    text-align: left;
+    text-align: start;
 }
 
 .catesItemR .desc > * {
@@ -287,7 +287,7 @@
     .catesItemR .partA .addToCartB span {
         text-align: center;
         min-width: 82px;
-        padding-left: 0;
+        padding-inline-start: 0;
         flex: 1;
 
     }
@@ -421,7 +421,7 @@
 .categoryModelItem h3 {
     display: flex;
     align-items: center;
-    padding-left: 15px;
+    padding-inline-start: 15px;
     color: grey;
     text-transform: capitalize;
 }
@@ -452,8 +452,8 @@
     align-items: center;
     border-radius: 50px;
     position: absolute;
-    right: 5px;
-    top: -20px;
+    inset-inline-start: 5px;
+    inset-block-start: -20px;
 }
 
 /*!items*/

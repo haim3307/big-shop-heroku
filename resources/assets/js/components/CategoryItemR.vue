@@ -4,7 +4,7 @@
         <!-- :class="{'zoomIn':loadedItem}"--><!-- v-show="loadedItem"-->
         <a :href="url_item" style="text-decoration: none; color: black;">
             <div class="innerCatesItemR" :style="{backgroundImage:make_bgi}" style="    background-size: cover;">
-                <div class="quickViewWrap" style="position: absolute; top: 10px; left: 10px;">
+                <div class="quickViewWrap" style="position: absolute;inset-block-start: 10px;inset-inline-start: 10px;">
                     <button class="btn btn-light quickViewB" :id="'quickView'+it.id" :data-product="jsonProduct">
                         <i class="fa fa-eye" title="Quick View"></i>
                     </button>
@@ -16,7 +16,7 @@
                     <h4 class="h5">{{it['title'] | capitalize}}</h4>
                     <div class="desc my-text-overflow" style="max-height: 90px;" v-html="it['description']"></div>
                     <div class="frameItemPrices">
-                        <span style="text-decoration: line-through; margin-right: 20px;" v-if="it['prev_price']">${{it['prev_price']}}</span>
+                        <span style="text-decoration: line-through; margin-inline-end: 20px;" v-if="it['prev_price']">${{it['prev_price']}}</span>
                         <span style="color: #d70a0a">${{it['price']}}</span>
                     </div>
                     <button class="buyNowWideButton addToCartB" v-on:click="addToCartEvent($event)" ref="addToCart"
@@ -34,50 +34,62 @@
     </li>
 </template>
 <script>
-    export default {
-        mounted() {
-        },
-        props: ['it'],
-        data: function () {
-            return {
-                loadedItem: false
-            }
-        },
-        methods: {
-            loadItem() {
-                this.loadedItem = true;
-            },
-            addToCartEvent($event) {
-                window.addToCartEvent.call(this.$refs.addToCart, $event);
-            }
-        },
-        computed: {
-            // a computed getter
-            url_main_img() {
-                return `${this.cdnByType.img}/_img/products/${this.it['c_url']}/${this.it['main_img']}?scale.width=231`;
-            },
-            url_shopping_cart() {
-                return `${this.cdnByType.img}/_img/shopping-cart.png`;
-            },
-            url_item() {
-                !this.it['c_url'] && (this.it['c_url'] = typeof this.selectedCategory == "undefined" ? this.it.main_category.url : this.selectedCategory);
-                return `${this.url}/shop/${this.it['c_url']}/${this.it['url']}`;
-            },
-            make_bgi() {
-                let url = this.url;
+	export default {
+        setup(){
+            const { url,cdnByType,it,selectedCategory } = this;
+            const { c_url,main_img,main_category,iurl } = it;
+            const { img } = cdnByType;
 
-                function bg_white() {
-                    return `${url}/_img/bg_items_white.png`;
+            const computed_ = {
+                url_main_img() {
+                    return `${img}/_img/products/${c_url}/${main_img}?scale.width=231`;
+                },
+                url_shopping_cart() {
+                    return `${img}/_img/shopping-cart.png`;
+                },
+                url_item() {
+                    !c_url && (c_url = typeof selectedCategory == "undefined" ? main_category.url : selectedCategory);
+                    return `${url}/shop/${c_url}/${url}`;
+                },
+                make_bgi() {
+                    function bg_white() {
+                        return `${url}/_img/bg_items_white.png`;
+                    }
+
+                    return `url('${bg_white()}')`;
+                },
+                jsonProduct() {
+                    return JSON.stringify(it);
                 }
+            }
+            for(comp in computed){
+                computed_[comp] = computed(computed_[comp]);
+            }
 
-                return `url('${bg_white()}')`;
-            },
-            jsonProduct() {
-                return JSON.stringify(this.it);
+            return {
+                ...computed_
             }
         },
-        filters: {}
-    }
+		mounted() {
+			/*			$('.addToCartB').on('click', updateCartedButtons);
+                        console.log('options:',this.it['options']);*/
+		},
+		props: ['it'],
+		data: function () {
+			return {
+				loadedItem: false
+			}
+		},
+		methods: {
+			loadItem() {
+				this.loadedItem = true;
+			},
+			addToCartEvent($event) {
+              window.addToCartEvent.call(this.$refs.addToCart,$event);
+			}
+		},
+		filters: {}
+	}
 </script>
 <style>
     .catesItemR {
@@ -175,7 +187,7 @@
         font-size: 12px;
         font-weight: 400;
         line-height: 20px;
-        text-align: left;
+        text-align: start;
     }
 
     @media (max-width: 800px) {
@@ -203,7 +215,7 @@
         .catesItemR .partA .addToCartB span {
             text-align: center;
             min-width: 82px;
-            padding-left: 0;
+            padding-inline-start: 0;
             flex: 1;
 
         }
