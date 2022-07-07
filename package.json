@@ -46,7 +46,7 @@
     },
     "dependencies": {
         "bootstrap-vue": "^2.0.0-rc.13",
-        "moment": "^2.24.0",
+        "moment": "^2.29.4",
         "stripe": "^6.25.1",
         "vue-datetime-2": "^0.6.1",
         "vue-star-rating": "^1.6.1",
